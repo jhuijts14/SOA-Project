@@ -1,0 +1,7 @@
+127.0.0.1 - - [10/Feb/2017:17:48:12 +0100] "GET / HTTP/1.1" 404 988
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:48:21 +0100] "GET /axis2 HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:48:22 +0100] "GET /favicon.ico HTTP/1.1" 404 1010
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:48:29 +0100] "GET /axis2 HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:50:05 +0100] "GET /SOAProject/services/BookPriceServiceSkeleton.java HTTP/1.1" 500 149
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:50:56 +0100] "GET /SOAProject/services/BookPriceService HTTP/1.1" 500 241
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:51:17 +0100] "GET /SOAProject/services/BookQuote HTTP/1.1" 500 129

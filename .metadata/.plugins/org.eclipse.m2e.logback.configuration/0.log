@@ -3,3 +3,17 @@
 2017-02-09 20:15:06,691 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@332748b3{/wse,null,AVAILABLE}
 2017-02-09 20:15:06,701 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@18b99cd6{HTTP/1.1,[http/1.1]}{0.0.0.0:65423}
 2017-02-09 20:15:06,702 [main] INFO  org.eclipse.jetty.server.Server - Started @3567630ms
+2017-02-15 08:55:17,652 [Thread-196] ERROR org.eclipse.jgit.util.FS - xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+2017-02-15 08:55:17,772 [Thread-197] ERROR org.eclipse.jgit.util.FS - xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+2017-02-15 10:42:24,811 [Framework stop] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@18b99cd6{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
+2017-02-15 10:42:24,901 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@332748b3{/wse,null,UNAVAILABLE}
+2017-02-15 10:43:50,262 [Thread-11] ERROR org.eclipse.jgit.util.FS - xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+2017-02-15 10:43:50,332 [Thread-12] ERROR org.eclipse.jgit.util.FS - xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+2017-02-15 11:41:26,236 [Thread-12] ERROR org.eclipse.jgit.util.FS - xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+2017-02-15 11:41:26,318 [Thread-13] ERROR org.eclipse.jgit.util.FS - xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
