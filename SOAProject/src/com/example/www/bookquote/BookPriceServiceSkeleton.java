@@ -17,7 +17,7 @@ import java.util.*;
     	
         public BookPriceServiceSkeleton () {
         	books = new HashMap<String,Double>();
-        	books.put("1", 10.0); /*Joep joep*/
+        	books.put("1", 10.0); 
         	books.put("2", 45.0);
         	books.put("3", 20.0);
         	books.put("4", 35.0);
