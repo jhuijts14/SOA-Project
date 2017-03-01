@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/CommonTypes" elementFormDefault="qualified">
+	<element name="Customer" type="tns:CustomerType"></element>
+	<complexType name="CustomerType">
+		<sequence>
+			<element name="RepairID" type="tns:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="CustomerName" type="tns:CustomerNameType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="PhoneNumber" type="string" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="Email" type="tns:EmailType" maxOccurs="1"
+				minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<simpleType name="RepairIDType">
+		<restriction base="string"></restriction> 
+	</simpleType>
+	
+	<complexType name="CustomerNameType">
+		<sequence>
+			<element name="FirstName" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="LastName" type="string" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+	<simpleType name="EmailType">
+		<restriction base="string"></restriction>
+	</simpleType>
+
+	<element name="Cost" type="tns:CostType"></element>
+	
+	<simpleType name="CostType">
+		<restriction base="decimal"></restriction>
+	</simpleType>
+
+</schema>
