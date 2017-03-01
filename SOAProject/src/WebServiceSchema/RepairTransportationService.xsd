@@ -2,8 +2,10 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
 targetNamespace="http://www.example.org/RepairTransportationService" 
 xmlns:tns="http://www.example.org/RepairTransportationService" 
+xmlns:common="http://www.example.org/CommonTypes"
 elementFormDefault="qualified">
 
+<import schemaLocation="CommonTypes.xsd" namespace="http://www.example.org/CommonTypes" />
 
 	<element name="Address" type="tns:AddressType"></element>
 
@@ -28,10 +30,6 @@ elementFormDefault="qualified">
 		<restriction base="int"></restriction> 
 	</simpleType>
 	
-	<element name="TransportationDistance" type="tns:TransportationDistanceType"></element>
-	
-	<simpleType name="TransportationDistanceType">
-		<restriction base="decimal"></restriction>
-	</simpleType>
+	<element name="TransportationDistance" type="common:TransportationDistanceType" />
 	
 </schema>

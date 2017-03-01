@@ -36,5 +36,20 @@
 	<simpleType name="CostType">
 		<restriction base="decimal"></restriction>
 	</simpleType>
+	
+	<element name="ApprovalResponse" type="tns:ApprovalResponseType"></element>
+
+	<simpleType name="ApprovalResponseType">
+		<restriction base="string">
+			<enumeration value="Approved"></enumeration>
+			<enumeration value="Cancelled"></enumeration>
+		</restriction>
+	</simpleType>
+	
+	<element name="TransportationDistance" type="tns:TransportationDistanceType"></element>
+	
+	<simpleType name="TransportationDistanceType">
+		<restriction base="decimal"></restriction>
+	</simpleType>
 
 </schema>
