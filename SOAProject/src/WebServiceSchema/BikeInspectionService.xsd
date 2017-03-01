@@ -2,7 +2,11 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
 targetNamespace="http://www.example.org/BikeInspectionService" 
 xmlns:tns="http://www.example.org/BikeInspectionService" 
+xmlns:common="http://www.example.org/CommonTypes"
 elementFormDefault="qualified">
+
+<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.example.org/CommonTypes"/>
 
 <element name="Repair" type="tns:RepairType"> </element>
 
@@ -20,7 +24,7 @@ elementFormDefault="qualified">
 		<element name="BikePart" type="tns:BikePartType" 
 			minOccurs="0"  maxOccurs="unbounded">
 		</element>
-		<element name="RepairCost" type="tns:CostType" 
+		<element name="RepairCost" type="common:CostType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
 	</sequence>
@@ -51,7 +55,7 @@ elementFormDefault="qualified">
 	<restriction base="decimal"></restriction>
 </simpleType>
 
-<element name="RepairCost" type="tns:CostType"></element>
+<element name="RepairCost" type="common:CostType"></element>
 
 <element name="ApprovalResponse" type="tns:ApprovalResponseType"></element>
 

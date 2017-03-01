@@ -2,25 +2,34 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
 	targetNamespace="http://www.example.org/RepairBillingService" 
 	xmlns:tns="http://www.example.org/RepairBillingService" 
+	xmlns:common="http://www.example.org/CommonTypes"
 	elementFormDefault="qualified">
 	
+
+<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.example.org/CommonTypes"/>
+
 <element name="Bill" type="tns:BillType"></element>
 
 <complexType name="BillType">
 	<sequence>
-		<element name="PickUpCost" type="CostType" 
+		<element name="PickUpCost" type="common:CostType" 
 			maxOccurs="1" minOccurs="1">
 		</element>
-		<element name="RepairCost" type="CostType" 
-			maxOccurs="0" minOccurs="1">
+		<element name="RepairCost" type="common:CostType" 
+			maxOccurs="1" minOccurs="0">
 		</element>
-		<element name="DeliveryCost" type="CostType" 
+		<element name="DeliveryCost" type="common:CostType" 
 			maxOccurs="1" minOccurs="1">
 		</element>
-		<element name="TotalCost" type="CostType" 
+		<element name="TotalCost" type="common:CostType" 
 			maxOccurs="1" minOccurs="1">
 		</element>
 	</sequence>
 </complexType>
+
+<element name="ApprovalResponse" type="c></element>
+
+
 
 </schema>
