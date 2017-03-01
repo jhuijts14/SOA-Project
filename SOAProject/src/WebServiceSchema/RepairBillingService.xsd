@@ -25,16 +25,22 @@
 		<element name="TotalCost" type="common:CostType" 
 			maxOccurs="1" minOccurs="1">
 		</element>
+		<element name="CustomerInformation" type="common:CustomerType"
+			maxOccurs="1" minOccurs="1">
+		</element>
+		<element name="ApprovalResponse" type="common:ApprovalResponseType"
+			maxOccurs="1" minOccurs="1">
+		</element>
 	</sequence>
 </complexType>
 
-<element name="ApprovalResponse" type="common:ApprovalResponseType"></element>
+<element name="DeliveryConfirmation" type="tns:DeliveryConfirmationType"></element>
 
-<element name="TotalCost" type="common:CostType"></element>
+<simpleType name="DeliveryConfirmationType">
+	<restriction base="string">
+		<enumeration value="Delivered"></enumeration>
+		<enumeration value="NotDelivered"></enumeration>
+	</restriction>
+</simpleType>
 
-<element name="PickUpCost" type="common:CostType"></element>
-
-<element name="DeliveryCost" type="common:CostType"></element>
-
-<element name="RepairCost" type="common:CostType"></element>
 </schema>
