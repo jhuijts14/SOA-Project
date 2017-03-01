@@ -1,21 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/RepairTransportationService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RepairTransportationService" targetNamespace="http://www.example.org/RepairTransportationService/">
-  <wsdl:message name="NewOperationRequest">
-    <wsdl:part name="NewOperationRequest" type="xsd:string"/>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/RepairTransportationService/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+name="RepairTransportationService" 
+targetNamespace="http://www.example.org/RepairTransportationService/" 
+xmlns:xsd1="http://www.example.org/RepairTransportationService" 
+xmlns:xsd2="http://www.example.org/CommonTypes">
+  <wsdl:types>
+  	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<xsd:import
+  			namespace="http://www.example.org/RepairTransportationService"
+  			schemaLocation="../WebServiceSchema/RepairTransportationService.xsd">
+  		</xsd:import>
+  		<xsd:import namespace="http://www.example.org/CommonTypes"
+  			schemaLocation="../WebServiceSchema/CommonTypes.xsd">
+  		</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="GetTransportationTimeRequest">
+    <wsdl:part name="GetTransportationTimeRequest" type="xsd1:AddressType"/>
   </wsdl:message>
-  <wsdl:message name="NewOperationResponse">
-    <wsdl:part name="NewOperationResponse" type="xsd:string"/>
+  <wsdl:message name="GetTransportationTimeResponse">
+    <wsdl:part name="GetTransportationTimeResponse" type="xsd1:TransportationTimeType"/>
   </wsdl:message>
-  <wsdl:portType name="RepairTransportationService">
-    <wsdl:operation name="NewOperation">
-      <wsdl:input message="tns:NewOperationRequest"/>
-      <wsdl:output message="tns:NewOperationResponse"/>
+  <wsdl:message name="GetTransportationDistanceRequest">
+  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd1:AddressType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetTransportationDistanceResponse">
+  	<wsdl:part name="GetTransportationDistanceResponse" type="xsd2:TransportationDistanceType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RepairTransportationServicePortType">
+    <wsdl:operation name="GetTransportationTime">
+      <wsdl:input message="tns:GetTransportationTimeRequest"/>
+      <wsdl:output message="tns:GetTransportationTimeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransportationDistance">
+    	<wsdl:input message="tns:GetTransportationDistanceRequest"></wsdl:input>
+    	<wsdl:output message="tns:GetTransportationDistanceResponse"></wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="RepairTransportationServiceSOAP" type="tns:RepairTransportationService">
+  <wsdl:binding name="RepairTransportationServiceSOAPBinding" type="tns:RepairTransportationServicePortType">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="NewOperation">
-      <soap:operation soapAction="http://www.example.org/RepairTransportationService/NewOperation"/>
+    <wsdl:operation name="GetTransportationTime">
+      <soap:operation soapAction="http://www.example.org/RepairTransportationService/GetTransportationTime"/>
+      <wsdl:input>
+        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransportationDistance">
+      <soap:operation soapAction="http://www.example.org/RepairTransportationService/GetTransportationDistance"/>
       <wsdl:input>
         <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
       </wsdl:input>
@@ -24,9 +57,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="RepairTransportationService">
-    <wsdl:port binding="tns:RepairTransportationServiceSOAP" name="RepairTransportationServiceSOAP">
-      <soap:address location="http://www.example.org/"/>
+  <wsdl:service name="RepairTransportationServicePort">
+    <wsdl:port binding="tns:RepairTransportationServiceSOAPBinding" name="RepairTransportationServiceSOAP">
+      <soap:address location="http://www.example.org/RepairTransportationService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
