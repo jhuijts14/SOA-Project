@@ -15,21 +15,15 @@ elementFormDefault="qualified">
 		<element name="RepairID" type="common:RepairIDType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
-		<element name="RepairCalculation" type="tns:CalculationType" 
-			minOccurs="1"  maxOccurs="1">
-		</element>
-		<!-- 
 		<element name="RepairTime" type="tns:RepairTimeType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
 		<element name="BikePart" type="tns:BikePartType" 
 			minOccurs="0"  maxOccurs="unbounded">
 		</element>
-		-->
 	</sequence>
 </complexType>
 
-<!--
 <element name="BikePart" type="tns:BikePartType"></element>
 
 <complexType name="BikePartType">
@@ -52,7 +46,6 @@ elementFormDefault="qualified">
 <simpleType name="RepairTimeType">
 	<restriction base="int"></restriction>
 </simpleType>
--->
 
 <element name="RepairCost" type="common:CostType"></element>
 
@@ -65,16 +58,10 @@ elementFormDefault="qualified">
 		<element name="RepairID" type="common:RepairIDType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
-		<element name="TransportationCalculation" type="tns:CalculationType" 
+		<element name="TransportationDistance" type="common:TransportationDistanceType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
 	</sequence>
 </complexType>
 
-<simpleType name="CalculationType">
-	<restriction base="string">
-		<enumeration value="Transportation"></enumeration>
-		<enumeration value="Repair"></enumeration>
-	</restriction>
-</simpleType>
 </schema>
