@@ -57,12 +57,6 @@ elementFormDefault="qualified">
 
 <element name="RepairCost" type="common:CostType"></element>
 
-<element name="ApprovalResponse" type="tns:ApprovalResponseType"></element>
+<element name="ApprovalResponse" type="common:ApprovalResponseType"></element>
 
-<simpleType name="ApprovalResponseType">
-		<restriction base="string">
-			<enumeration value="Approved"></enumeration>
-			<enumeration value="Cancelled"></enumeration>
-		</restriction>
-	</simpleType>
 </schema>

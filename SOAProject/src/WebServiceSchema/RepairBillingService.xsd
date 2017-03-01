@@ -28,7 +28,7 @@
 	</sequence>
 </complexType>
 
-<element name="ApprovalResponse" type="c></element>
+<element name="ApprovalResponse" type="common:ApprovalResponseType"></element>
 
 
 
