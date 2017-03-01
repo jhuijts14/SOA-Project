@@ -13,7 +13,22 @@
 				minOccurs="1"></element>
 			<element name="Email" type="tns:EmailType" maxOccurs="1"
 				minOccurs="1"></element>
-			<element name="BillingAddress" type="string" maxOccurs="1"
+			<element name="BillingAddress" type="tns:AddressType" maxOccurs="1"
+				minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AddressType">
+		<sequence>
+			<element name="Street" type="string"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="HouseNumber" type="int"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="City" type="string" maxOccurs="unbounded"
+				minOccurs="1"></element>
+			<element name="PostCode" type="string" maxOccurs="unbounded"
 				minOccurs="1"></element>
 		</sequence>
 	</complexType>
