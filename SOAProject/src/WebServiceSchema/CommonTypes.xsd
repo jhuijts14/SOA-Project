@@ -13,6 +13,8 @@
 				minOccurs="1"></element>
 			<element name="Email" type="tns:EmailType" maxOccurs="1"
 				minOccurs="1"></element>
+			<element name="BillingAddress" type="string" maxOccurs="1"
+				minOccurs="1"></element>
 		</sequence>
 	</complexType>
 
