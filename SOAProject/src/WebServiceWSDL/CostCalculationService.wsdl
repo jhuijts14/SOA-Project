@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/CostCalculationService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CostCalculationService" targetNamespace="http://www.example.org/CostCalculationService/" xmlns:xsd1="http://www.example.org/CostCalculationService" xmlns:xsd2="http://www.example.org/CommonTypes">
+  <wsdl:types>
+  	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<xsd:import
+  			namespace="http://www.example.org/CostCalculationService"
+  			schemaLocation="../../build/classes/WebServiceSchema/CostCalculationService.xsd">
+  		</xsd:import>
+  		<xsd:import namespace="http://www.example.org/CommonTypes"
+  			schemaLocation="../../build/classes/WebServiceSchema/CommonTypes.xsd">
+  		</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="CalculateTransportationCostRequest">
+    <wsdl:part name="CalculateTransportationCostRequest" type="xsd1:CalculateTransportationCostType"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateTransportationCostResponse">
+    <wsdl:part name="CalculateTransportationCostResponse" type="xsd2:CostType"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateRepairCostRequest">
+  	<wsdl:part name="CalculateRepairCostRequest" type="xsd1:CalculateRepairCostType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateRepairCostResponse">
+  	<wsdl:part name="CalculateRepairCostResponse" type="xsd2:CostType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CostCalculationServicePortType">
+    <wsdl:operation name="CalculateTransportationCost">
+      <wsdl:input message="tns:CalculateTransportationCostRequest"/>
+      <wsdl:output message="tns:CalculateTransportationCostResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRepairCost">
+    	<wsdl:input message="tns:CalculateRepairCostRequest"></wsdl:input>
+    	<wsdl:output message="tns:CalculateRepairCostResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CostCalculationServiceSOAPBinding" type="tns:CostCalculationServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CalculateTransportationCost">
+      <soap:operation soapAction="http://www.example.org/CostCalculationService/CalculateTransportationCost"/>
+      <wsdl:input>
+        <soap:body namespace="http://www.example.org/CostCalculationService/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://www.example.org/CostCalculationService/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CostCalculationServicePort">
+    <wsdl:port binding="tns:CostCalculationServiceSOAPBinding" name="CostCalculationServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/CostCalculationService" 
+xmlns:tns="http://www.example.org/CostCalculationService" 
+xmlns:common="http://www.example.org/CommonTypes"
+elementFormDefault="qualified">
+
+<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.example.org/CommonTypes"/>
+
+<element name="CalculateRepairCost" type="tns:CalculateRepairCostType"> </element>
+
+<complexType name="CalculateRepairCostType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="RepairCalculation" type="tns:CalculationType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<!-- 
+		<element name="RepairTime" type="tns:RepairTimeType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="BikePart" type="tns:BikePartType" 
+			minOccurs="0"  maxOccurs="unbounded">
+		</element>
+		-->
+	</sequence>
+</complexType>
+
+<!--
+<element name="BikePart" type="tns:BikePartType"></element>
+
+<complexType name="BikePartType">
+	<sequence>
+		<element name="Name" type="string"
+			maxOccurs="1" minOccurs="1">
+		</element>
+		<element name="Price" type="tns:Price"
+			maxOccurs="1" minOccurs="1">
+		</element>
+	</sequence>
+</complexType>
+
+<simpleType name="Price">
+	<restriction base="decimal"></restriction>
+</simpleType>
+
+<element name="RepairTime" type="tns:RepairTimeType"></element>
+
+<simpleType name="RepairTimeType">
+	<restriction base="int"></restriction>
+</simpleType>
+-->
+
+<element name="RepairCost" type="common:CostType"></element>
+
+<element name="TransportationCost" type="common:CostType"></element>
+
+<element name="CalculateTransportationCost" type="tns:CalculateTransportationCostType"></element>
+
+<complexType name="CalculateTransportationCostType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="TransportationCalculation" type="tns:CalculationType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+	</sequence>
+</complexType>
+
+<simpleType name="CalculationType">
+	<restriction base="string">
+		<enumeration value="Transportation"></enumeration>
+		<enumeration value="Repair"></enumeration>
+	</restriction>
+</simpleType>
+</schema>

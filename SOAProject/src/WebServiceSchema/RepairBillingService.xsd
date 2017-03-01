@@ -30,6 +30,11 @@
 
 <element name="ApprovalResponse" type="common:ApprovalResponseType"></element>
 
+<element name="TotalCost" type="common:CostType"></element>
 
+<element name="PickUpCost" type="common:CostType"></element>
 
+<element name="DeliveryCost" type="common:CostType"></element>
+
+<element name="RepairCost" type="common:CostType"></element>
 </schema>
