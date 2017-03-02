@@ -5,16 +5,43 @@ xmlns:tns="http://www.example.org/RepairTransportationService"
 xmlns:common="http://www.example.org/CommonTypes"
 elementFormDefault="qualified">
 
-<import schemaLocation="CommonTypes.xsd" namespace="http://www.example.org/CommonTypes" />
+	<import schemaLocation="CommonTypes.xsd" namespace="http://www.example.org/CommonTypes" />
 
-	<element name="Address" type="common:AddressType"></element>
-	
-	<element name="TransportationTime" type="tns:TransportationTimeType"></element>
+	<complexType name="TransportationRequestType">
+		<sequence>
+			<element name="Repair" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="Address" type="common:AddressType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="TimeResponseType">
+		<sequence>
+			<element name="Repair" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="TransportationTime" type="tns:TransportationTimeType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
 	
 	<simpleType name="TransportationTimeType">
 		<restriction base="int"></restriction> 
 	</simpleType>
 	
-	<element name="TransportationDistance" type="common:TransportationDistanceType" />
+	<complexType name="DistantResponseType">
+		<sequence>
+			<element name="Repair" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="TransportationDistance" type="common:TransportationDistanceType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
 	
 </schema>

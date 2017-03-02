@@ -8,18 +8,19 @@
   		</xsd:import>
   		<xsd:import namespace="http://www.example.org/CommonTypes"
   			schemaLocation="../WebServiceSchema/CommonTypes.xsd">
-  		</xsd:import></xsd:schema></wsdl:types>
+  		</xsd:import>
+  		</xsd:schema></wsdl:types>
   <wsdl:message name="CalculateTransportCostRequest">
-    <wsdl:part name="CalculateTransportCostRequest" type="xsd1:CalculateTransportationCostType"/>
+    <wsdl:part name="CalculateTransportCostRequest" type="xsd1:GetTransportationCostType"/>
   </wsdl:message>
   <wsdl:message name="CalculateTransportCostResponse">
-    <wsdl:part name="CalculateTransportCostResponse" type="xsd2:CostType"/>
+    <wsdl:part name="CalculateTransportCostResponse" type="xsd1:TransportationCostResponseType"/>
   </wsdl:message>
   <wsdl:message name="CalculateRepairCostRequest">
-  	<wsdl:part name="CalculateRepairCostRequest" type="xsd1:CalculateRepairCostType"></wsdl:part>
+  	<wsdl:part name="CalculateRepairCostRequest" type="xsd1:GetRepairCostType"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="CalculateRepairCostResponse">
-  	<wsdl:part name="CalculateRepairCostResponse" type="xsd2:CostType"></wsdl:part>
+  	<wsdl:part name="CalculateRepairCostResponse" type="xsd1:RepairCostResponseType"></wsdl:part>
   </wsdl:message>
   <wsdl:portType name="CostCalculationServicePortType">
     <wsdl:operation name="CalculateTransportCost">

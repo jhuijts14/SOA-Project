@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/RepairTransportationService/" 
-xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-name="RepairTransportationService" 
-targetNamespace="http://www.example.org/RepairTransportationService/" 
-xmlns:xsd1="http://www.example.org/RepairTransportationService" 
-xmlns:xsd2="http://www.example.org/CommonTypes">
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	name="RepairTransportationService" 
+	targetNamespace="http://www.example.org/RepairTransportationService/" 
+	xmlns:xsd1="http://www.example.org/RepairTransportationService" 
+	xmlns:xsd2="http://www.example.org/CommonTypes">
   <wsdl:types>
   	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   		<xsd:import
@@ -13,18 +13,19 @@ xmlns:xsd2="http://www.example.org/CommonTypes">
   		</xsd:import>
   		<xsd:import namespace="http://www.example.org/CommonTypes"
   			schemaLocation="../WebServiceSchema/CommonTypes.xsd">
-  		</xsd:import></xsd:schema></wsdl:types>
+  		</xsd:import>
+  		</xsd:schema></wsdl:types>
   <wsdl:message name="GetTransportationTimeRequest">
-    <wsdl:part name="GetTransportationTimeRequest" type="xsd2:AddressType"/>
+    <wsdl:part name="GetTransportationTimeRequest" type="xsd1:TransportationRequestType"/>
   </wsdl:message>
   <wsdl:message name="GetTransportationTimeResponse">
-    <wsdl:part name="GetTransportationTimeResponse" type="xsd1:TransportationTimeType"/>
+    <wsdl:part name="GetTransportationTimeResponse" type="xsd1:TimeResponseType"/>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceRequest">
-  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd2:AddressType"></wsdl:part>
+  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd1:TransportationRequestType"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceResponse">
-  	<wsdl:part name="GetTransportationDistanceResponse" type="xsd2:TransportationDistanceType"></wsdl:part>
+  	<wsdl:part name="GetTransportationDistanceResponse" type="xsd1:DistantResponseType"></wsdl:part>
   </wsdl:message>
   <wsdl:portType name="RepairTransportationServicePortType">
     <wsdl:operation name="GetTransportationTime">

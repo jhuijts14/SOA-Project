@@ -8,9 +8,7 @@ elementFormDefault="qualified">
 <import schemaLocation="CommonTypes.xsd" 
            namespace="http://www.example.org/CommonTypes"/>
 
-<element name="CalculateRepairCost" type="tns:CalculateRepairCostType"> </element>
-
-<complexType name="CalculateRepairCostType">
+<complexType name="GetRepairCostType">
 	<sequence>
 		<element name="RepairID" type="common:RepairIDType" 
 			minOccurs="1"  maxOccurs="1">
@@ -23,8 +21,6 @@ elementFormDefault="qualified">
 		</element>
 	</sequence>
 </complexType>
-
-<element name="BikePart" type="tns:BikePartType"></element>
 
 <complexType name="BikePartType">
 	<sequence>
@@ -41,19 +37,33 @@ elementFormDefault="qualified">
 	<restriction base="decimal"></restriction>
 </simpleType>
 
-<element name="RepairTime" type="tns:RepairTimeType"></element>
-
 <simpleType name="RepairTimeType">
 	<restriction base="int"></restriction>
 </simpleType>
 
-<element name="RepairCost" type="common:CostType"></element>
+<complexType name="RepairCostResponseType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="RepairCost" type="common:CostType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+	</sequence>
+</complexType>
 
-<element name="TransportationCost" type="common:CostType"></element>
+<complexType name="TransportationCostResponseType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="TransportationCost" type="common:CostType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+	</sequence>
+</complexType>
 
-<element name="CalculateTransportationCost" type="tns:CalculateTransportationCostType"></element>
-
-<complexType name="CalculateTransportationCostType">
+<complexType name="GetTransportationCostType">
 	<sequence>
 		<element name="RepairID" type="common:RepairIDType" 
 			minOccurs="1"  maxOccurs="1">
