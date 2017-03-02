@@ -15,13 +15,13 @@ xmlns:xsd2="http://www.example.org/CommonTypes">
   			schemaLocation="../WebServiceSchema/CommonTypes.xsd">
   		</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="GetTransportationTimeRequest">
-    <wsdl:part name="GetTransportationTimeRequest" type="xsd1:AddressType"/>
+    <wsdl:part name="GetTransportationTimeRequest" type="xsd2:AddressType"/>
   </wsdl:message>
   <wsdl:message name="GetTransportationTimeResponse">
     <wsdl:part name="GetTransportationTimeResponse" type="xsd1:TransportationTimeType"/>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceRequest">
-  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd1:AddressType"></wsdl:part>
+  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd2:AddressType"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceResponse">
   	<wsdl:part name="GetTransportationDistanceResponse" type="xsd2:TransportationDistanceType"></wsdl:part>
