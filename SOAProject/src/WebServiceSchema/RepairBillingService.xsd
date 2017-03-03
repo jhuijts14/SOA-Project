@@ -33,5 +33,4 @@
 
 <element name="DeliveryConfirmation" type="common:RepairIDType"></element>
 
-
 </schema>

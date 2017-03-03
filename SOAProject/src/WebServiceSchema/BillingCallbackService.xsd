@@ -8,9 +8,9 @@
 	<import schemaLocation="CommonTypes.xsd" 
            namespace="http://www.example.org/CommonTypes"/>
     
-    <element name="BillSentConfirmation" type="tns:BillMessageType"></element>
+    <element name="BillSentConfirmation" type="tns:BillSentConfirmationType"></element>
 
-	<complexType name="BillMessageType">
+	<complexType name="CostConfirmationType">
 		<sequence>
 			<element name="RepairID" type="common:RepairIDType"
 				maxOccurs="1" minOccurs="1">
@@ -18,7 +18,13 @@
 		</sequence>
 	</complexType>
 	
-	
-	<element name="TotalCostConfirmation" type="tns:BillMessageType"></element>
+	<complexType name="BillSentConfirmationType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="TotalCostConfirmation" type="tns:CostConfirmationType"></element>
 	
 </schema>

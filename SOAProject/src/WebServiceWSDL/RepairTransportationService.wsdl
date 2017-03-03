@@ -16,13 +16,13 @@
   		</xsd:import>
   		</xsd:schema></wsdl:types>
   <wsdl:message name="GetTransportationTimeRequest">
-    <wsdl:part name="GetTransportationTimeRequest" type="xsd1:TransportationRequestType"/>
+    <wsdl:part name="GetTransportationTimeRequest" type="xsd1:TransportationTimeRequestType"/>
   </wsdl:message>
   <wsdl:message name="GetTransportationTimeResponse">
     <wsdl:part name="GetTransportationTimeResponse" type="xsd1:TimeResponseType"/>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceRequest">
-  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd1:TransportationRequestType"></wsdl:part>
+  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd1:TransportationDistanceRequestType"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceResponse">
   	<wsdl:part name="GetTransportationDistanceResponse" type="xsd1:DistantResponseType"></wsdl:part>
