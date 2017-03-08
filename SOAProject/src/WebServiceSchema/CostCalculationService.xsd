@@ -16,6 +16,9 @@ elementFormDefault="qualified">
 		<element name="RepairTime" type="tns:RepairTimeType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
+		<element name="NumberOfParts" type="int" 
+			maxOccurs="1" minOccurs="1">
+		</element>
 		<element name="BikePart" type="tns:BikePartType" 
 			minOccurs="0"  maxOccurs="unbounded">
 		</element>
