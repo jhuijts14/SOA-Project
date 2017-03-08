@@ -31,6 +31,16 @@
 	</sequence>
 </complexType>
 
-<element name="DeliveryConfirmation" type="common:RepairIDType"></element>
+<element name="DeliveryConfirmation" type="tns:DeliveryConfirmationType"></element>
 
+	<complexType name="DeliveryConfirmationType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="DeliveryConfirmation" type="common:ConfirmationType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
 </schema>

@@ -15,12 +15,19 @@
 			<element name="RepairID" type="common:RepairIDType"
 				maxOccurs="1" minOccurs="1">
 			</element>
+			<element name="Confirmation" type="common:ConfirmationType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
 		</sequence>
 	</complexType>
+	
 	
 	<complexType name="BillSentConfirmationType">
 		<sequence>
 			<element name="RepairID" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="Confirmation" type="common:ConfirmationType" 
 				maxOccurs="1" minOccurs="1">
 			</element>
 		</sequence>

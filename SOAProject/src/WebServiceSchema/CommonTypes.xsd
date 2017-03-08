@@ -47,6 +47,10 @@
 	<simpleType name="EmailType">
 		<restriction base="string"></restriction>
 	</simpleType>
+	
+	<simpleType name="ConfirmationType">
+		<restriction base="boolean"></restriction>
+	</simpleType>
 
 	<element name="Cost" type="tns:CostType"></element>
 	
