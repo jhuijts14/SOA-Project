@@ -13,8 +13,7 @@
   		</xsd:import>
   		<xsd:import namespace="http://www.example.org/CommonTypes"
   			schemaLocation="../WebServiceSchema/CommonTypes.xsd">
-  		</xsd:import>
-  		</xsd:schema></wsdl:types>
+  		</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="GetTransportationTimeRequest">
     <wsdl:part name="GetTransportationTimeRequest" type="xsd1:TransportationTimeRequestType"/>
   </wsdl:message>
@@ -27,6 +26,12 @@
   <wsdl:message name="GetTransportationDistanceResponse">
   	<wsdl:part name="GetTransportationDistanceResponse" type="xsd1:DistantResponseType"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="UpdateDeliveryTimeRequest">
+  	<wsdl:part name="UpdateDeliveryTimeRequest" type="xsd1:UpdatedDeliveryTimeType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliveryTimeResponse">
+  	<wsdl:part name="UpdateDeliveryTimeResponse" type="xsd1:UpdatedDeliveryTimeResponseType"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="RepairTransportationServicePortType">
     <wsdl:operation name="GetTransportationTime">
       <wsdl:input message="tns:GetTransportationTimeRequest"/>
@@ -35,6 +40,10 @@
     <wsdl:operation name="GetTransportationDistance">
     	<wsdl:input message="tns:GetTransportationDistanceRequest"></wsdl:input>
     	<wsdl:output message="tns:GetTransportationDistanceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryTime">
+    	<wsdl:input message="tns:UpdateDeliveryTimeRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateDeliveryTimeResponse"></wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="RepairTransportationServiceSOAPBinding" type="tns:RepairTransportationServicePortType">
@@ -50,6 +59,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTransportationDistance">
       <soap:operation soapAction="http://www.example.org/RepairTransportationService/GetTransportationDistance"/>
+      <wsdl:input>
+        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryTime">
+      <soap:operation soapAction="http://www.example.org/RepairTransportationService/UpdateDeliveryTime"/>
       <wsdl:input>
         <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
       </wsdl:input>

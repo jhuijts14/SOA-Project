@@ -41,7 +41,7 @@ elementFormDefault="qualified">
 	</complexType>
 	
 	<simpleType name="TransportationTimeType">
-		<restriction base="int"></restriction> 
+		<restriction base="dateTime"></restriction> 
 	</simpleType>
 	
 	<complexType name="DistantResponseType">
@@ -50,6 +50,34 @@ elementFormDefault="qualified">
 				maxOccurs="1" minOccurs="1">
 			</element>
 			<element name="TransportationDistance" type="common:TransportationDistanceType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="UpdatedDeliveryTimeType">
+		<sequence>
+				<element name="RepairID" type="common:RepairIDType" 
+					minOccurs="1"  maxOccurs="1">
+				</element>
+				<element name="DeliveryTime" type="tns:TransportationTimeType" 
+					minOccurs="1"  maxOccurs="1">
+				</element>
+				<element name="RepairTime" type="common:RepairTimeType" 
+					minOccurs="1"  maxOccurs="1">
+				</element>
+				<element name="ApprovalResponse" type="common:ApprovalResponseType" 
+					minOccurs="1"  maxOccurs="1">
+				</element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="UpdatedDeliveryTimeResponseType">
+		<sequence>
+			<element name="Repair" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="UpdatedDeliveryTime" type="tns:TransportationTimeType" 
 				maxOccurs="1" minOccurs="1">
 			</element>
 		</sequence>

@@ -13,7 +13,7 @@ elementFormDefault="qualified">
 		<element name="RepairID" type="common:RepairIDType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
-		<element name="RepairTime" type="tns:RepairTimeType" 
+		<element name="RepairTime" type="common:RepairTimeType" 
 			minOccurs="1"  maxOccurs="1">
 		</element>
 		<element name="NumberOfParts" type="int" 
@@ -38,10 +38,6 @@ elementFormDefault="qualified">
 
 <simpleType name="Price">
 	<restriction base="decimal"></restriction>
-</simpleType>
-
-<simpleType name="RepairTimeType">
-	<restriction base="int"></restriction>
 </simpleType>
 
 <complexType name="RepairCostResponseType">

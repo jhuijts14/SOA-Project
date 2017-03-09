@@ -72,5 +72,9 @@
 	<simpleType name="TransportationDistanceType">
 		<restriction base="decimal"></restriction>
 	</simpleType>
+	
+	<simpleType name="RepairTimeType">
+		<restriction base="dateTime"></restriction>
+	</simpleType>
 
 </schema>
