@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/BillingCallbackService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/BillingCallbackService">
+    <import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <element name="BillSentConfirmation" type="tns:BillSentConfirmationType"/>
+    <complexType name="CostConfirmationType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="Confirmation" type="common:ConfirmationType"/>
+        </sequence>
+    </complexType>
+    <complexType name="BillSentConfirmationType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="Confirmation" type="common:ConfirmationType"/>
+        </sequence>
+    </complexType>
+    <element name="TotalCostConfirmation" type="tns:CostConfirmationType"/>
+</schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/CostCalculationService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/CostCalculationService">
+    <import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <complexType name="GetRepairCostType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="RepairTime" type="tns:RepairTimeType"/>
+            <element name="NumberOfParts" type="int"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="BikePart" type="tns:BikePartType"/>
+        </sequence>
+    </complexType>
+    <complexType name="BikePartType">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="Price" type="tns:Price"/>
+        </sequence>
+    </complexType>
+    <simpleType name="Price">
+        <restriction base="decimal"/>
+    </simpleType>
+    <simpleType name="RepairTimeType">
+        <restriction base="int"/>
+    </simpleType>
+    <complexType name="RepairCostResponseType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="RepairCost" type="common:CostType"/>
+        </sequence>
+    </complexType>
+    <complexType name="TransportationCostResponseType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="TransportationCost" type="common:CostType"/>
+        </sequence>
+    </complexType>
+    <complexType name="GetTransportationCostType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="TransportationDistance" type="common:TransportationDistanceType"/>
+        </sequence>
+    </complexType>
+</schema>

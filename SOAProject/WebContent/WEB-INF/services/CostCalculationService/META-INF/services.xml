@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="CostCalculationService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.costcalculationservice.CostCalculationServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.example.www.costcalculationservice.CostCalculationServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="CalculateRepairCost" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/CostCalculationService/">
+            <actionMapping>http://www.example.org/CostCalculationService/CalculateRepairCost</actionMapping>
+            <outputActionMapping>http://www.example.org/CostCalculationService/CostCalculationServicePortType/CalculateRepairCostResponse</outputActionMapping>
+        </operation>
+        <operation name="CalculateTransportCost" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/CostCalculationService/">
+            <actionMapping>http://www.example.org/CostCalculationService/CalculateTransportCost</actionMapping>
+            <outputActionMapping>http://www.example.org/CostCalculationService/CostCalculationServicePortType/CalculateTransportCostResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
