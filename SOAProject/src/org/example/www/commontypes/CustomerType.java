@@ -558,7 +558,7 @@
                             if (!"CustomerType".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CustomerType)org.example.www.billingcallbackservice.ExtensionMapper.getTypeObject(
+                                return (CustomerType)org.example.www.repairtransportationservice.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         

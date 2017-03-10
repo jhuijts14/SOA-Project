@@ -1,84 +1,144 @@
 
 /**
- * CustomerNameType.java
+ * UpdatedDeliveryTimeType.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:04:10 GMT)
  */
 
             
-                package org.example.www.commontypes;
+                package org.example.www.repairtransportationservice;
             
 
             /**
-            *  CustomerNameType bean class
+            *  UpdatedDeliveryTimeType bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class CustomerNameType
+        public  class UpdatedDeliveryTimeType
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had
-                name = CustomerNameType
-                Namespace URI = http://www.example.org/CommonTypes
-                Namespace Prefix = ns1
+                name = UpdatedDeliveryTimeType
+                Namespace URI = http://www.example.org/RepairTransportationService
+                Namespace Prefix = ns2
                 */
             
 
                         /**
-                        * field for FirstName
+                        * field for RepairID
                         */
 
                         
-                                    protected java.lang.String localFirstName ;
+                                    protected org.example.www.commontypes.RepairIDType localRepairID ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return org.example.www.commontypes.RepairIDType
                            */
-                           public  java.lang.String getFirstName(){
-                               return localFirstName;
+                           public  org.example.www.commontypes.RepairIDType getRepairID(){
+                               return localRepairID;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param FirstName
+                               * @param param RepairID
                                */
-                               public void setFirstName(java.lang.String param){
+                               public void setRepairID(org.example.www.commontypes.RepairIDType param){
                             
-                                            this.localFirstName=param;
+                                            this.localRepairID=param;
                                        
 
                                }
                             
 
                         /**
-                        * field for LastName
+                        * field for DeliveryTime
                         */
 
                         
-                                    protected java.lang.String localLastName ;
+                                    protected org.example.www.repairtransportationservice.TransportationTimeType localDeliveryTime ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return org.example.www.repairtransportationservice.TransportationTimeType
                            */
-                           public  java.lang.String getLastName(){
-                               return localLastName;
+                           public  org.example.www.repairtransportationservice.TransportationTimeType getDeliveryTime(){
+                               return localDeliveryTime;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param LastName
+                               * @param param DeliveryTime
                                */
-                               public void setLastName(java.lang.String param){
+                               public void setDeliveryTime(org.example.www.repairtransportationservice.TransportationTimeType param){
                             
-                                            this.localLastName=param;
+                                            this.localDeliveryTime=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for RepairTime
+                        */
+
+                        
+                                    protected org.example.www.commontypes.RepairTimeType localRepairTime ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return org.example.www.commontypes.RepairTimeType
+                           */
+                           public  org.example.www.commontypes.RepairTimeType getRepairTime(){
+                               return localRepairTime;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param RepairTime
+                               */
+                               public void setRepairTime(org.example.www.commontypes.RepairTimeType param){
+                            
+                                            this.localRepairTime=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for ApprovalResponse
+                        */
+
+                        
+                                    protected org.example.www.commontypes.ApprovalResponseType localApprovalResponse ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return org.example.www.commontypes.ApprovalResponseType
+                           */
+                           public  org.example.www.commontypes.ApprovalResponseType getApprovalResponse(){
+                               return localApprovalResponse;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param ApprovalResponse
+                               */
+                               public void setApprovalResponse(org.example.www.commontypes.ApprovalResponseType param){
+                            
+                                            this.localApprovalResponse=param;
                                        
 
                                }
@@ -129,64 +189,52 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/CommonTypes");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/RepairTransportationService");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":CustomerNameType",
+                           namespacePrefix+":UpdatedDeliveryTimeType",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "CustomerNameType",
+                           "UpdatedDeliveryTimeType",
                            xmlWriter);
                    }
 
                
                    }
                
-                                    namespace = "http://www.example.org/CommonTypes";
-                                    writeStartElement(null, namespace, "FirstName", xmlWriter);
-                             
-
-                                          if (localFirstName==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("FirstName cannot be null!!");
-                                                  
-                                          }else{
-
+                                            if (localRepairID==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("RepairID cannot be null!!");
+                                            }
+                                           localRepairID.serialize(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","RepairID"),
+                                               xmlWriter);
                                         
-                                                   xmlWriter.writeCharacters(localFirstName);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                                    namespace = "http://www.example.org/CommonTypes";
-                                    writeStartElement(null, namespace, "LastName", xmlWriter);
-                             
-
-                                          if (localLastName==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("LastName cannot be null!!");
-                                                  
-                                          }else{
-
+                                            if (localDeliveryTime==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("DeliveryTime cannot be null!!");
+                                            }
+                                           localDeliveryTime.serialize(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","DeliveryTime"),
+                                               xmlWriter);
                                         
-                                                   xmlWriter.writeCharacters(localLastName);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
+                                            if (localRepairTime==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("RepairTime cannot be null!!");
+                                            }
+                                           localRepairTime.serialize(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","RepairTime"),
+                                               xmlWriter);
+                                        
+                                            if (localApprovalResponse==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("ApprovalResponse cannot be null!!");
+                                            }
+                                           localApprovalResponse.serialize(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","ApprovalResponse"),
+                                               xmlWriter);
+                                        
                     xmlWriter.writeEndElement();
                
 
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://www.example.org/CommonTypes")){
-                return "ns1";
+            if(namespace.equals("http://www.example.org/RepairTransportationService")){
+                return "ns2";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -364,24 +412,42 @@
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                 
-                                      elementList.add(new javax.xml.namespace.QName("http://www.example.org/CommonTypes",
-                                                                      "FirstName"));
-                                 
-                                        if (localFirstName != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFirstName));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("FirstName cannot be null!!");
-                                        }
-                                    
-                                      elementList.add(new javax.xml.namespace.QName("http://www.example.org/CommonTypes",
-                                                                      "LastName"));
-                                 
-                                        if (localLastName != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastName));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("LastName cannot be null!!");
-                                        }
-                                    
+                            elementList.add(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService",
+                                                                      "RepairID"));
+                            
+                            
+                                    if (localRepairID==null){
+                                         throw new org.apache.axis2.databinding.ADBException("RepairID cannot be null!!");
+                                    }
+                                    elementList.add(localRepairID);
+                                
+                            elementList.add(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService",
+                                                                      "DeliveryTime"));
+                            
+                            
+                                    if (localDeliveryTime==null){
+                                         throw new org.apache.axis2.databinding.ADBException("DeliveryTime cannot be null!!");
+                                    }
+                                    elementList.add(localDeliveryTime);
+                                
+                            elementList.add(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService",
+                                                                      "RepairTime"));
+                            
+                            
+                                    if (localRepairTime==null){
+                                         throw new org.apache.axis2.databinding.ADBException("RepairTime cannot be null!!");
+                                    }
+                                    elementList.add(localRepairTime);
+                                
+                            elementList.add(new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService",
+                                                                      "ApprovalResponse"));
+                            
+                            
+                                    if (localApprovalResponse==null){
+                                         throw new org.apache.axis2.databinding.ADBException("ApprovalResponse cannot be null!!");
+                                    }
+                                    elementList.add(localApprovalResponse);
+                                
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -406,9 +472,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CustomerNameType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CustomerNameType object =
-                new CustomerNameType();
+        public static UpdatedDeliveryTimeType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            UpdatedDeliveryTimeType object =
+                new UpdatedDeliveryTimeType();
 
             int event;
             java.lang.String nillableValue = null;
@@ -432,10 +498,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"CustomerNameType".equals(type)){
+                            if (!"UpdatedDeliveryTimeType".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CustomerNameType)org.example.www.repairtransportationservice.ExtensionMapper.getTypeObject(
+                                return (UpdatedDeliveryTimeType)org.example.www.repairtransportationservice.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -460,18 +526,9 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CommonTypes","FirstName").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","RepairID").equals(reader.getName())){
                                 
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"FirstName" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setFirstName(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                                object.setRepairID(org.example.www.commontypes.RepairIDType.Factory.parse(reader));
                                               
                                         reader.next();
                                     
@@ -485,18 +542,41 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CommonTypes","LastName").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","DeliveryTime").equals(reader.getName())){
                                 
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"LastName" +"  cannot be null");
-                                    }
+                                                object.setDeliveryTime(org.example.www.repairtransportationservice.TransportationTimeType.Factory.parse(reader));
+                                              
+                                        reader.next();
                                     
-
-                                    java.lang.String content = reader.getElementText();
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
                                     
-                                              object.setLastName(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","RepairTime").equals(reader.getName())){
+                                
+                                                object.setRepairTime(org.example.www.commontypes.RepairTimeType.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/RepairTransportationService","ApprovalResponse").equals(reader.getName())){
+                                
+                                                object.setApprovalResponse(org.example.www.commontypes.ApprovalResponseType.Factory.parse(reader));
                                               
                                         reader.next();
                                     

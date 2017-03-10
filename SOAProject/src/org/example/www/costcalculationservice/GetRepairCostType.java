@@ -59,14 +59,14 @@
                         */
 
                         
-                                    protected org.example.www.costcalculationservice.RepairTimeType localRepairTime ;
+                                    protected org.example.www.commontypes.RepairTimeType localRepairTime ;
                                 
 
                            /**
                            * Auto generated getter method
                            * @return org.example.www.costcalculationservice.RepairTimeType
                            */
-                           public  org.example.www.costcalculationservice.RepairTimeType getRepairTime(){
+                           public  org.example.www.commontypes.RepairTimeType getRepairTime(){
                                return localRepairTime;
                            }
 
@@ -76,7 +76,7 @@
                                * Auto generated setter method
                                * @param param RepairTime
                                */
-                               public void setRepairTime(org.example.www.costcalculationservice.RepairTimeType param){
+                               public void setRepairTime(org.example.www.commontypes.RepairTimeType param){
                             
                                             this.localRepairTime=param;
                                        
@@ -120,7 +120,7 @@
                         */
 
                         
-                                    protected org.example.www.costcalculationservice.BikePartType[] localBikePart ;
+                                    protected org.example.www.commontypes.BikePartType[] localBikePart ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
@@ -138,7 +138,7 @@
                            * Auto generated getter method
                            * @return org.example.www.costcalculationservice.BikePartType[]
                            */
-                           public  org.example.www.costcalculationservice.BikePartType[] getBikePart(){
+                           public  org.example.www.commontypes.BikePartType[] getBikePart(){
                                return localBikePart;
                            }
 
@@ -150,7 +150,7 @@
                               /**
                                * validate the array for BikePart
                                */
-                              protected void validateBikePart(org.example.www.costcalculationservice.BikePartType[] param){
+                              protected void validateBikePart(org.example.www.commontypes.BikePartType[] param){
                              
                               }
 
@@ -159,7 +159,7 @@
                               * Auto generated setter method
                               * @param param BikePart
                               */
-                              public void setBikePart(org.example.www.costcalculationservice.BikePartType[] param){
+                              public void setBikePart(org.example.www.commontypes.BikePartType[] param){
                               
                                    validateBikePart(param);
 
@@ -174,9 +174,9 @@
                              * Auto generated add method for the array for convenience
                              * @param param org.example.www.costcalculationservice.BikePartType
                              */
-                             public void addBikePart(org.example.www.costcalculationservice.BikePartType param){
+                             public void addBikePart(org.example.www.commontypes.BikePartType param){
                                    if (localBikePart == null){
-                                   localBikePart = new org.example.www.costcalculationservice.BikePartType[]{};
+                                   localBikePart = new org.example.www.commontypes.BikePartType[]{};
                                    }
 
                             
@@ -188,8 +188,8 @@
                             org.apache.axis2.databinding.utils.ConverterUtil.toList(localBikePart);
                                list.add(param);
                                this.localBikePart =
-                             (org.example.www.costcalculationservice.BikePartType[])list.toArray(
-                            new org.example.www.costcalculationservice.BikePartType[list.size()]);
+                             (org.example.www.commontypes.BikePartType[])list.toArray(
+                            new org.example.www.commontypes.BikePartType[list.size()]);
 
                              }
                              
@@ -624,7 +624,7 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CostCalculationService","RepairTime").equals(reader.getName())){
                                 
-                                                object.setRepairTime(org.example.www.costcalculationservice.RepairTimeType.Factory.parse(reader));
+                                                object.setRepairTime(org.example.www.commontypes.RepairTimeType.Factory.parse(reader));
                                               
                                         reader.next();
                                     
@@ -668,7 +668,7 @@
                                     
                                     
                                     // Process the array and step past its final element's end.
-                                    list4.add(org.example.www.costcalculationservice.BikePartType.Factory.parse(reader));
+                                    list4.add(org.example.www.commontypes.BikePartType.Factory.parse(reader));
                                                                 
                                                         //loop until we find a start element that is not part of this array
                                                         boolean loopDone4 = false;
@@ -686,7 +686,7 @@
                                                                 loopDone4 = true;
                                                             } else {
                                                                 if (new javax.xml.namespace.QName("http://www.example.org/CostCalculationService","BikePart").equals(reader.getName())){
-                                                                    list4.add(org.example.www.costcalculationservice.BikePartType.Factory.parse(reader));
+                                                                    list4.add(org.example.www.commontypes.BikePartType.Factory.parse(reader));
                                                                         
                                                                 }else{
                                                                     loopDone4 = true;
@@ -695,9 +695,9 @@
                                                         }
                                                         // call the converter utility  to convert and set the array
                                                         
-                                                        object.setBikePart((org.example.www.costcalculationservice.BikePartType[])
+                                                        object.setBikePart((org.example.www.commontypes.BikePartType[])
                                                             org.apache.axis2.databinding.utils.ConverterUtil.convertToArray(
-                                                                org.example.www.costcalculationservice.BikePartType.class,
+                                                                org.example.www.commontypes.BikePartType.class,
                                                                 list4));
                                                             
                               }  // End of if for expected property start element

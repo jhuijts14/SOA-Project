@@ -1,6 +1,6 @@
 
 /**
- * CustomerNameType.java
+ * RepairTimeType.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:04:10 GMT)
@@ -11,78 +11,56 @@
             
 
             /**
-            *  CustomerNameType bean class
+            *  RepairTimeType bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class CustomerNameType
+        public  class RepairTimeType
         implements org.apache.axis2.databinding.ADBBean{
-        /* This type was generated from the piece of schema that had
-                name = CustomerNameType
-                Namespace URI = http://www.example.org/CommonTypes
-                Namespace Prefix = ns1
-                */
+        
+                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                "http://www.example.org/CostCalculationService",
+                "RepairTimeType",
+                "ns2");
+
             
 
                         /**
-                        * field for FirstName
+                        * field for RepairTimeType
                         */
 
                         
-                                    protected java.lang.String localFirstName ;
+                                    protected int localRepairTimeType ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return int
                            */
-                           public  java.lang.String getFirstName(){
-                               return localFirstName;
+                           public  int getRepairTimeType(){
+                               return localRepairTimeType;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param FirstName
+                               * @param param RepairTimeType
                                */
-                               public void setFirstName(java.lang.String param){
+                               public void setRepairTimeType(int param){
                             
-                                            this.localFirstName=param;
-                                       
+                                             this.localRepairTimeType=param;
+                                        
 
                                }
                             
 
-                        /**
-                        * field for LastName
-                        */
-
-                        
-                                    protected java.lang.String localLastName ;
+                            public java.lang.String toString(){
                                 
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getLastName(){
-                               return localLastName;
-                           }
-
-                           
+                                        return org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRepairTimeType);
+                                    
+                            }
                         
-                            /**
-                               * Auto generated setter method
-                               * @param param LastName
-                               */
-                               public void setLastName(java.lang.String param){
-                            
-                                            this.localLastName=param;
-                                       
-
-                               }
-                            
 
      
      
@@ -99,8 +77,8 @@
 
         
                org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
-               return factory.createOMElement(dataSource,parentQName);
+                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
+               return factory.createOMElement(dataSource,MY_QNAME);
             
         }
 
@@ -116,77 +94,43 @@
             throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
             
                 
-
-
-                java.lang.String prefix = null;
-                java.lang.String namespace = null;
+                //We can safely assume an element has only one type associated with it
                 
+                            java.lang.String namespace = parentQName.getNamespaceURI();
+                            java.lang.String _localName = parentQName.getLocalPart();
+                        
+                            writeStartElement(null, namespace, _localName, xmlWriter);
 
-                    prefix = parentQName.getPrefix();
-                    namespace = parentQName.getNamespaceURI();
-                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-                
-                  if (serializeType){
-               
-
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/CommonTypes");
-                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":CustomerNameType",
-                           xmlWriter);
-                   } else {
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "CustomerNameType",
-                           xmlWriter);
-                   }
-
-               
-                   }
-               
-                                    namespace = "http://www.example.org/CommonTypes";
-                                    writeStartElement(null, namespace, "FirstName", xmlWriter);
-                             
-
-                                          if (localFirstName==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("FirstName cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localFirstName);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                                    namespace = "http://www.example.org/CommonTypes";
-                                    writeStartElement(null, namespace, "LastName", xmlWriter);
-                             
-
-                                          if (localLastName==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("LastName cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localLastName);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                    xmlWriter.writeEndElement();
-               
+                            // add the type details if this is used in a simple type
+                               if (serializeType){
+                                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/CostCalculationService");
+                                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                                           namespacePrefix+":RepairTimeType",
+                                           xmlWriter);
+                                   } else {
+                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                                           "RepairTimeType",
+                                           xmlWriter);
+                                   }
+                               }
+                            
+                                               if (localRepairTimeType==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("property value cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRepairTimeType));
+                                               }
+                            
+                            xmlWriter.writeEndElement();
+                    
 
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://www.example.org/CommonTypes")){
-                return "ns1";
+            if(namespace.equals("http://www.example.org/CostCalculationService")){
+                return "ns2";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -360,32 +304,14 @@
 
 
         
-                 java.util.ArrayList elementList = new java.util.ArrayList();
-                 java.util.ArrayList attribList = new java.util.ArrayList();
-
                 
-                                      elementList.add(new javax.xml.namespace.QName("http://www.example.org/CommonTypes",
-                                                                      "FirstName"));
-                                 
-                                        if (localFirstName != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFirstName));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("FirstName cannot be null!!");
-                                        }
-                                    
-                                      elementList.add(new javax.xml.namespace.QName("http://www.example.org/CommonTypes",
-                                                                      "LastName"));
-                                 
-                                        if (localLastName != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastName));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("LastName cannot be null!!");
-                                        }
-                                    
-
-                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-            
-            
+                //We can safely assume an element has only one type associated with it
+                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(MY_QNAME,
+                            new java.lang.Object[]{
+                            org.apache.axis2.databinding.utils.reader.ADBXMLStreamReader.ELEMENT_TEXT,
+                            org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRepairTimeType)
+                            },
+                            null);
 
         }
 
@@ -398,6 +324,29 @@
 
         
         
+                public static RepairTimeType fromString(java.lang.String value,
+                                                    java.lang.String namespaceURI){
+                    RepairTimeType returnValue = new  RepairTimeType();
+                    
+                            returnValue.setRepairTimeType(
+                                org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(value));
+                        
+
+                    return returnValue;
+                }
+
+                public static RepairTimeType fromString(javax.xml.stream.XMLStreamReader xmlStreamReader,
+                                                                    java.lang.String content) {
+                    if (content.indexOf(":") > -1){
+                        java.lang.String prefix = content.substring(0,content.indexOf(":"));
+                        java.lang.String namespaceUri = xmlStreamReader.getNamespaceContext().getNamespaceURI(prefix);
+                        return RepairTimeType.Factory.fromString(content,namespaceUri);
+                    } else {
+                       return RepairTimeType.Factory.fromString(content,"");
+                    }
+                }
+
+            
 
         /**
         * static method to create the object
@@ -406,9 +355,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CustomerNameType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CustomerNameType object =
-                new CustomerNameType();
+        public static RepairTimeType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            RepairTimeType object =
+                new RepairTimeType();
 
             int event;
             java.lang.String nillableValue = null;
@@ -420,32 +369,6 @@
                     reader.next();
 
                 
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
-                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                        "type");
-                  if (fullTypeName!=null){
-                    java.lang.String nsPrefix = null;
-                    if (fullTypeName.indexOf(":") > -1){
-                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
-                    }
-                    nsPrefix = nsPrefix==null?"":nsPrefix;
-
-                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
-                    
-                            if (!"CustomerNameType".equals(type)){
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CustomerNameType)org.example.www.repairtransportationservice.ExtensionMapper.getTypeObject(
-                                     nsUri,type,reader);
-                              }
-                        
-
-                  }
-                
-
-                }
-
-                
 
                 
                 // Note all attributes that were handled. Used to differ normal attributes
@@ -453,67 +376,35 @@
                 java.util.Vector handledAttributes = new java.util.Vector();
                 
 
+                   
+                while(!reader.isEndElement()) {
+                    if (reader.isStartElement()  || reader.hasText()){
                 
-                    
-                    reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CommonTypes","FirstName").equals(reader.getName())){
+                                    if (reader.isStartElement()  || reader.hasText()){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"FirstName" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"RepairTimeType" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setFirstName(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
+                                              object.setRepairTimeType(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
                               }  // End of if for expected property start element
                                 
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CommonTypes","LastName").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"LastName" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setLastName(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                              
-                            while (!reader.isStartElement() && !reader.isEndElement())
+                             else{
+                                        // A start element we are not expecting indicates an invalid parameter was passed
+                                        throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                             }
+                          
+                             } else {
                                 reader.next();
-                            
-                                if (reader.isStartElement())
-                                // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                            
+                             }  
+                           }  // end of while loop
+                        
 
 
 

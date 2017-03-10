@@ -7,7 +7,7 @@
  */
 
         
-            package org.example.www.costcalculationservice;
+            package org.example.www.repairtransportationservice;
         
             /**
             *  ExtensionMapper class
@@ -42,6 +42,46 @@
 
               
                   if (
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "TimeResponseType".equals(typeName)){
+                   
+                            return  org.example.www.repairtransportationservice.TimeResponseType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "DistantResponseType".equals(typeName)){
+                   
+                            return  org.example.www.repairtransportationservice.DistantResponseType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "TransportationTimeType".equals(typeName)){
+                   
+                            return  org.example.www.repairtransportationservice.TransportationTimeType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/CommonTypes".equals(namespaceURI) &&
+                  "RepairTimeType".equals(typeName)){
+                   
+                            return  org.example.www.commontypes.RepairTimeType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
                   "http://www.example.org/CommonTypes".equals(namespaceURI) &&
                   "RepairIDType".equals(typeName)){
                    
@@ -52,20 +92,10 @@
 
               
                   if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "GetRepairCostType".equals(typeName)){
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "TransportationTimeRequestType".equals(typeName)){
                    
-                            return  org.example.www.costcalculationservice.GetRepairCostType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "RepairCostResponseType".equals(typeName)){
-                   
-                            return  org.example.www.costcalculationservice.RepairCostResponseType.Factory.parse(reader);
+                            return  org.example.www.repairtransportationservice.TransportationTimeRequestType.Factory.parse(reader);
                         
 
                   }
@@ -76,36 +106,6 @@
                   "EmailType".equals(typeName)){
                    
                             return  org.example.www.commontypes.EmailType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "Price".equals(typeName)){
-                   
-                            return  org.example.www.commontypes.Price.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "BikePartType".equals(typeName)){
-                   
-                            return  org.example.www.commontypes.BikePartType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "RepairTimeType".equals(typeName)){
-                   
-                            return  org.example.www.commontypes.RepairTimeType.Factory.parse(reader);
                         
 
                   }
@@ -142,30 +142,40 @@
 
               
                   if (
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "TransportationDistanceRequestType".equals(typeName)){
+                   
+                            return  org.example.www.repairtransportationservice.TransportationDistanceRequestType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "UpdatedDeliveryTimeType".equals(typeName)){
+                   
+                            return  org.example.www.repairtransportationservice.UpdatedDeliveryTimeType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
+                  "UpdatedDeliveryTimeResponseType".equals(typeName)){
+                   
+                            return  org.example.www.repairtransportationservice.UpdatedDeliveryTimeResponseType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
                   "http://www.example.org/CommonTypes".equals(namespaceURI) &&
                   "TransportationDistanceType".equals(typeName)){
                    
                             return  org.example.www.commontypes.TransportationDistanceType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "GetTransportationCostType".equals(typeName)){
-                   
-                            return  org.example.www.costcalculationservice.GetTransportationCostType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "TransportationCostResponseType".equals(typeName)){
-                   
-                            return  org.example.www.costcalculationservice.TransportationCostResponseType.Factory.parse(reader);
                         
 
                   }
