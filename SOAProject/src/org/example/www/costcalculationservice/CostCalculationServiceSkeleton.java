@@ -30,47 +30,45 @@ import org.example.www.commontypes.CostType;
                   )
             {
                 //TODO : fill this with the necessary business logic
-                	 
-                // Make local variables for the Repair Time and array for the prices of the bike parts;
-                int repairTime;
-                int numberOfParts = calculateRepairCost0.getCalculateRepairCostRequest().getNumberOfParts();
-                BigDecimal[] priceOfParts = new BigDecimal[numberOfParts];
-                
-                // The repairCost that will be calculated.
-                double repairCost;
-                
-                // The labour rate of the repair shop.
-                double labourRate = 15; //$ per labour hour;
-                
-                // Retrieve the repair time;
-                repairTime = calculateRepairCost0.getCalculateRepairCostRequest().getRepairTime().getRepairTimeType();
-               
-               // Retrieve the bike part prices from the request message;
-                
-               /*  while (numberOfParts > 0) {
-                	priceOfParts = calculateRepairCost0.getCalculateRepairCostRequest().getBikePart()
-                }
-                */
-                // Calculate the repair costs;
-                repairCost = repairTime * labourRate;
-                
-                // Create a BigDecimal object to store the repair cost.
-                CostType BigDecRepCost = new CostType();
-                BigDecRepCost.setCostType(new BigDecimal(repairCost));
-                
-                // Create the repair cost response to be sent back;
-                RepairCostResponseType repCostResponse = new RepairCostResponseType();
-                repCostResponse.setRepairID(calculateRepairCost0.getCalculateRepairCostRequest().getRepairID());
-                repCostResponse.setRepairCost(BigDecRepCost);
-                
-                // Set the response to the cost and ID you created.
-                CalculateRepairCostResponse calculateRepairCostResponse1 = new CalculateRepairCostResponse();
-                calculateRepairCostResponse1.setCalculateRepairCostResponse(repCostResponse);
-                
-                // Return the response;
-                return calculateRepairCostResponse1;
-                
-             }
+                	 // Make local variables for the Repair Time and array for the prices of the bike parts;
+                     int repairTime;
+                     int numberOfParts = calculateRepairCost0.getCalculateRepairCostRequest().getNumberOfParts();
+                     BigDecimal[] priceOfParts = new BigDecimal[numberOfParts];
+                     
+                     // The repairCost that will be calculated.
+                     double repairCost;
+                     
+                     // The labour rate of the repair shop.
+                     double labourRate = 15; //$ per labour hour;
+                     
+                     // Retrieve the repair time;
+                     repairTime = calculateRepairCost0.getCalculateRepairCostRequest().getRepairTime().getRepairTimeType();
+                    
+                    // Retrieve the bike part prices from the request message;
+                     
+                    /*  while (numberOfParts > 0) {
+                     	priceOfParts = calculateRepairCost0.getCalculateRepairCostRequest().getBikePart()
+                     }
+                     */
+                     // Calculate the repair costs;
+                     repairCost = repairTime * labourRate;
+                     
+                     // Create a BigDecimal object to store the repair cost.
+                     CostType BigDecRepCost = new CostType();
+                     BigDecRepCost.setCostType(new BigDecimal(repairCost));
+                     
+                     // Create the repair cost response to be sent back;
+                     RepairCostResponseType repCostResponse = new RepairCostResponseType();
+                     repCostResponse.setRepairID(calculateRepairCost0.getCalculateRepairCostRequest().getRepairID());
+                     repCostResponse.setRepairCost(BigDecRepCost);
+                     
+                     // Set the response to the cost and ID you created.
+                     CalculateRepairCostResponse calculateRepairCostResponse1 = new CalculateRepairCostResponse();
+                     calculateRepairCostResponse1.setCalculateRepairCostResponse(repCostResponse);
+                     
+                     // Return the response;
+                     return calculateRepairCostResponse1;
+        }
      
          
         /**
@@ -86,30 +84,30 @@ import org.example.www.commontypes.CostType;
                   )
             {
                 //TODO : fill this with the necessary business logic
-                	 
-                // Define local variables for the transportation distance and rate;
-                BigDecimal distance = calculateTransportCost2.getCalculateTransportCostRequest().getTransportationDistance().getTransportationDistanceType();
-                BigDecimal transRate = new BigDecimal(0.45); //$ per km
-                		
-                // Local variable for the calculated transportation costs;
-                BigDecimal transCost = distance.multiply(transRate);
-                
-                // Make that BigDecimal a CostType object;
-                CostType transCostType = new CostType();
-                transCostType.setCostType(transCost);
-                
-                // Create the transportation cost response type to be sent;
-                TransportationCostResponseType transCostRespType = new TransportationCostResponseType();
-                transCostRespType.setRepairID(calculateTransportCost2.getCalculateTransportCostRequest().getRepairID());
-                transCostRespType.setTransportationCost(transCostType);
-                
-                // Create a response message to be sent back;
-                CalculateTransportCostResponse calculateTransportCostResponse3 = new CalculateTransportCostResponse();
-                calculateTransportCostResponse3.setCalculateTransportCostResponse(transCostRespType);
-                
-                // return the response.
-                return calculateTransportCostResponse3;
-
+               
+                 	 
+                     // Define local variables for the transportation distance and rate;
+                     BigDecimal distance = calculateTransportCost2.getCalculateTransportCostRequest().getTransportationDistance().getTransportationDistanceType();
+                     BigDecimal transRate = new BigDecimal(0.45); //$ per km
+                     		
+                     // Local variable for the calculated transportation costs;
+                     BigDecimal transCost = distance.multiply(transRate);
+                     
+                     // Make that BigDecimal a CostType object;
+                     CostType transCostType = new CostType();
+                     transCostType.setCostType(transCost);
+                     
+                     // Create the transportation cost response type to be sent;
+                     TransportationCostResponseType transCostRespType = new TransportationCostResponseType();
+                     transCostRespType.setRepairID(calculateTransportCost2.getCalculateTransportCostRequest().getRepairID());
+                     transCostRespType.setTransportationCost(transCostType);
+                     
+                     // Create a response message to be sent back;
+                     CalculateTransportCostResponse calculateTransportCostResponse3 = new CalculateTransportCostResponse();
+                     calculateTransportCostResponse3.setCalculateTransportCostResponse(transCostRespType);
+                     
+                     // return the response.
+                     return calculateTransportCostResponse3;
         }
      
     }

@@ -8,11 +8,9 @@
 
             
                 package org.example.www.commontypes;
+            
 
-import org.example.www.commontypes.Price.Factory;
-import org.example.www.costcalculationservice.ExtensionMapper;
-
-/**
+            /**
             *  BikePartType bean class
             */
             @SuppressWarnings({"unchecked","unused"})
@@ -21,8 +19,8 @@ import org.example.www.costcalculationservice.ExtensionMapper;
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had
                 name = BikePartType
-                Namespace URI = http://www.example.org/CostCalculationService
-                Namespace Prefix = ns2
+                Namespace URI = http://www.example.org/CommonTypes
+                Namespace Prefix = ns1
                 */
             
 
@@ -66,7 +64,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
 
                            /**
                            * Auto generated getter method
-                           * @return org.example.www.costcalculationservice.Price
+                           * @return org.example.www.commontypes.Price
                            */
                            public  org.example.www.commontypes.Price getPrice(){
                                return localPrice;
@@ -131,7 +129,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/CostCalculationService");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/CommonTypes");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
                            namespacePrefix+":BikePartType",
@@ -145,7 +143,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                
                    }
                
-                                    namespace = "http://www.example.org/CostCalculationService";
+                                    namespace = "http://www.example.org/CommonTypes";
                                     writeStartElement(null, namespace, "Name", xmlWriter);
                              
 
@@ -166,7 +164,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                                             if (localPrice==null){
                                                  throw new org.apache.axis2.databinding.ADBException("Price cannot be null!!");
                                             }
-                                           localPrice.serialize(new javax.xml.namespace.QName("http://www.example.org/CostCalculationService","Price"),
+                                           localPrice.serialize(new javax.xml.namespace.QName("http://www.example.org/CommonTypes","Price"),
                                                xmlWriter);
                                         
                     xmlWriter.writeEndElement();
@@ -175,8 +173,8 @@ import org.example.www.costcalculationservice.ExtensionMapper;
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://www.example.org/CostCalculationService")){
-                return "ns2";
+            if(namespace.equals("http://www.example.org/CommonTypes")){
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -354,7 +352,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                 
-                                      elementList.add(new javax.xml.namespace.QName("http://www.example.org/CostCalculationService",
+                                      elementList.add(new javax.xml.namespace.QName("http://www.example.org/CommonTypes",
                                                                       "Name"));
                                  
                                         if (localName != null){
@@ -363,7 +361,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                                            throw new org.apache.axis2.databinding.ADBException("Name cannot be null!!");
                                         }
                                     
-                            elementList.add(new javax.xml.namespace.QName("http://www.example.org/CostCalculationService",
+                            elementList.add(new javax.xml.namespace.QName("http://www.example.org/CommonTypes",
                                                                       "Price"));
                             
                             
@@ -450,7 +448,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CostCalculationService","Name").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CommonTypes","Name").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
@@ -475,7 +473,7 @@ import org.example.www.costcalculationservice.ExtensionMapper;
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CostCalculationService","Price").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.example.org/CommonTypes","Price").equals(reader.getName())){
                                 
                                                 object.setPrice(org.example.www.commontypes.Price.Factory.parse(reader));
                                               

@@ -20,7 +20,7 @@
         /* This type was generated from the piece of schema that had
                 name = BillType
                 Namespace URI = http://www.example.org/RepairBillingService
-                Namespace Prefix = ns5
+                Namespace Prefix = ns11
                 */
             
 
@@ -282,7 +282,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/RepairBillingService")){
-                return "ns5";
+                return "ns11";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }

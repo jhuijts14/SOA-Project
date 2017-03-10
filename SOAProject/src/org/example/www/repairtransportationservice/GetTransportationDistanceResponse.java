@@ -21,7 +21,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.example.org/RepairTransportationService/",
                 "GetTransportationDistanceResponse",
-                "ns3");
+                "ns5");
 
             
 
@@ -30,14 +30,14 @@
                         */
 
                         
-                                    protected org.example.www.repairtransportationservice.DistantResponseType localGetTransportationDistanceResponse ;
+                                    protected org.apache.axiom.om.OMElement localGetTransportationDistanceResponse ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return org.example.www.repairtransportationservice.DistantResponseType
+                           * @return org.apache.axiom.om.OMElement
                            */
-                           public  org.example.www.repairtransportationservice.DistantResponseType getGetTransportationDistanceResponse(){
+                           public  org.apache.axiom.om.OMElement getGetTransportationDistanceResponse(){
                                return localGetTransportationDistanceResponse;
                            }
 
@@ -47,7 +47,7 @@
                                * Auto generated setter method
                                * @param param GetTransportationDistanceResponse
                                */
-                               public void setGetTransportationDistanceResponse(org.example.www.repairtransportationservice.DistantResponseType param){
+                               public void setGetTransportationDistanceResponse(org.apache.axiom.om.OMElement param){
                             
                                             this.localGetTransportationDistanceResponse=param;
                                        
@@ -114,18 +114,23 @@
                
                    }
                
-                                    if (localGetTransportationDistanceResponse==null){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "GetTransportationDistanceResponse", xmlWriter);
+                             
 
-                                        writeStartElement(null, "", "GetTransportationDistanceResponse", xmlWriter);
+                                          if (localGetTransportationDistanceResponse==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
 
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localGetTransportationDistanceResponse.serialize(new javax.xml.namespace.QName("","GetTransportationDistanceResponse"),
-                                        xmlWriter);
-                                    }
-                                
+                                        localGetTransportationDistanceResponse.serialize(xmlWriter);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -133,7 +138,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/RepairTransportationService/")){
-                return "ns3";
+                return "ns5";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -311,13 +316,12 @@
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                 
-                            elementList.add(new javax.xml.namespace.QName("",
+                                      elementList.add(new javax.xml.namespace.QName("",
                                                                       "GetTransportationDistanceResponse"));
-                            
-                            
-                                    elementList.add(localGetTransportationDistanceResponse==null?null:
-                                    localGetTransportationDistanceResponse);
-                                
+                                 
+                                         elementList.add(localGetTransportationDistanceResponse==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGetTransportationDistanceResponse));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -396,21 +400,28 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","GetTransportationDistanceResponse").equals(reader.getName())){
+                                   if (reader.isStartElement()){
                                 
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setGetTransportationDistanceResponse(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
                                     
-                                                object.setGetTransportationDistanceResponse(org.example.www.repairtransportationservice.DistantResponseType.Factory.parse(reader));
-                                              
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                                org.apache.axiom.om.OMFactory fac = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
+                                                org.apache.axiom.om.OMNamespace omNs = fac.createOMNamespace("", "");
+                                                org.apache.axiom.om.OMElement _valueGetTransportationDistanceResponse = fac.createOMElement("GetTransportationDistanceResponse", omNs);
+                                                _valueGetTransportationDistanceResponse.addChild(fac.createOMText(_valueGetTransportationDistanceResponse, content));
+                                                object.setGetTransportationDistanceResponse(_valueGetTransportationDistanceResponse);
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
                                         reader.next();
-                                    }
+                                    
                               }  // End of if for expected property start element
                                 
                                 else{

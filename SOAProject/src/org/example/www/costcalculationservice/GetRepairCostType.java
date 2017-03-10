@@ -20,7 +20,7 @@
         /* This type was generated from the piece of schema that had
                 name = GetRepairCostType
                 Namespace URI = http://www.example.org/CostCalculationService
-                Namespace Prefix = ns2
+                Namespace Prefix = ns8
                 */
             
 
@@ -64,7 +64,7 @@
 
                            /**
                            * Auto generated getter method
-                           * @return org.example.www.costcalculationservice.RepairTimeType
+                           * @return org.example.www.commontypes.RepairTimeType
                            */
                            public  org.example.www.commontypes.RepairTimeType getRepairTime(){
                                return localRepairTime;
@@ -136,7 +136,7 @@
 
                            /**
                            * Auto generated getter method
-                           * @return org.example.www.costcalculationservice.BikePartType[]
+                           * @return org.example.www.commontypes.BikePartType[]
                            */
                            public  org.example.www.commontypes.BikePartType[] getBikePart(){
                                return localBikePart;
@@ -172,7 +172,7 @@
                              
                              /**
                              * Auto generated add method for the array for convenience
-                             * @param param org.example.www.costcalculationservice.BikePartType
+                             * @param param org.example.www.commontypes.BikePartType
                              */
                              public void addBikePart(org.example.www.commontypes.BikePartType param){
                                    if (localBikePart == null){
@@ -303,7 +303,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/CostCalculationService")){
-                return "ns2";
+                return "ns8";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }

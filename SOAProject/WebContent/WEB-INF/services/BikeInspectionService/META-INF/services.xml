@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="BikeInspectionService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.bikeinspectionservice.BikeInspectionServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.example.www.bikeinspectionservice.BikeInspectionServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="InspectBike" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/BikeInspectionService/">
+            <actionMapping>http://www.example.org/BikeInspectionService/InspectBike</actionMapping>
+            <outputActionMapping>http://www.example.org/BikeInspectionService/BikeInspectionServicePortType/InspectBikeResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

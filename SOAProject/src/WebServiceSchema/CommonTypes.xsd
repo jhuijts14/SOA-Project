@@ -74,7 +74,7 @@
 	</simpleType>
 	
 	<simpleType name="RepairTimeType">
-		<restriction base="dateTime"></restriction>
+		<restriction base="int"></restriction>
 	</simpleType>
 	
 	<simpleType name="RepairsDesiredType">

@@ -665,7 +665,7 @@
                             if (!"AddressType".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (AddressType)org.example.www.repairtransportationservice.ExtensionMapper.getTypeObject(
+                                return (AddressType)org.example.www.repairbillingservice.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         

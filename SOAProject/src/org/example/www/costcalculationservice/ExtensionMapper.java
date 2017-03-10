@@ -43,6 +43,16 @@
               
                   if (
                   "http://www.example.org/CommonTypes".equals(namespaceURI) &&
+                  "RepairTimeType".equals(typeName)){
+                   
+                            return  org.example.www.commontypes.RepairTimeType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/CommonTypes".equals(namespaceURI) &&
                   "RepairIDType".equals(typeName)){
                    
                             return  org.example.www.commontypes.RepairIDType.Factory.parse(reader);
@@ -76,36 +86,6 @@
                   "EmailType".equals(typeName)){
                    
                             return  org.example.www.commontypes.EmailType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "Price".equals(typeName)){
-                   
-                            return  org.example.www.commontypes.Price.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "BikePartType".equals(typeName)){
-                   
-                            return  org.example.www.commontypes.BikePartType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/CostCalculationService".equals(namespaceURI) &&
-                  "RepairTimeType".equals(typeName)){
-                   
-                            return  org.example.www.commontypes.RepairTimeType.Factory.parse(reader);
                         
 
                   }
@@ -146,6 +126,26 @@
                   "TransportationDistanceType".equals(typeName)){
                    
                             return  org.example.www.commontypes.TransportationDistanceType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/CommonTypes".equals(namespaceURI) &&
+                  "BikePartType".equals(typeName)){
+                   
+                            return  org.example.www.commontypes.BikePartType.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://www.example.org/CommonTypes".equals(namespaceURI) &&
+                  "Price".equals(typeName)){
+                   
+                            return  org.example.www.commontypes.Price.Factory.parse(reader);
                         
 
                   }

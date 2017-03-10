@@ -7,16 +7,15 @@
  */
     package org.example.www.repairbillingservice;
 
-import java.math.BigDecimal;
-
-import org.example.www.commontypes.*;
+import org.example.www.commontypes.RepairIDType;
 
 /**
      *  RepairBillingServicePortSkeleton java skeleton for the axisService
      */
     public class RepairBillingServicePortSkeleton implements RepairBillingServicePortSkeletonInterface{
         
-        // Information variables stored for the bill department;
+        
+    	// Information variables stored for the bill department;
     	double totalCost;
     	Bill bill;
     	
@@ -33,7 +32,7 @@ import org.example.www.commontypes.*;
                   )
             {
                 //TODO : fill this with the necessary business logic
-             
+                
                 	 System.out.println("===============================================================");
                 	 System.out.println("Customer Details:");
                 	 System.out.println("Customer Name: " 
@@ -41,7 +40,6 @@ import org.example.www.commontypes.*;
                 			 + bill.getBill().getCustomerInformation().getCustomerName().getLastName());
                 	 System.out.println("RepairID: " + bill.getBill().getCustomerInformation().getRepairID().getRepairIDType());
                 	 System.out.println("The total cost of the repair service is: " + totalCost + " $");
-                	 
         }
      
          
@@ -58,35 +56,36 @@ import org.example.www.commontypes.*;
                   )
             {
                 //TODO : fill this with the necessary business logic
+                	 
+                	 // Define local variables for the 3 costs;
+                     double pickUpCost, repairCost, deliveryCost;
+                     
+                     // Define local variable for the approval response of the customer;
+                     String approvalResp;
+                     
+                     //Retrieve all the information needed to calculate The Total Cost;
+                     pickUpCost   = bill1.getBill().getPickUpCost().getCostType().doubleValue();
+                     repairCost   = bill1.getBill().getRepairCost().getCostType().doubleValue();
+                     deliveryCost = bill1.getBill().getDeliveryCost().getCostType().doubleValue();
+                     
+                     approvalResp = bill1.getBill().getApprovalResponse().getValue();
+                     
+                     // Calculate the total cost (only include the repair cost if the repair was approved);
+                     totalCost = pickUpCost + deliveryCost;
+                     
+                     if (approvalResp.equals("Approved")) {
+                     	totalCost += repairCost;
+                     }
+                     
+                     // Retrieve the information needed for the bill;
+                     bill = bill1;
+                     
+                     // Invoke the Confirm Total Cost operation for the Billing services callback service;
+                     // Retrieve the appropriate Repair ID;
+                     RepairIDType repairID = bill1.getBill().getCustomerInformation().getRepairID();
+                     // Create boolean that confirms total cost has been calculated and billing process is initiated;
+                     boolean confirmation = true;
                 
-                // Define local variables for the 3 costs;
-                double pickUpCost, repairCost, deliveryCost;
-                
-                // Define local variable for the approval response of the customer;
-                String approvalResp;
-                
-                //Retrieve all the information needed to calculate The Total Cost;
-                pickUpCost   = bill1.getBill().getPickUpCost().getCostType().doubleValue();
-                repairCost   = bill1.getBill().getRepairCost().getCostType().doubleValue();
-                deliveryCost = bill1.getBill().getDeliveryCost().getCostType().doubleValue();
-                
-                approvalResp = bill1.getBill().getApprovalResponse().getValue();
-                
-                // Calculate the total cost (only include the repair cost if the repair was approved);
-                totalCost = pickUpCost + deliveryCost;
-                
-                if (approvalResp.equals("Approved")) {
-                	totalCost += repairCost;
-                }
-                
-                // Retrieve the information needed for the bill;
-                bill = bill1;
-                
-                // Invoke the Confirm Total Cost operation for the Billing services callback service;
-                // Retrieve the appropriate Repair ID;
-                RepairIDType repairID = bill1.getBill().getCustomerInformation().getRepairID();
-                // Create boolean that confirms total cost has been calculated and billing process is initiated;
-                boolean confirmation = true;
         }
      
     }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/RepairTransportationService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/RepairTransportationService">
+    <import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <complexType name="TransportationTimeRequestType">
+        <sequence>
+            <element name="Repair" type="common:RepairIDType"/>
+            <element name="Address" type="common:AddressType"/>
+        </sequence>
+    </complexType>
+    <complexType name="TransportationDistanceRequestType">
+        <sequence>
+            <element name="Repair" type="common:RepairIDType"/>
+            <element name="Address" type="common:AddressType"/>
+        </sequence>
+    </complexType>
+    <complexType name="TimeResponseType">
+        <sequence>
+            <element name="Repair" type="common:RepairIDType"/>
+            <element name="TransportationTime" type="tns:TransportationTimeType"/>
+        </sequence>
+    </complexType>
+    <simpleType name="TransportationTimeType">
+        <restriction base="dateTime"/>
+    </simpleType>
+    <complexType name="DistantResponseType">
+        <sequence>
+            <element name="Repair" type="common:RepairIDType"/>
+            <element name="TransportationDistance" type="common:TransportationDistanceType"/>
+        </sequence>
+    </complexType>
+    <complexType name="UpdatedDeliveryTimeType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="DeliveryTime" type="tns:TransportationTimeType"/>
+            <element name="RepairTime" type="common:RepairTimeType"/>
+            <element name="ApprovalResponse" type="common:ApprovalResponseType"/>
+        </sequence>
+    </complexType>
+    <complexType name="UpdatedDeliveryTimeResponseType">
+        <sequence>
+            <element name="Repair" type="common:RepairIDType"/>
+            <element name="UpdatedDeliveryTime" type="tns:TransportationTimeType"/>
+        </sequence>
+    </complexType>
+</schema>

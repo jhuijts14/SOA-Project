@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
-    <service name="RepairTransportationServicePort">
+    <service name="RepairBillingServicePort">
         <messageReceivers>
-            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.repairtransportationservice.RepairTransportationServicePortMessageReceiverInOut"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.example.www.repairbillingservice.RepairBillingServicePortMessageReceiverInOnly"/>
         </messageReceivers>
-        <parameter name="ServiceClass">org.example.www.repairtransportationservice.RepairTransportationServicePortSkeleton</parameter>
+        <parameter name="ServiceClass">org.example.www.repairbillingservice.RepairBillingServicePortSkeleton</parameter>
         <parameter name="useOriginalwsdl">true</parameter>
         <parameter name="modifyUserWSDLPortAddress">true</parameter>
-        <operation name="GetTransportationTime" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/RepairTransportationService/">
-            <actionMapping>http://www.example.org/RepairTransportationService/GetTransportationTime</actionMapping>
-            <outputActionMapping>http://www.example.org/RepairTransportationService/RepairTransportationServicePortType/GetTransportationTimeResponse</outputActionMapping>
+        <operation name="SendBill" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.example.org/RepairBillingService/">
+            <actionMapping>http://www.example.org/RepairBillingService/SendBill</actionMapping>
         </operation>
-        <operation name="GetTransportationDistance" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/RepairTransportationService/">
-            <actionMapping>http://www.example.org/RepairTransportationService/GetTransportationDistance</actionMapping>
-            <outputActionMapping>http://www.example.org/RepairTransportationService/RepairTransportationServicePortType/GetTransportationDistanceResponse</outputActionMapping>
-        </operation>
-        <operation name="UpdateDeliveryTime" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/RepairTransportationService/">
-            <actionMapping>http://www.example.org/RepairTransportationService/UpdateDeliveryTime</actionMapping>
-            <outputActionMapping>http://www.example.org/RepairTransportationService/RepairTransportationServicePortType/UpdateDeliveryTimeResponse</outputActionMapping>
+        <operation name="CalculateTotalCost" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.example.org/RepairBillingService/">
+            <actionMapping>http://www.example.org/RepairBillingService/CalculateTotalCost</actionMapping>
         </operation>
     </service>
 </serviceGroup>

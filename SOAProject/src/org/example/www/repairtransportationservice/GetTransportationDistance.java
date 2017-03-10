@@ -21,7 +21,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.example.org/RepairTransportationService/",
                 "GetTransportationDistance",
-                "ns3");
+                "ns5");
 
             
 
@@ -133,7 +133,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/RepairTransportationService/")){
-                return "ns3";
+                return "ns5";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }

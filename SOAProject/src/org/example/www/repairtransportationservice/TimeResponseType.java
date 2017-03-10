@@ -20,7 +20,7 @@
         /* This type was generated from the piece of schema that had
                 name = TimeResponseType
                 Namespace URI = http://www.example.org/RepairTransportationService
-                Namespace Prefix = ns2
+                Namespace Prefix = ns4
                 */
             
 
@@ -162,7 +162,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/RepairTransportationService")){
-                return "ns2";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }

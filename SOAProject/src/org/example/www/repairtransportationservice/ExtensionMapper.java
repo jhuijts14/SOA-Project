@@ -53,16 +53,6 @@
               
                   if (
                   "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
-                  "DistantResponseType".equals(typeName)){
-                   
-                            return  org.example.www.repairtransportationservice.DistantResponseType.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://www.example.org/RepairTransportationService".equals(namespaceURI) &&
                   "TransportationTimeType".equals(typeName)){
                    
                             return  org.example.www.repairtransportationservice.TransportationTimeType.Factory.parse(reader);

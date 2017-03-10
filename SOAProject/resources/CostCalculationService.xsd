@@ -3,23 +3,11 @@
     <complexType name="GetRepairCostType">
         <sequence>
             <element name="RepairID" type="common:RepairIDType"/>
-            <element name="RepairTime" type="tns:RepairTimeType"/>
+            <element name="RepairTime" type="common:RepairTimeType"/>
             <element name="NumberOfParts" type="int"/>
-            <element maxOccurs="unbounded" minOccurs="0" name="BikePart" type="tns:BikePartType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="BikePart" type="common:BikePartType"/>
         </sequence>
     </complexType>
-    <complexType name="BikePartType">
-        <sequence>
-            <element name="Name" type="string"/>
-            <element name="Price" type="tns:Price"/>
-        </sequence>
-    </complexType>
-    <simpleType name="Price">
-        <restriction base="decimal"/>
-    </simpleType>
-    <simpleType name="RepairTimeType">
-        <restriction base="int"/>
-    </simpleType>
     <complexType name="RepairCostResponseType">
         <sequence>
             <element name="RepairID" type="common:RepairIDType"/>

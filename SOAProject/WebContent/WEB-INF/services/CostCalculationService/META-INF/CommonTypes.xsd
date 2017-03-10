@@ -47,4 +47,19 @@
     <simpleType name="TransportationDistanceType">
         <restriction base="decimal"/>
     </simpleType>
+    <simpleType name="RepairTimeType">
+        <restriction base="int"/>
+    </simpleType>
+    <simpleType name="RepairsDesiredType">
+        <restriction base="string"/>
+    </simpleType>
+    <complexType name="BikePartType">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="Price" type="tns:Price"/>
+        </sequence>
+    </complexType>
+    <simpleType name="Price">
+        <restriction base="decimal"/>
+    </simpleType>
 </schema>
