@@ -9,7 +9,9 @@
 
 import java.math.BigDecimal;
 
+import org.example.www.commontypes.BikePartType;
 import org.example.www.commontypes.CostType;
+import org.example.www.commontypes.Price;
 
 /**
      *  CostCalculationServiceSkeleton java skeleton for the axisService
@@ -33,7 +35,7 @@ import org.example.www.commontypes.CostType;
                 	 // Make local variables for the Repair Time and array for the prices of the bike parts;
                      int repairTime;
                      int numberOfParts = calculateRepairCost0.getCalculateRepairCostRequest().getNumberOfParts();
-                     BigDecimal[] priceOfParts = new BigDecimal[numberOfParts];
+                     Price[] priceOfParts = new Price[numberOfParts];
                      
                      // The repairCost that will be calculated.
                      double repairCost;
@@ -46,12 +48,25 @@ import org.example.www.commontypes.CostType;
                     
                     // Retrieve the bike part prices from the request message;
                      
-                    /*  while (numberOfParts > 0) {
-                     	priceOfParts = calculateRepairCost0.getCalculateRepairCostRequest().getBikePart()
+                     while (numberOfParts > 0) {
+                     	
+                    	 BikePartType[] bikePartArray = calculateRepairCost0.getCalculateRepairCostRequest().localBikePart;
+                    	 priceOfParts[numberOfParts - 1] = bikePartArray[numberOfParts - 1].getPrice();
+                    	 numberOfParts--;
                      }
-                     */
+                     
                      // Calculate the repair costs;
                      repairCost = repairTime * labourRate;
+                     
+                     // If there are bike parts in the inspections add them to the repair cost;
+                     // Since inspection results are simulated we know there are either 0, 1 or 3;
+                     if (priceOfParts.length == 1) {
+                    	 repairCost += priceOfParts[0].getPrice().doubleValue();
+                     } else if (priceOfParts.length == 3) {
+                    	 repairCost += priceOfParts[0].getPrice().doubleValue() 
+                    			 + priceOfParts[1].getPrice().doubleValue() 
+                    			 + priceOfParts[2].getPrice().doubleValue();
+                     }
                      
                      // Create a BigDecimal object to store the repair cost.
                      CostType BigDecRepCost = new CostType();
