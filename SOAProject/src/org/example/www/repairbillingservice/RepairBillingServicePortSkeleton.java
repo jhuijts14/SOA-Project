@@ -77,7 +77,7 @@ import org.example.www.commontypes.RepairIDType;
                      	totalCost += repairCost;
                      }
                      
-                     // Retrieve the information needed for the bill;
+                     // Retrieve the information needed for the bill to be stored by the billing department;
                      bill = bill1;
                      
                      // Invoke the Confirm Total Cost operation for the Billing services callback service;
