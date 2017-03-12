@@ -56,10 +56,10 @@
     <complexType name="BikePartType">
         <sequence>
             <element name="Name" type="string"/>
-            <element name="Price" type="tns:Price"/>
+            <element name="Price" type="tns:PriceType"/>
         </sequence>
     </complexType>
-    <simpleType name="Price">
+    <simpleType name="PriceType">
         <restriction base="decimal"/>
     </simpleType>
 </schema>

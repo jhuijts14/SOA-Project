@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/RepairBillingService" 
+	xmlns:tns="http://www.example.org/RepairBillingService" 
+	xmlns:common="http://www.example.org/CommonTypes"
+	elementFormDefault="qualified">
+	
+
+<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.example.org/CommonTypes"/>
+
+<element name="Bill" type="tns:BillType"></element>
+
+<complexType name="BillType">
+	<sequence>
+		<element name="ApprovalResponse" type="common:ApprovalResponseType"
+			maxOccurs="1" minOccurs="1">
+		</element>
+		<element name="PickUpCost" type="common:CostType" 
+			maxOccurs="1" minOccurs="1">
+		</element>
+		<element name="RepairCost" type="common:CostType" 
+			maxOccurs="1" minOccurs="0">
+		</element>
+		<element name="DeliveryCost" type="common:CostType" 
+			maxOccurs="1" minOccurs="1">
+		</element>
+		<element name="CustomerInformation" type="common:CustomerType"
+			maxOccurs="1" minOccurs="1">
+		</element>
+	</sequence>
+</complexType>
+
+<element name="DeliveryConfirmation" type="tns:DeliveryConfirmationType"></element>
+
+	<complexType name="DeliveryConfirmationType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="DeliveryConfirmation" type="common:ConfirmationType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+</schema>

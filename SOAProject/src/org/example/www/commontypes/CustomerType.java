@@ -20,7 +20,7 @@
         /* This type was generated from the piece of schema that had
                 name = CustomerType
                 Namespace URI = http://www.example.org/CommonTypes
-                Namespace Prefix = ns1
+                Namespace Prefix = ns2
                 */
             
 
@@ -282,7 +282,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/CommonTypes")){
-                return "ns1";
+                return "ns2";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -558,7 +558,7 @@
                             if (!"CustomerType".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CustomerType)org.example.www.repairbillingservice.ExtensionMapper.getTypeObject(
+                                return (CustomerType)org.example.www.billingcallbackservice.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         

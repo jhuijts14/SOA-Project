@@ -20,7 +20,7 @@
         /* This type was generated from the piece of schema that had
                 name = CostConfirmationType
                 Namespace URI = http://www.example.org/BillingCallbackService
-                Namespace Prefix = ns7
+                Namespace Prefix = ns3
                 */
             
 
@@ -162,7 +162,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.example.org/BillingCallbackService")){
-                return "ns7";
+                return "ns3";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/BillingCallbackService" 
+	xmlns:tns="http://www.example.org/BillingCallbackService" 
+	xmlns:common="http://www.example.org/CommonTypes"
+	elementFormDefault="qualified">
+	
+	<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.example.org/CommonTypes"/>
+    
+    <element name="BillSentConfirmation" type="tns:BillSentConfirmationType"></element>
+
+	<complexType name="CostConfirmationType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="Confirmation" type="common:ConfirmationType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+	
+	
+	<complexType name="BillSentConfirmationType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="Confirmation" type="common:ConfirmationType" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="TotalCostConfirmation" type="tns:CostConfirmationType"></element>
+	
+</schema>

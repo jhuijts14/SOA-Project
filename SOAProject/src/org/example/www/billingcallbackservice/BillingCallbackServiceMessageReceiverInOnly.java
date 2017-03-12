@@ -36,18 +36,18 @@
         
             if("confirmTotalCost".equals(methodName)){
             
-            org.example.www.billingcallbackservice.ConfirmTotalCost wrappedParam = (org.example.www.billingcallbackservice.ConfirmTotalCost)fromOM(
+            org.example.www.billingcallbackservice.TotalCostConfirmation wrappedParam = (org.example.www.billingcallbackservice.TotalCostConfirmation)fromOM(
                                                         inMessage.getEnvelope().getBody().getFirstElement(),
-                                                        org.example.www.billingcallbackservice.ConfirmTotalCost.class,
+                                                        org.example.www.billingcallbackservice.TotalCostConfirmation.class,
                                                         getEnvelopeNamespaces(inMessage.getEnvelope()));
                                             
                                                      skel.confirmTotalCost(wrappedParam);
                                                 } else 
             if("confirmBillSent".equals(methodName)){
             
-            org.example.www.billingcallbackservice.ConfirmBillSent wrappedParam = (org.example.www.billingcallbackservice.ConfirmBillSent)fromOM(
+            org.example.www.billingcallbackservice.BillSentConfirmation wrappedParam = (org.example.www.billingcallbackservice.BillSentConfirmation)fromOM(
                                                         inMessage.getEnvelope().getBody().getFirstElement(),
-                                                        org.example.www.billingcallbackservice.ConfirmBillSent.class,
+                                                        org.example.www.billingcallbackservice.BillSentConfirmation.class,
                                                         getEnvelopeNamespaces(inMessage.getEnvelope()));
                                             
                                                      skel.confirmBillSent(wrappedParam);
@@ -66,12 +66,12 @@
 
         
         //
-            private  org.apache.axiom.om.OMElement  toOM(org.example.www.billingcallbackservice.ConfirmTotalCost param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(org.example.www.billingcallbackservice.TotalCostConfirmation param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(org.example.www.billingcallbackservice.ConfirmTotalCost.MY_QNAME,
+                             return param.getOMElement(org.example.www.billingcallbackservice.TotalCostConfirmation.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -80,12 +80,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(org.example.www.billingcallbackservice.ConfirmBillSent param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(org.example.www.billingcallbackservice.BillSentConfirmation param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(org.example.www.billingcallbackservice.ConfirmBillSent.MY_QNAME,
+                             return param.getOMElement(org.example.www.billingcallbackservice.BillSentConfirmation.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -111,16 +111,16 @@
 
         try {
         
-                if (org.example.www.billingcallbackservice.ConfirmBillSent.class.equals(type)){
+                if (org.example.www.billingcallbackservice.BillSentConfirmation.class.equals(type)){
                 
-                        return org.example.www.billingcallbackservice.ConfirmBillSent.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                        return org.example.www.billingcallbackservice.BillSentConfirmation.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
             
-                if (org.example.www.billingcallbackservice.ConfirmTotalCost.class.equals(type)){
+                if (org.example.www.billingcallbackservice.TotalCostConfirmation.class.equals(type)){
                 
-                        return org.example.www.billingcallbackservice.ConfirmTotalCost.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                        return org.example.www.billingcallbackservice.TotalCostConfirmation.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

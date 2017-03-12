@@ -15,13 +15,13 @@
         /**
          * Auto generated method signature
          * 
-                                    * @param confirmTotalCost
+                                    * @param totalCostConfirmation
          */
 
         
                 public void confirmTotalCost
                 (
-                  org.example.www.billingcallbackservice.ConfirmTotalCost confirmTotalCost
+                  org.example.www.billingcallbackservice.TotalCostConfirmation totalCostConfirmation
                  )
             ;
         
@@ -29,13 +29,13 @@
         /**
          * Auto generated method signature
          * 
-                                    * @param confirmBillSent
+                                    * @param billSentConfirmation
          */
 
         
                 public void confirmBillSent
                 (
-                  org.example.www.billingcallbackservice.ConfirmBillSent confirmBillSent
+                  org.example.www.billingcallbackservice.BillSentConfirmation billSentConfirmation
                  )
             ;
         

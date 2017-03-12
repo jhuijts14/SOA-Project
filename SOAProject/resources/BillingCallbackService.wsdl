@@ -22,11 +22,11 @@
     	</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="ConfirmBillSentRequest">
-    <wsdl:part name="ConfirmBillSent" element="tns:ConfirmBillSent">
+    <wsdl:part name="ConfirmBillSent" element="xsd1:BillSentConfirmation">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="ConfirmTotalCostRequest">
-    <wsdl:part name="ConfirmTotalCost" element="tns:ConfirmTotalCost">
+    <wsdl:part name="ConfirmTotalCost" element="xsd1:TotalCostConfirmation">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="BillingCallbackServicePortType">

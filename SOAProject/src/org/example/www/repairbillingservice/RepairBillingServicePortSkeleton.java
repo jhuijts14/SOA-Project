@@ -7,6 +7,7 @@
  */
     package org.example.www.repairbillingservice;
 
+import org.example.www.commontypes.ConfirmationType;
 import org.example.www.commontypes.RepairIDType;
 
 /**
@@ -33,6 +34,16 @@ import org.example.www.commontypes.RepairIDType;
             {
                 //TODO : fill this with the necessary business logic
                 
+                // Retrieve the associated repairID and confirmation;
+                //Define local variables for the confirmation message and its associated repair ID;
+                RepairIDType repairID = new RepairIDType();
+                ConfirmationType confirmDelComplete = new ConfirmationType();
+                     
+                 //Retrieve confirmation, repair ID from message;
+                confirmDelComplete.setConfirmationType(deliveryConfirmation0.getDeliveryConfirmation().getDeliveryConfirmation().getConfirmationType());
+                repairID.setRepairIDType(deliveryConfirmation0.getDeliveryConfirmation().getRepairID().getRepairIDType());
+                	 
+                	 // Simulate sending the bill by printing the following;
                 	 System.out.println("===============================================================");
                 	 System.out.println("Customer Details:");
                 	 System.out.println("Customer Name: " 
