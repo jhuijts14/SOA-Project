@@ -21,7 +21,7 @@
     <simpleType name="TransportationTimeType">
         <restriction base="dateTime"/>
     </simpleType>
-    <complexType name="DistantResponseType">
+    <complexType name="DistanceResponseType">
         <sequence>
             <element name="Repair" type="common:RepairIDType"/>
             <element name="TransportationDistance" type="common:TransportationDistanceType"/>

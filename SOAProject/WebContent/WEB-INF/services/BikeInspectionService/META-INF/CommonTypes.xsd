@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/CommonTypes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/CommonTypes">
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost:8080/SOAProject/services/CommonTypes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://localhost:8080/SOAProject/services/CommonTypes">
     <element name="Customer" type="tns:CustomerType"/>
     <complexType name="CustomerType">
         <sequence>
@@ -56,10 +56,10 @@
     <complexType name="BikePartType">
         <sequence>
             <element name="Name" type="string"/>
-            <element name="Price" type="tns:Price"/>
+            <element name="Price" type="tns:PriceType"/>
         </sequence>
     </complexType>
-    <simpleType name="Price">
+    <simpleType name="PriceType">
         <restriction base="decimal"/>
     </simpleType>
 </schema>

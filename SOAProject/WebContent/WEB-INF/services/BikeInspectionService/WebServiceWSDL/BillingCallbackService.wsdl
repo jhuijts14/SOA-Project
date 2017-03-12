@@ -23,10 +23,10 @@
     		schemaLocation="../WebServiceSchema/BillingCallbackService.xsd">
     	</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="ConfirmBillSentRequest">
-    <wsdl:part element="tns:ConfirmBillSent" name="ConfirmBillSent"/>
+    <wsdl:part element="xsd1:BillSentConfirmation" name="ConfirmBillSent"/>
   </wsdl:message>
   <wsdl:message name="ConfirmTotalCostRequest">
-  	<wsdl:part name="ConfirmTotalCost" element="tns:ConfirmTotalCost"></wsdl:part>
+  	<wsdl:part name="ConfirmTotalCost" element="xsd1:TotalCostConfirmation"></wsdl:part>
   </wsdl:message>
   <wsdl:portType name="BillingCallbackServicePortType">
     <wsdl:operation name="ConfirmBillSent">

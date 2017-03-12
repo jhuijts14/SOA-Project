@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
-    <service name="BillingCallbackService">
+    <service name="BikeInspectionService">
         <messageReceivers>
-            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.example.www.billingcallbackservice.BillingCallbackServiceMessageReceiverInOnly"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="localhost.soaproject.services.bikeinspectionservice.BikeInspectionServiceMessageReceiverInOut"/>
         </messageReceivers>
-        <parameter name="ServiceClass">org.example.www.billingcallbackservice.BillingCallbackServiceSkeleton</parameter>
+        <parameter name="ServiceClass">localhost.soaproject.services.bikeinspectionservice.BikeInspectionServiceSkeleton</parameter>
         <parameter name="useOriginalwsdl">true</parameter>
         <parameter name="modifyUserWSDLPortAddress">true</parameter>
-        <operation name="ConfirmTotalCost" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.example.org/BillingCallbackService/">
-            <actionMapping>http://www.example.org/BillingCallbackService/ConfirmTotalCost</actionMapping>
-        </operation>
-        <operation name="ConfirmBillSent" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.example.org/BillingCallbackService/">
-            <actionMapping>http://www.example.org/BillingCallbackService/ConfirmBillSent</actionMapping>
+        <operation name="InspectBike" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://localhost:8080/SOAProject/services/BikeInspectionService/">
+            <actionMapping>http://localhost:8080/SOAProject/services/BikeInspectionService/InspectBike</actionMapping>
+            <outputActionMapping>http://localhost:8080/SOAProject/services/BikeInspectionService/BikeInspectionServicePortType/InspectBikeResponse</outputActionMapping>
         </operation>
     </service>
 </serviceGroup>
