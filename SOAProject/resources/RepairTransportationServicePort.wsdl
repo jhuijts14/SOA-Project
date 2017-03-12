@@ -28,7 +28,7 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="GetTransportationDistanceResponse">
-    <wsdl:part name="GetTransportationDistanceResponse" type="xsd1:DistantResponseType">
+    <wsdl:part name="GetTransportationDistanceResponse" type="xsd1:DistanceResponseType">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="RepairTransportationServicePortType">
