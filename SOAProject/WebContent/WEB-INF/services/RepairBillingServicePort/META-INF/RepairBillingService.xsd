@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/RepairBillingService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/RepairBillingService">
-    <import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
-    <element name="Bill" type="tns:BillType"/>
-    <complexType name="BillType">
-        <sequence>
-            <element name="ApprovalResponse" type="common:ApprovalResponseType"/>
-            <element name="PickUpCost" type="common:CostType"/>
-            <element minOccurs="0" name="RepairCost" type="common:CostType"/>
-            <element name="DeliveryCost" type="common:CostType"/>
-            <element name="CustomerInformation" type="common:CustomerType"/>
-        </sequence>
-    </complexType>
-    <element name="DeliveryConfirmation" type="tns:DeliveryConfirmationType"/>
-    <complexType name="DeliveryConfirmationType">
-        <sequence>
-            <element name="RepairID" type="common:RepairIDType"/>
-            <element name="DeliveryConfirmation" type="common:ConfirmationType"/>
-        </sequence>
-    </complexType>
-</schema>
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://localhost:8080/SOAProject/services/RepairBillingService" xmlns:Q1="http://localhost:8080/SOAProject/services/CommonTypes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://localhost:8080/SOAProject/services/RepairBillingService">
+    <xsd:import namespace="http://localhost:8080/SOAProject/services/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <xsd:element name="Bill" type="BillType"/>
+    <xsd:complexType name="BillType">
+        <xsd:sequence>
+            <xsd:element name="ApprovalResponse" type="Q1:ApprovalResponseType"/>
+            <xsd:element name="PickUpCost" type="Q1:CostType"/>
+            <xsd:element minOccurs="0" name="RepairCost" type="Q1:CostType"/>
+            <xsd:element name="DeliveryCost" type="Q1:CostType"/>
+            <xsd:element name="CustomerInformation" type="Q1:CustomerType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="DeliveryConfirmation" type="DeliveryConfirmationType"/>
+    <xsd:complexType name="DeliveryConfirmationType">
+        <xsd:sequence>
+            <xsd:element name="RepairID" type="Q1:RepairIDType"/>
+            <xsd:element name="DeliveryConfirmation" type="Q1:ConfirmationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

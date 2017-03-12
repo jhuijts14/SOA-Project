@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/RepairTransportationService/" 
-	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-	name="RepairTransportationService" 
-	targetNamespace="http://www.example.org/RepairTransportationService/" 
-	xmlns:xsd1="http://www.example.org/RepairTransportationService" 
-	xmlns:xsd2="http://www.example.org/CommonTypes">
+<wsdl:definitions name="RepairTransportationService" 
+	targetNamespace="http://localhost:8080/SOAProject/services//RepairTransportationService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost:8080/SOAProject/services//RepairTransportationService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://localhost:8080/SOAProject/services/RepairTransportationService" xmlns:xsd2="http://localhost:8080/SOAProject/services/CommonTypes">
   <wsdl:types>
   	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   		<xsd:import
-  			namespace="http://www.example.org/RepairTransportationService"
+  			namespace="http://localhost:8080/SOAProject/services/RepairTransportationService"
   			schemaLocation="../WebServiceSchema/RepairTransportationService.xsd">
   		</xsd:import>
-  		<xsd:import namespace="http://www.example.org/CommonTypes"
+  		<xsd:import namespace="http://localhost:8080/SOAProject/services/CommonTypes"
   			schemaLocation="../WebServiceSchema/CommonTypes.xsd">
+  		</xsd:import>
+  		<xsd:import
+  			namespace="http://localhost:8080/SOAProject/services/RepairTransportationService"
+  			schemaLocation="../../build/classes/WebServiceSchema/RepairTransportationService.xsd">
   		</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="GetTransportationTimeRequest">
     <wsdl:part name="GetTransportationTimeRequest" type="xsd1:TransportationTimeRequestType"/>
@@ -49,36 +49,36 @@
   <wsdl:binding name="RepairTransportationServiceSOAPBinding" type="tns:RepairTransportationServicePortType">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="GetTransportationTime">
-      <soap:operation soapAction="http://www.example.org/RepairTransportationService/GetTransportationTime"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/RepairTransportationService/GetTransportationTime"/>
       <wsdl:input>
-        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+        <soap:body namespace="http://localhost:8080/SOAProject/services/RepairTransportationService/" use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+        <soap:body namespace="http://localhost:8080/SOAProject/services/RepairTransportationService/" use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetTransportationDistance">
-      <soap:operation soapAction="http://www.example.org/RepairTransportationService/GetTransportationDistance"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/RepairTransportationService/GetTransportationDistance"/>
       <wsdl:input>
-        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+        <soap:body namespace="http://localhost:8080/SOAProject/services/RepairTransportationService/" use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+        <soap:body namespace="http://localhost:8080/SOAProject/services/RepairTransportationService/" use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateDeliveryTime">
-      <soap:operation soapAction="http://www.example.org/RepairTransportationService/UpdateDeliveryTime"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/RepairTransportationService/UpdateDeliveryTime"/>
       <wsdl:input>
-        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+        <soap:body namespace="http://localhost:8080/SOAProject/services/RepairTransportationService/" use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body namespace="http://www.example.org/RepairTransportationService/" use="literal"/>
+        <soap:body namespace="http://localhost:8080/SOAProject/services/RepairTransportationService/" use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="RepairTransportationServicePort">
     <wsdl:port binding="tns:RepairTransportationServiceSOAPBinding" name="RepairTransportationServiceSOAP">
-      <soap:address location="http://www.example.org/RepairTransportationService"/>
+      <soap:address location="http://localhost:8080/SOAProject/services/RepairTransportationService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

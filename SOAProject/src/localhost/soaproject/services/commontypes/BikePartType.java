@@ -423,7 +423,7 @@
                             if (!"BikePartType".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (BikePartType)localhost.soaproject.services.bikeinspectionservice.ExtensionMapper.getTypeObject(
+                                return (BikePartType)localhost.soaproject.services.costcalculationservice.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         

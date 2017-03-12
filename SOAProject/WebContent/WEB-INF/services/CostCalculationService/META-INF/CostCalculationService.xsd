@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/CostCalculationService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/CostCalculationService">
-    <import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://localhost:8080/SOAProject/services/CommonTypes" xmlns:tns="http://localhost:8080/SOAProject/services/CostCalculationService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://localhost:8080/SOAProject/services/CostCalculationService">
+    <import namespace="http://localhost:8080/SOAProject/services/CommonTypes" schemaLocation="CommonTypes.xsd"/>
     <complexType name="GetRepairCostType">
         <sequence>
             <element name="RepairID" type="common:RepairIDType"/>

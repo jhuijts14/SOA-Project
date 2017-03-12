@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="CostCalculationService" targetNamespace="http://www.example.org/CostCalculationService/" xmlns:xsd1="http://www.example.org/CostCalculationService" xmlns:xsd2="http://www.example.org/CommonTypes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/CostCalculationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="CostCalculationService" targetNamespace="http://localhost:8080/SOAProject/services/CostCalculationService/" xmlns:xsd1="http://localhost:8080/SOAProject/services/CostCalculationService" xmlns:xsd2="http://localhost:8080/SOAProject/services/CommonTypes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8080/SOAProject/services/CostCalculationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  		<xsd:import namespace="http://www.example.org/CostCalculationService" schemaLocation="CostCalculationService.xsd">
+  		<xsd:import namespace="http://localhost:8080/SOAProject/services/CostCalculationService" schemaLocation="CostCalculationService.xsd">
   		</xsd:import>
-  		<xsd:import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd">
-  		</xsd:import>
-  		</xsd:schema>
+  		<xsd:import namespace="http://localhost:8080/SOAProject/services/CommonTypes" schemaLocation="CommonTypes.xsd">
+  		</xsd:import></xsd:schema>
   </wsdl:types>
+  <wsdl:message name="CalculateRepairCostRequest">
+    <wsdl:part name="CalculateRepairCostRequest" type="xsd1:GetRepairCostType">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="CalculateRepairCostResponse">
     <wsdl:part name="CalculateRepairCostResponse" type="xsd1:RepairCostResponseType">
     </wsdl:part>
@@ -18,10 +21,6 @@
   </wsdl:message>
   <wsdl:message name="CalculateTransportCostRequest">
     <wsdl:part name="CalculateTransportCostRequest" type="xsd1:GetTransportationCostType">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="CalculateRepairCostRequest">
-    <wsdl:part name="CalculateRepairCostRequest" type="xsd1:GetRepairCostType">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="CostCalculationServicePortType">
@@ -43,25 +42,25 @@
     <wsdl:operation name="CalculateTransportCost">
       <soap:operation soapAction="http://www.example.org/CostCalculationService/CalculateTransportCost"/>
       <wsdl:input>
-        <soap:body use="literal" namespace="http://www.example.org/CostCalculationService/"/>
+        <soap:body use="literal" namespace="http://localhost:8080/SOAProject/services/CostCalculationService/"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" namespace="http://www.example.org/CostCalculationService/"/>
+        <soap:body use="literal" namespace="http://localhost:8080/SOAProject/services/CostCalculationService/"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CalculateRepairCost">
-      <soap:operation soapAction="http://www.example.org/CostCalculationService/CalculateRepairCost"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/CostCalculationService/CalculateRepairCost"/>
       <wsdl:input>
-        <soap:body use="literal" namespace="http://www.example.org/CostCalculationService/"/>
+        <soap:body use="literal" namespace="http://localhost:8080/SOAProject/services/CostCalculationService/"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" namespace="http://www.example.org/CostCalculationService/"/>
+        <soap:body use="literal" namespace="http://localhost:8080/SOAProject/services/CostCalculationService/"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CostCalculationService">
     <wsdl:port name="CostCalculationServiceSOAP" binding="tns:CostCalculationServiceSOAPBinding">
-      <soap:address location="http://www.example.org/CostCalculationService"/>
+      <soap:address location="http://localhost:8080/SOAProject/services/CostCalculationService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

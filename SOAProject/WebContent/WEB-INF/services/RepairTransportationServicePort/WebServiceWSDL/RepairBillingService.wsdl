@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/RepairBillingService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RepairBillingService" targetNamespace="http://www.example.org/RepairBillingService/" xmlns:xsd1="http://www.example.org/RepairBillingService">
+<wsdl:definitions name="RepairBillingService" 
+targetNamespace="http://localhost:8080/SOAProject/services/RepairBillingService" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:tns="http://localhost:8080/SOAProject/services/RepairBillingService" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:xsd1="http://localhost:8080/SOAProject/services/RepairBillingService">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.example.org/RepairBillingService/">
+    <xsd:schema targetNamespace="http://localhost:8080/SOAProject/services/RepairBillingService/">
       <xsd:element name="CalculateTotalCost">
         <xsd:complexType>
           <xsd:sequence>
@@ -19,7 +25,7 @@
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     	<xsd:import
-    		namespace="http://www.example.org/RepairBillingService"
+    		namespace="http://localhost:8080/SOAProject/services/RepairBillingService"
     		schemaLocation="../WebServiceSchema/RepairBillingService.xsd">
     	</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="CalculateTotalCostRequest">
@@ -39,13 +45,13 @@
   <wsdl:binding name="RepairBillingServiceSOAPBinding" type="tns:RepairBillingServicePortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="CalculateTotalCost">
-      <soap:operation soapAction="http://www.example.org/RepairBillingService/CalculateTotalCost"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/RepairBillingService/CalculateTotalCost"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="SendBill">
-      <soap:operation soapAction="http://www.example.org/RepairBillingService/SendBill"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/RepairBillingService/SendBill"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -53,7 +59,7 @@
   </wsdl:binding>
   <wsdl:service name="RepairBillingServicePort">
     <wsdl:port binding="tns:RepairBillingServiceSOAPBinding" name="RepairBillingServiceSOAP">
-      <soap:address location="http://www.example.org/RepairBillingService"/>
+      <soap:address location="http://localhost:8080/SOAProject/services/RepairBillingService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
     <service name="RepairTransportationServicePort">
         <messageReceivers>
-            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.repairtransportationservice.RepairTransportationServicePortMessageReceiverInOut"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="localhost.soaproject.services.repairtransportationservice.RepairTransportationServicePortMessageReceiverInOut"/>
         </messageReceivers>
-        <parameter name="ServiceClass">org.example.www.repairtransportationservice.RepairTransportationServicePortSkeleton</parameter>
+        <parameter name="ServiceClass">localhost.soaproject.services.repairtransportationservice.RepairTransportationServicePortSkeleton</parameter>
         <parameter name="useOriginalwsdl">true</parameter>
         <parameter name="modifyUserWSDLPortAddress">true</parameter>
-        <operation name="GetTransportationTime" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/RepairTransportationService/">
-            <actionMapping>http://www.example.org/RepairTransportationService/GetTransportationTime</actionMapping>
-            <outputActionMapping>http://www.example.org/RepairTransportationService/RepairTransportationServicePortType/GetTransportationTimeResponse</outputActionMapping>
+        <operation name="UpdateDeliveryTime" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://localhost:8080/SOAProject/services//RepairTransportationService">
+            <actionMapping>http://localhost:8080/SOAProject/services/RepairTransportationService/UpdateDeliveryTime</actionMapping>
+            <outputActionMapping>http://localhost:8080/SOAProject/services//RepairTransportationService/RepairTransportationServicePortType/UpdateDeliveryTimeResponse</outputActionMapping>
         </operation>
-        <operation name="GetTransportationDistance" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/RepairTransportationService/">
-            <actionMapping>http://www.example.org/RepairTransportationService/GetTransportationDistance</actionMapping>
-            <outputActionMapping>http://www.example.org/RepairTransportationService/RepairTransportationServicePortType/GetTransportationDistanceResponse</outputActionMapping>
+        <operation name="GetTransportationDistance" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://localhost:8080/SOAProject/services//RepairTransportationService">
+            <actionMapping>http://localhost:8080/SOAProject/services/RepairTransportationService/GetTransportationDistance</actionMapping>
+            <outputActionMapping>http://localhost:8080/SOAProject/services//RepairTransportationService/RepairTransportationServicePortType/GetTransportationDistanceResponse</outputActionMapping>
         </operation>
-        <operation name="UpdateDeliveryTime" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/RepairTransportationService/">
-            <actionMapping>http://www.example.org/RepairTransportationService/UpdateDeliveryTime</actionMapping>
-            <outputActionMapping>http://www.example.org/RepairTransportationService/RepairTransportationServicePortType/UpdateDeliveryTimeResponse</outputActionMapping>
+        <operation name="GetTransportationTime" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://localhost:8080/SOAProject/services//RepairTransportationService">
+            <actionMapping>http://localhost:8080/SOAProject/services/RepairTransportationService/GetTransportationTime</actionMapping>
+            <outputActionMapping>http://localhost:8080/SOAProject/services//RepairTransportationService/RepairTransportationServicePortType/GetTransportationTimeResponse</outputActionMapping>
         </operation>
     </service>
 </serviceGroup>

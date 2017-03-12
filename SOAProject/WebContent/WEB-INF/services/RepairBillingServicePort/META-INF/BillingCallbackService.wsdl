@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="BillingCallbackService" targetNamespace="http://www.example.org/BillingCallbackService/" xmlns:xsd1="http://www.example.org/BillingCallbackService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="BillingCallbackService" targetNamespace="http://localhost:8080/SOAProject/services/BillingCallbackService/" xmlns:xsd1="http://localhost:8080/SOAProject/services/BillingCallbackService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8080/SOAProject/services/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.example.org/BillingCallbackService/">
+    <xsd:schema targetNamespace="http://localhost:8080/SOAProject/services/BillingCallbackService/">
       <xsd:element name="ConfirmBillSent">
         <xsd:complexType>
           <xsd:sequence>
@@ -18,15 +18,15 @@
       </xsd:element>
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    	<xsd:import namespace="http://www.example.org/BillingCallbackService" schemaLocation="BillingCallbackService.xsd">
+    	<xsd:import namespace="http://localhost:8080/SOAProject/services/BillingCallbackService" schemaLocation="BillingCallbackService.xsd">
     	</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="ConfirmBillSentRequest">
-    <wsdl:part name="ConfirmBillSent" element="tns:ConfirmBillSent">
+    <wsdl:part name="ConfirmBillSent" element="xsd1:BillSentConfirmation">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="ConfirmTotalCostRequest">
-    <wsdl:part name="ConfirmTotalCost" element="tns:ConfirmTotalCost">
+    <wsdl:part name="ConfirmTotalCost" element="xsd1:TotalCostConfirmation">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="BillingCallbackServicePortType">
@@ -42,13 +42,13 @@
   <wsdl:binding name="BillingCallbackServiceSOAPBinding" type="tns:BillingCallbackServicePortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="ConfirmBillSent">
-      <soap:operation soapAction="http://www.example.org/BillingCallbackService/ConfirmBillSent"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/BillingCallbackService/ConfirmBillSent"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="ConfirmTotalCost">
-      <soap:operation soapAction="http://www.example.org/BillingCallbackService/ConfirmTotalCost"/>
+      <soap:operation soapAction="http://localhost:8080/SOAProject/services/BillingCallbackService/ConfirmTotalCost"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -56,7 +56,7 @@
   </wsdl:binding>
   <wsdl:service name="BillingCallbackService">
     <wsdl:port name="BillingCallbackServiceSOAP" binding="tns:BillingCallbackServiceSOAPBinding">
-      <soap:address location="http://www.example.org/BillingCallbackService"/>
+      <soap:address location="http://localhost:8080/SOAProject/services/BillingCallbackService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

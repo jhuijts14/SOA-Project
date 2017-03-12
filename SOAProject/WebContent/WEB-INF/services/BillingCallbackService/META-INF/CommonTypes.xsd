@@ -1,65 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/CommonTypes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/CommonTypes">
-    <element name="Customer" type="tns:CustomerType"/>
-    <complexType name="CustomerType">
-        <sequence>
-            <element name="RepairID" type="tns:RepairIDType"/>
-            <element name="CustomerName" type="tns:CustomerNameType"/>
-            <element name="PhoneNumber" type="string"/>
-            <element name="Email" type="tns:EmailType"/>
-            <element name="BillingAddress" type="tns:AddressType"/>
-        </sequence>
-    </complexType>
-    <complexType name="AddressType">
-        <sequence>
-            <element name="Street" type="string"/>
-            <element name="HouseNumber" type="int"/>
-            <element maxOccurs="unbounded" name="City" type="string"/>
-            <element maxOccurs="unbounded" name="PostCode" type="string"/>
-        </sequence>
-    </complexType>
-    <simpleType name="RepairIDType">
-        <restriction base="string"/>
-    </simpleType>
-    <complexType name="CustomerNameType">
-        <sequence>
-            <element name="FirstName" type="string"/>
-            <element name="LastName" type="string"/>
-        </sequence>
-    </complexType>
-    <simpleType name="EmailType">
-        <restriction base="string"/>
-    </simpleType>
-    <simpleType name="ConfirmationType">
-        <restriction base="boolean"/>
-    </simpleType>
-    <element name="Cost" type="tns:CostType"/>
-    <simpleType name="CostType">
-        <restriction base="decimal"/>
-    </simpleType>
-    <element name="ApprovalResponse" type="tns:ApprovalResponseType"/>
-    <simpleType name="ApprovalResponseType">
-        <restriction base="string">
-            <enumeration value="Approved"/>
-            <enumeration value="Cancelled"/>
-        </restriction>
-    </simpleType>
-    <element name="TransportationDistance" type="tns:TransportationDistanceType"/>
-    <simpleType name="TransportationDistanceType">
-        <restriction base="decimal"/>
-    </simpleType>
-    <simpleType name="RepairTimeType">
-        <restriction base="int"/>
-    </simpleType>
-    <simpleType name="RepairsDesiredType">
-        <restriction base="string"/>
-    </simpleType>
-    <complexType name="BikePartType">
-        <sequence>
-            <element name="Name" type="string"/>
-            <element name="Price" type="tns:PriceType"/>
-        </sequence>
-    </complexType>
-    <simpleType name="PriceType">
-        <restriction base="decimal"/>
-    </simpleType>
-</schema>
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost:8080/SOAProject/services/CommonTypes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://localhost:8080/SOAProject/services/CommonTypes">
+    <xsd:element name="Customer" type="tns:CustomerType"/>
+    <xsd:complexType name="CustomerType">
+        <xsd:sequence>
+            <xsd:element name="RepairID" type="tns:RepairIDType"/>
+            <xsd:element name="CustomerName" type="tns:CustomerNameType"/>
+            <xsd:element name="PhoneNumber" type="xsd:string"/>
+            <xsd:element name="Email" type="tns:EmailType"/>
+            <xsd:element name="BillingAddress" type="tns:AddressType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AddressType">
+        <xsd:sequence>
+            <xsd:element name="Street" type="xsd:string"/>
+            <xsd:element name="HouseNumber" type="xsd:int"/>
+            <xsd:element maxOccurs="unbounded" name="City" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" name="PostCode" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="RepairIDType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="CustomerNameType">
+        <xsd:sequence>
+            <xsd:element name="FirstName" type="xsd:string"/>
+            <xsd:element name="LastName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="EmailType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="ConfirmationType">
+        <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+    <xsd:element name="Cost" type="tns:CostType"/>
+    <xsd:simpleType name="CostType">
+        <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+    <xsd:element name="ApprovalResponse" type="tns:ApprovalResponseType"/>
+    <xsd:simpleType name="ApprovalResponseType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Approved"/>
+            <xsd:enumeration value="Cancelled"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:element name="TransportationDistance" type="tns:TransportationDistanceType"/>
+    <xsd:simpleType name="TransportationDistanceType">
+        <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="RepairTimeType">
+        <xsd:restriction base="xsd:int"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="RepairsDesiredType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:complexType name="BikePartType">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="Price" type="tns:PriceType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="PriceType">
+        <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+</xsd:schema>

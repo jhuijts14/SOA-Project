@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
-    <service name="BikeInspectionService">
+    <service name="RepairBillingServicePort">
         <messageReceivers>
-            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="localhost.soaproject.services.bikeinspectionservice.BikeInspectionServiceMessageReceiverInOut"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="localhost.soaproject.services.repairbillingservice.RepairBillingServicePortMessageReceiverInOnly"/>
         </messageReceivers>
-        <parameter name="ServiceClass">localhost.soaproject.services.bikeinspectionservice.BikeInspectionServiceSkeleton</parameter>
+        <parameter name="ServiceClass">localhost.soaproject.services.repairbillingservice.RepairBillingServicePortSkeleton</parameter>
         <parameter name="useOriginalwsdl">true</parameter>
         <parameter name="modifyUserWSDLPortAddress">true</parameter>
-        <operation name="InspectBike" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://localhost:8080/SOAProject/services/BikeInspectionService/">
-            <actionMapping>http://localhost:8080/SOAProject/services/BikeInspectionService/InspectBike</actionMapping>
-            <outputActionMapping>http://localhost:8080/SOAProject/services/BikeInspectionService/BikeInspectionServicePortType/InspectBikeResponse</outputActionMapping>
+        <operation name="SendBill" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://localhost:8080/SOAProject/services/RepairBillingService">
+            <actionMapping>http://localhost:8080/SOAProject/services/RepairBillingService/SendBill</actionMapping>
+        </operation>
+        <operation name="CalculateTotalCost" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://localhost:8080/SOAProject/services/RepairBillingService">
+            <actionMapping>http://localhost:8080/SOAProject/services/RepairBillingService/CalculateTotalCost</actionMapping>
         </operation>
     </service>
 </serviceGroup>

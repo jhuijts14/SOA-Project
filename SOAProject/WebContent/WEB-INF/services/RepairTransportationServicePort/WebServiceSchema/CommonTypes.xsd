@@ -1,98 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CommonTypes" xmlns:tns="http://www.example.org/CommonTypes" elementFormDefault="qualified">
-	<element name="Customer" type="tns:CustomerType"></element>
-	<complexType name="CustomerType">
-		<sequence>
-			<element name="RepairID" type="tns:RepairIDType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="CustomerName" type="tns:CustomerNameType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="PhoneNumber" type="string" maxOccurs="1"
-				minOccurs="1"></element>
-			<element name="Email" type="tns:EmailType" maxOccurs="1"
-				minOccurs="1"></element>
-			<element name="BillingAddress" type="tns:AddressType" maxOccurs="1"
-				minOccurs="1"></element>
-		</sequence>
-	</complexType>
+<xsd:schema targetNamespace="http://localhost:8080/SOAProject/services/CommonTypes" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost:8080/SOAProject/services/CommonTypes">
+	<xsd:element name="Customer" type="tns:CustomerType"></xsd:element>
+	<xsd:complexType name="CustomerType">
+		<xsd:sequence>
+			<xsd:element name="RepairID" type="tns:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="CustomerName" type="tns:CustomerNameType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="PhoneNumber" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="Email" type="tns:EmailType" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="BillingAddress" type="tns:AddressType" maxOccurs="1" minOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-	<complexType name="AddressType">
-		<sequence>
-			<element name="Street" type="string"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="HouseNumber" type="int"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="City" type="string" maxOccurs="unbounded"
-				minOccurs="1"></element>
-			<element name="PostCode" type="string" maxOccurs="unbounded"
-				minOccurs="1"></element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element name="Street" type="xsd:string" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="HouseNumber" type="xsd:int" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="City" type="xsd:string" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+			<xsd:element name="PostCode" type="xsd:string" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 
-	<simpleType name="RepairIDType">
-		<restriction base="string"></restriction> 
-	</simpleType>
+	<xsd:simpleType name="RepairIDType">
+		<xsd:restriction base="xsd:string"></xsd:restriction> 
+	</xsd:simpleType>
 	
-	<complexType name="CustomerNameType">
-		<sequence>
-			<element name="FirstName" type="string" maxOccurs="1" minOccurs="1"></element>
-			<element name="LastName" type="string" maxOccurs="1" minOccurs="1"></element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="CustomerNameType">
+		<xsd:sequence>
+			<xsd:element name="FirstName" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="LastName" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-	<simpleType name="EmailType">
-		<restriction base="string"></restriction>
-	</simpleType>
+	<xsd:simpleType name="EmailType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
 	
-	<simpleType name="ConfirmationType">
-		<restriction base="boolean"></restriction>
-	</simpleType>
+	<xsd:simpleType name="ConfirmationType">
+		<xsd:restriction base="xsd:boolean"></xsd:restriction>
+	</xsd:simpleType>
 
-	<element name="Cost" type="tns:CostType"></element>
+	<xsd:element name="Cost" type="tns:CostType"></xsd:element>
 	
-	<simpleType name="CostType">
-		<restriction base="decimal"></restriction>
-	</simpleType>
+	<xsd:simpleType name="CostType">
+		<xsd:restriction base="xsd:decimal"></xsd:restriction>
+	</xsd:simpleType>
 	
-	<element name="ApprovalResponse" type="tns:ApprovalResponseType"></element>
+	<xsd:element name="ApprovalResponse" type="tns:ApprovalResponseType"></xsd:element>
 
-	<simpleType name="ApprovalResponseType">
-		<restriction base="string">
-			<enumeration value="Approved"></enumeration>
-			<enumeration value="Cancelled"></enumeration>
-		</restriction>
-	</simpleType>
+	<xsd:simpleType name="ApprovalResponseType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Approved"></xsd:enumeration>
+			<xsd:enumeration value="Cancelled"></xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
 	
-	<element name="TransportationDistance" type="tns:TransportationDistanceType"></element>
+	<xsd:element name="TransportationDistance" type="tns:TransportationDistanceType"></xsd:element>
 	
-	<simpleType name="TransportationDistanceType">
-		<restriction base="decimal"></restriction>
-	</simpleType>
+	<xsd:simpleType name="TransportationDistanceType">
+		<xsd:restriction base="xsd:decimal"></xsd:restriction>
+	</xsd:simpleType>
 	
-	<simpleType name="RepairTimeType">
-		<restriction base="int"></restriction>
-	</simpleType>
+	<xsd:simpleType name="RepairTimeType">
+		<xsd:restriction base="xsd:int"></xsd:restriction>
+	</xsd:simpleType>
 	
-	<simpleType name="RepairsDesiredType">
-		<restriction base="string"></restriction>
-	</simpleType>
+	<xsd:simpleType name="RepairsDesiredType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
 
-<complexType name="BikePartType">
-	<sequence>
-		<element name="Name" type="string"
-			maxOccurs="1" minOccurs="1">
-		</element>
-		<element name="Price" type="tns:Price"
-			maxOccurs="1" minOccurs="1">
-		</element>
-	</sequence>
-</complexType>
+<xsd:complexType name="BikePartType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+		<xsd:element name="Price" type="tns:PriceType" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
 
-<simpleType name="Price">
-	<restriction base="decimal"></restriction>
-</simpleType>
-</schema>
+<xsd:simpleType name="PriceType">
+	<xsd:restriction base="xsd:decimal"></xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>

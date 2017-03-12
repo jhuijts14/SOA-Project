@@ -1,86 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://www.example.org/RepairTransportationService" 
-xmlns:tns="http://www.example.org/RepairTransportationService" 
-xmlns:common="http://www.example.org/CommonTypes"
-elementFormDefault="qualified">
+<xsd:schema targetNamespace="http://localhost:8080/SOAProject/services/RepairTransportationService" 
+elementFormDefault="qualified" 
+xmlns:common="http://localhost:8080/SOAProject/services/CommonTypes" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://localhost:8080/SOAProject/services/RepairTransportationService">
 
-	<import schemaLocation="CommonTypes.xsd" namespace="http://www.example.org/CommonTypes" />
+	<xsd:import schemaLocation="CommonTypes.xsd" namespace="http://localhost:8080/SOAProject/services/CommonTypes" />
 
-	<complexType name="TransportationTimeRequestType">
-		<sequence>
-			<element name="Repair" type="common:RepairIDType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="Address" type="common:AddressType" 
-				maxOccurs="1" minOccurs="1">
-			</element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="TransportationTimeRequestType">
+		<xsd:sequence>
+			<xsd:element name="Repair" type="common:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="Address" type="common:AddressType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-		<complexType name="TransportationDistanceRequestType">
-		<sequence>
-			<element name="Repair" type="common:RepairIDType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="Address" type="common:AddressType" 
-				maxOccurs="1" minOccurs="1">
-			</element>
-		</sequence>
-	</complexType>
+		<xsd:complexType name="TransportationDistanceRequestType">
+		<xsd:sequence>
+			<xsd:element name="Repair" type="common:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="Address" type="common:AddressType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 
-	<complexType name="TimeResponseType">
-		<sequence>
-			<element name="Repair" type="common:RepairIDType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="TransportationTime" type="tns:TransportationTimeType" 
-				maxOccurs="1" minOccurs="1">
-			</element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="TimeResponseType">
+		<xsd:sequence>
+			<xsd:element name="Repair" type="common:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="TransportationTime" type="tns:TransportationTimeType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-	<simpleType name="TransportationTimeType">
-		<restriction base="dateTime"></restriction> 
-	</simpleType>
+	<xsd:simpleType name="TransportationTimeType">
+		<xsd:restriction base="xsd:dateTime"></xsd:restriction> 
+	</xsd:simpleType>
 	
-	<complexType name="DistanceResponseType">
-		<sequence>
-			<element name="Repair" type="common:RepairIDType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="TransportationDistance" type="common:TransportationDistanceType" 
-				maxOccurs="1" minOccurs="1">
-			</element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="DistanceResponseType">
+		<xsd:sequence>
+			<xsd:element name="Repair" type="common:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="TransportationDistance" type="common:TransportationDistanceType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-	<complexType name="UpdatedDeliveryTimeType">
-		<sequence>
-				<element name="RepairID" type="common:RepairIDType" 
-					minOccurs="1"  maxOccurs="1">
-				</element>
-				<element name="DeliveryTime" type="tns:TransportationTimeType" 
-					minOccurs="1"  maxOccurs="1">
-				</element>
-				<element name="RepairTime" type="common:RepairTimeType" 
-					minOccurs="1"  maxOccurs="1">
-				</element>
-				<element name="ApprovalResponse" type="common:ApprovalResponseType" 
-					minOccurs="1"  maxOccurs="1">
-				</element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="UpdatedDeliveryTimeType">
+		<xsd:sequence>
+				<xsd:element name="RepairID" type="common:RepairIDType" minOccurs="1" maxOccurs="1">
+				</xsd:element>
+				<xsd:element name="DeliveryTime" type="tns:TransportationTimeType" minOccurs="1" maxOccurs="1">
+				</xsd:element>
+				<xsd:element name="RepairTime" type="common:RepairTimeType" minOccurs="1" maxOccurs="1">
+				</xsd:element>
+				<xsd:element name="ApprovalResponse" type="common:ApprovalResponseType" minOccurs="1" maxOccurs="1">
+				</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-	<complexType name="UpdatedDeliveryTimeResponseType">
-		<sequence>
-			<element name="Repair" type="common:RepairIDType"
-				maxOccurs="1" minOccurs="1">
-			</element>
-			<element name="UpdatedDeliveryTime" type="tns:TransportationTimeType" 
-				maxOccurs="1" minOccurs="1">
-			</element>
-		</sequence>
-	</complexType>
+	<xsd:complexType name="UpdatedDeliveryTimeResponseType">
+		<xsd:sequence>
+			<xsd:element name="Repair" type="common:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="UpdatedDeliveryTime" type="tns:TransportationTimeType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	
-</schema>
+</xsd:schema>
