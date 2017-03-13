@@ -94,6 +94,8 @@ import localhost.soaproject.services.commontypes.*;
                      RepairIDType repairID = bill1.getBill().getCustomerInformation().getRepairID();
                      // Create boolean that confirms total cost has been calculated and billing process is initiated;
                      boolean confirmation = true;
+                     
+                     
                 
         }
      

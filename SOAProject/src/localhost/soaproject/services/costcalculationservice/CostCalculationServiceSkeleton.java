@@ -72,7 +72,7 @@ import localhost.soaproject.services.commontypes.*;
                               
                               // Create a BigDecimal object to store the repair cost.
                               CostType BigDecRepCost = new CostType();
-                              BigDecRepCost.setCostType(new BigDecimal(repairCost).round(new MathContext(2, RoundingMode.CEILING)));
+                              BigDecRepCost.setCostType((new BigDecimal(repairCost)).setScale(2, RoundingMode.HALF_EVEN));
                               
                               // Create the repair cost response to be sent back;
                               RepairCostResponseType repCostResponse = new RepairCostResponseType();
