@@ -7,6 +7,16 @@
  */
     package localhost.soaproject.services.repairbillingservice;
 
+import java.rmi.RemoteException;
+
+import org.apache.axis2.AxisFault;
+
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.BillSentConfirmation;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.BillSentConfirmationType;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.ConfirmTotalCost;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.CostConfirmationType;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.TotalCostConfirmation;
 import localhost.soaproject.services.commontypes.*;
 
 /**
@@ -22,24 +32,39 @@ import localhost.soaproject.services.commontypes.*;
          * 
                                      * @param deliveryConfirmation0 
              * @return  
+         * @throws RemoteException 
          */
         
                  public void sendBill
                   (
                   localhost.soaproject.services.repairbillingservice.DeliveryConfirmation deliveryConfirmation0
-                  )
+                  ) throws RemoteException
             {
                 //TODO : fill this with the necessary business logic
                 	 
                 	 // Retrieve the associated repairID and confirmation;
                      //Define local variables for the confirmation message and its associated repair ID;
-                     RepairIDType repairID = new RepairIDType();
-                     ConfirmationType confirmDelComplete = new ConfirmationType();
+                	// Retrieve the appropriate Repair ID;
+                     String repairID = deliveryConfirmation0.getDeliveryConfirmation().getRepairID().getRepairIDType();
+                     localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.RepairIDType stubRepairID = new localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.RepairIDType();
+                     stubRepairID.setRepairIDType(repairID);
+                     
+                     //Retrieve confirmation, repair ID from message;
+                     localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.ConfirmationType confirmType = new localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.ConfirmationType();
+                     confirmType.setConfirmationType(deliveryConfirmation0.getDeliveryConfirmation().getDeliveryConfirmation().getConfirmationType());
                           
-                      //Retrieve confirmation, repair ID from message;
-                     confirmDelComplete.setConfirmationType(deliveryConfirmation0.getDeliveryConfirmation().getDeliveryConfirmation().getConfirmationType());
-                     repairID.setRepairIDType(deliveryConfirmation0.getDeliveryConfirmation().getRepairID().getRepairIDType());
-                          
+                     // Create Confirm Cost Type message to be sent to the callback service:
+                     localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.BillSentConfirmationType confirmSentType = new BillSentConfirmationType();
+                     confirmSentType.setRepairID(stubRepairID);
+                     confirmSentType.setConfirmation(confirmType);
+                     
+                     // Create the Total Cost Confirmation object to be sent to the callback service;
+                     BillSentConfirmation stubBillSentConfirm = new BillSentConfirmation();
+                     stubBillSentConfirm.setBillSentConfirmation(confirmSentType);
+                     
+                     BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub();
+                     billCallSerStub.confirmBillSent(stubBillSentConfirm);
+                     
                           // Simulate sending the bill by printing the following;
                           System.out.println("===============================================================");
                           System.out.println("Customer Details:");
@@ -57,12 +82,13 @@ import localhost.soaproject.services.commontypes.*;
          * 
                                      * @param bill1 
              * @return  
+         * @throws RemoteException 
          */
         
                  public void calculateTotalCost
                   (
                   localhost.soaproject.services.repairbillingservice.Bill bill1
-                  )
+                  ) throws RemoteException
             {
                 //TODO : fill this with the necessary business logic
                 	 
@@ -86,15 +112,35 @@ import localhost.soaproject.services.commontypes.*;
                         totalCost += repairCost;
                      }
                      
+                     // Print total cost on system to see if cost is calculated;
+                     System.out.println("The total cost of the repair service is: " + totalCost + " $");
+                     
                      // Retrieve the information needed for the bill to be stored by the billing department;
                      bill = bill1;
                      
                      // Invoke the Confirm Total Cost operation for the Billing services callback service;
                      // Retrieve the appropriate Repair ID;
-                     RepairIDType repairID = bill1.getBill().getCustomerInformation().getRepairID();
+                     String repairID = bill1.getBill().getCustomerInformation().getRepairID().getRepairIDType();
+                     localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.RepairIDType stubRepairID = new localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.RepairIDType();
+                     stubRepairID.setRepairIDType(repairID);
+                     
                      // Create boolean that confirms total cost has been calculated and billing process is initiated;
                      boolean confirmation = true;
+                     localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.ConfirmationType confirmType = new localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.ConfirmationType();
+                     confirmType.setConfirmationType(confirmation);
                      
+                     
+                     // Create Confirm Cost Type message to be sent to the callback service:
+                     localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.CostConfirmationType confirmCostType = new CostConfirmationType();
+                     confirmCostType.setRepairID(stubRepairID);
+                     confirmCostType.setConfirmation(confirmType);
+                     
+                     // Create the Total Cost Confirmation object to be sent to the callback service;
+                     TotalCostConfirmation stubTotCostConfirm = new TotalCostConfirmation();
+                     stubTotCostConfirm.setTotalCostConfirmation(confirmCostType);
+                     
+                     BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub();
+                     billCallSerStub.confirmTotalCost(stubTotCostConfirm);
                      
                 
         }
