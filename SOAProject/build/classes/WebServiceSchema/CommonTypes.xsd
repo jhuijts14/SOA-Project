@@ -19,8 +19,8 @@
 			</xsd:element>
 			<xsd:element name="HouseNumber" type="xsd:int" maxOccurs="1" minOccurs="1">
 			</xsd:element>
-			<xsd:element name="City" type="xsd:string" maxOccurs="unbounded" minOccurs="1"></xsd:element>
-			<xsd:element name="PostCode" type="xsd:string" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+			<xsd:element name="City" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="PostCode" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 
