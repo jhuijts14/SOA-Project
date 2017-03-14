@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:common="http://localhost:8080/SOAProject/services/CommonTypes" xmlns:tns="http://localhost:8080/SOAProject/services/RepairTransportationService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://localhost:8080/SOAProject/services/RepairTransportationService">
+    <xsd:import namespace="http://localhost:8080/SOAProject/services/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <xsd:complexType name="TransportationTimeRequestType">
+        <xsd:sequence>
+            <xsd:element name="Repair" type="common:RepairIDType"/>
+            <xsd:element name="Address" type="common:AddressType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TransportationDistanceRequestType">
+        <xsd:sequence>
+            <xsd:element name="Repair" type="common:RepairIDType"/>
+            <xsd:element name="Address" type="common:AddressType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TimeResponseType">
+        <xsd:sequence>
+            <xsd:element name="Repair" type="common:RepairIDType"/>
+            <xsd:element name="TransportationTime" type="tns:TransportationTimeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="TransportationTimeType">
+        <xsd:restriction base="xsd:dateTime"/>
+    </xsd:simpleType>
+    <xsd:complexType name="DistanceResponseType">
+        <xsd:sequence>
+            <xsd:element name="Repair" type="common:RepairIDType"/>
+            <xsd:element name="TransportationDistance" type="common:TransportationDistanceType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="UpdatedDeliveryTimeType">
+        <xsd:sequence>
+            <xsd:element name="RepairID" type="common:RepairIDType"/>
+            <xsd:element name="DeliveryTime" type="tns:TransportationTimeType"/>
+            <xsd:element name="RepairTime" type="common:RepairTimeType"/>
+            <xsd:element name="ApprovalResponse" type="common:ApprovalResponseType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="UpdatedDeliveryTimeResponseType">
+        <xsd:sequence>
+            <xsd:element name="Repair" type="common:RepairIDType"/>
+            <xsd:element name="UpdatedDeliveryTime" type="tns:TransportationTimeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

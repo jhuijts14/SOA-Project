@@ -1,6 +1,6 @@
 
 /**
- * RepairTransportationServicePortMessageReceiverInOut.java
+ * RepairTransportationServiceMessageReceiverInOut.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT)
@@ -8,10 +8,10 @@
         package localhost.soaproject.services.repairtransportationservice;
 
         /**
-        *  RepairTransportationServicePortMessageReceiverInOut message receiver
+        *  RepairTransportationServiceMessageReceiverInOut message receiver
         */
 
-        public class RepairTransportationServicePortMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver{
+        public class RepairTransportationServiceMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver{
 
 
         public void invokeBusinessLogic(org.apache.axis2.context.MessageContext msgContext, org.apache.axis2.context.MessageContext newMsgContext)
@@ -22,7 +22,7 @@
         // get the implementation class for the Web Service
         Object obj = getTheImplementationObject(msgContext);
 
-        RepairTransportationServicePortSkeletonInterface skel = (RepairTransportationServicePortSkeletonInterface)obj;
+        RepairTransportationServiceSkeletonInterface skel = (RepairTransportationServiceSkeletonInterface)obj;
         //Out Envelop
         org.apache.axiom.soap.SOAPEnvelope envelope = null;
         //Find the axisOperation that has been set by the Dispatch phase.

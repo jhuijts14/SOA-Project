@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://localhost:8080/SOAProject/services/BikeInspectionService" 
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://localhost:8080/SOAProject/services/BikeInspectionService" 
+	xmlns:common="http://localhost:8080/SOAProject/services/CommonTypes">
+
+	<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://localhost:8080/SOAProject/services/CommonTypes"/>
+           
+    <complexType name="InspectionResultsType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType" 
+				minOccurs="1"  maxOccurs="1">
+			</element>
+			<element name="RepairTime" type="common:RepairTimeType" 
+				minOccurs="1"  maxOccurs="1">
+			</element>
+			<element name="NumberOfParts" type="int" 
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="BikePart" type="common:BikePartType" 
+				minOccurs="0"  maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionRequestType">
+		<sequence>
+			<element name="RepairID" type="common:RepairIDType" 
+				minOccurs="1"  maxOccurs="1">
+			</element>
+			<element name="RepairsDesired" type="common:RepairsDesiredType" 
+				minOccurs="1"  maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+	
+ </schema>

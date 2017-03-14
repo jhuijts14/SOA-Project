@@ -1,15 +1,15 @@
 
 /**
- * RepairTransportationServicePortSkeletonInterface.java
+ * RepairTransportationServiceSkeletonInterface.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT)
  */
     package localhost.soaproject.services.repairtransportationservice;
     /**
-     *  RepairTransportationServicePortSkeletonInterface java skeleton interface for the axisService
+     *  RepairTransportationServiceSkeletonInterface java skeleton interface for the axisService
      */
-    public interface RepairTransportationServicePortSkeletonInterface {
+    public interface RepairTransportationServiceSkeletonInterface {
      
          
         /**
