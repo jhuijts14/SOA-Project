@@ -57,7 +57,7 @@ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
       </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="RepairBillingServicePort">
+  <wsdl:service name="RepairBillingService">
     <wsdl:port binding="tns:RepairBillingServiceSOAPBinding" name="RepairBillingServiceSOAP">
       <soap:address location="http://localhost:8080/SOAProject/services/RepairBillingService"/>
     </wsdl:port>
