@@ -27,6 +27,9 @@
                       // TODO : Fill in the deliveryConfirmation4 here
                   
 
+          // Generate variables to be stored in the confirmation;
+          DeliveryConfirmationType delivConfirmation = new DeliveryConfirmationType();
+          deliveryConfirmation4.setDeliveryConfirmation(param);
                   //There is no output to be tested!
                   stub.sendBill(
                   deliveryConfirmation4);
