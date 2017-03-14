@@ -5,6 +5,10 @@ package localhost.soaproject.services.repairbillingservice;
 
 import org.apache.axis2.AxisFault;
 
+import localhost.soaproject.services.commontypes.ApprovalResponse;
+import localhost.soaproject.services.commontypes.CostType;
+import localhost.soaproject.services.repairbillingservice.RepairBillingServicePortStub.*;
+
 /**
  * @author Joep Huijts and Derrik Simmons
  *
@@ -22,6 +26,11 @@ public class TestRBS {
 		String approval = "Approved", repairID  = "1'", fName = "Joep", lName = "H", billStr = "Cals", 
 				billHoNu = "60", billPoCo = "1223", billCi = "Enschede", email = "1@g.com", phone = "1234";
 		double pickUpCost = 10, repairCost = 10, delivCost = 10;
+		BillType testBillType = new BillType();
+		ApprovalResponse Approval = new ApprovalResponse();
+		CostType pUCostType = new CostType();
+		CostType repCostType = new CostType();
+		CostType DeliveryCostType = new CostType();
 		
 		//
 		
