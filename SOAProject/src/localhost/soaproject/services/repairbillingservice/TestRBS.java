@@ -19,10 +19,11 @@ public class TestRBS {
 		// TODO Auto-generated method stub
 
 		// All the local variables for  information given for a bill;
-		String approval = , repairID, fName, lName, billStr, billHoNu, billPoCo, billCi;
-		double pickUpCost, repairCost, delivCost;
+		String approval = "Approved", repairID  = "1'", fName = "Joep", lName = "H", billStr = "Cals", 
+				billHoNu = "60", billPoCo = "1223", billCi = "Enschede", email = "1@g.com", phone = "1234";
+		double pickUpCost = 10, repairCost = 10, delivCost = 10;
 		
-		
+		//
 		
 		
 		RepairBillingServicePortStub repBillServStub = new RepairBillingServicePortStub();
