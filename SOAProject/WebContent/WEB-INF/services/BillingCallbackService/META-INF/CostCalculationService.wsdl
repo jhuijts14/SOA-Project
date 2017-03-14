@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="CostCalculationService" targetNamespace="http://www.example.org/CostCalculationService/" xmlns:xsd1="http://www.example.org/CostCalculationService" xmlns:xsd2="http://www.example.org/CommonTypes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/CostCalculationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="CostCalculationService" targetNamespace="http://localhost:8080/SOAProject/services/CostCalculationService" xmlns:xsd1="http://localhost:8080/SOAProject/services/CostCalculationService" xmlns:xsd2="http://localhost:8080/SOAProject/services/CommonTypes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8080/SOAProject/services/CostCalculationService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  		<xsd:import namespace="http://www.example.org/CostCalculationService" schemaLocation="CostCalculationService.xsd">
+  		<xsd:import namespace="http://localhost:8080/SOAProject/services/CommonTypes" schemaLocation="CommonTypes.xsd">
   		</xsd:import>
-  		<xsd:import namespace="http://www.example.org/CommonTypes" schemaLocation="CommonTypes.xsd">
-  		</xsd:import>
-  		</xsd:schema>
+  		<xsd:import
+  			namespace="http://localhost:8080/SOAProject/services/CostCalculationService"
+  			schemaLocation="CostCalculationService.xsd">
+  		</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="CalculateRepairCostResponse">
     <wsdl:part name="CalculateRepairCostResponse" type="xsd1:RepairCostResponseType">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="BillingCallbackService" targetNamespace="http://www.example.org/BillingCallbackService/" xmlns:xsd1="http://www.example.org/BillingCallbackService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="BillingCallbackService" targetNamespace="http://localhost:8080/SOAProject/services/BillingCallbackService/" xmlns:xsd1="http://localhost:8080/SOAProject/services/BillingCallbackService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8080/SOAProject/services/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.example.org/BillingCallbackService/">
       <xsd:element name="ConfirmBillSent">
@@ -18,7 +18,11 @@
       </xsd:element>
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    	<xsd:import namespace="http://www.example.org/BillingCallbackService" schemaLocation="BillingCallbackService.xsd">
+    	<xsd:import namespace="http://localhost:8080/SOAProject/services/BillingCallbackService" schemaLocation="BillingCallbackService.xsd">
+    	</xsd:import>
+    	<xsd:import
+    		namespace="http://localhost:8080/SOAProject/services/BillingCallbackService"
+    		schemaLocation="../../../../../src/WebServiceSchema/BillingCallbackService.xsd">
     	</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="ConfirmBillSentRequest">
