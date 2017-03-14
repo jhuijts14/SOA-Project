@@ -12,7 +12,6 @@ import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Scanner;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -28,6 +27,7 @@ import localhost.soaproject.services.commontypes.*;
          * 
                                      * @param updateDeliveryTime0 
              * @return updateDeliveryTimeResponse1 
+         * @throws ParseException 
          */
         
                  public localhost.soaproject.services.repairtransportationservice.UpdateDeliveryTimeResponse updateDeliveryTime
@@ -36,7 +36,40 @@ import localhost.soaproject.services.commontypes.*;
                   )
             {
                 //TODO : fill this with the necessary business logic
-                throw new  java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#updateDeliveryTime");
+                	 
+                //pull out the inputs from the request
+                RepairIDType repairID = updateDeliveryTime0.getUpdateDeliveryTimeRequest().getRepairID();
+                Calendar cal = Calendar.getInstance();
+                cal = updateDeliveryTime0.getUpdateDeliveryTimeRequest().getDeliveryTime().getTransportationTimeType();
+                int repairTime = updateDeliveryTime0.getUpdateDeliveryTimeRequest().getRepairTime().getRepairTimeType();
+           
+                
+                //Local Variable
+                TransportationTimeType transportationTimeType = new TransportationTimeType();
+                
+                //Add the repair time to the time to deliver
+                cal.add(Calendar.MINUTE, repairTime);
+                
+                //set transportationtimetype to new value
+                transportationTimeType.setTransportationTimeType(cal);
+                
+                
+                
+                UpdatedDeliveryTimeResponseType updatedDeliveryTimeResponseType = new UpdatedDeliveryTimeResponseType();
+                //Set return variables
+                updatedDeliveryTimeResponseType.setRepair(repairID);
+                updatedDeliveryTimeResponseType.setUpdatedDeliveryTime(transportationTimeType);
+                
+                //Call return
+                UpdateDeliveryTimeResponse updateDeliveryTimeResponse = new UpdateDeliveryTimeResponse();
+                updateDeliveryTimeResponse.setUpdateDeliveryTimeResponse(updatedDeliveryTimeResponseType);
+                
+                return updateDeliveryTimeResponse;
+                
+                
+                
+                
+                
         }
      
          
