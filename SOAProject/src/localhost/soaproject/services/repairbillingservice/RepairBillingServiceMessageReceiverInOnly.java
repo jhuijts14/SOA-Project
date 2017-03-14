@@ -1,7 +1,7 @@
 
 
 /**
- * RepairBillingServicePortMessageReceiverInOnly.java
+ * RepairBillingServiceMessageReceiverInOnly.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT)
@@ -9,10 +9,10 @@
         package localhost.soaproject.services.repairbillingservice;
 
         /**
-        *  RepairBillingServicePortMessageReceiverInOnly message receiver
+        *  RepairBillingServiceMessageReceiverInOnly message receiver
         */
 
-        public class RepairBillingServicePortMessageReceiverInOnly extends org.apache.axis2.receivers.AbstractInMessageReceiver{
+        public class RepairBillingServiceMessageReceiverInOnly extends org.apache.axis2.receivers.AbstractInMessageReceiver{
 
         public void invokeBusinessLogic(org.apache.axis2.context.MessageContext inMessage) throws org.apache.axis2.AxisFault{
 
@@ -21,7 +21,7 @@
         // get the implementation class for the Web Service
         Object obj = getTheImplementationObject(inMessage);
 
-        RepairBillingServicePortSkeletonInterface skel = (RepairBillingServicePortSkeletonInterface)obj;
+        RepairBillingServiceSkeletonInterface skel = (RepairBillingServiceSkeletonInterface)obj;
         //Out Envelop
         org.apache.axiom.soap.SOAPEnvelope envelope = null;
         //Find the axisOperation that has been set by the Dispatch phase.

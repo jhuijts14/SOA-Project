@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://localhost:8080/SOAProject/services/CommonTypes" xmlns:tns="http://localhost:8080/SOAProject/services/CostCalculationService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://localhost:8080/SOAProject/services/CostCalculationService">
+    <import namespace="http://localhost:8080/SOAProject/services/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <complexType name="GetRepairCostType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="RepairTime" type="common:RepairTimeType"/>
+            <element name="NumberOfParts" type="int"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="BikePart" type="common:BikePartType"/>
+        </sequence>
+    </complexType>
+    <complexType name="RepairCostResponseType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="RepairCost" type="common:CostType"/>
+        </sequence>
+    </complexType>
+    <complexType name="TransportationCostResponseType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="TransportationCost" type="common:CostType"/>
+        </sequence>
+    </complexType>
+    <complexType name="GetTransportationCostType">
+        <sequence>
+            <element name="RepairID" type="common:RepairIDType"/>
+            <element name="TransportationDistance" type="common:TransportationDistanceType"/>
+        </sequence>
+    </complexType>
+</schema>
