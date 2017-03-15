@@ -7,16 +7,14 @@
  */
     package localhost.soaproject.services.repairbillingservice;
     
+    import java.io.*;
+
     import java.rmi.RemoteException;
 
     import org.apache.axis2.AxisFault;
 
-    import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub;
-    import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.BillSentConfirmation;
-    import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.BillSentConfirmationType;
-    import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.ConfirmTotalCost;
-    import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.CostConfirmationType;
-    import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.TotalCostConfirmation;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub;
+import localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.*;
     import localhost.soaproject.services.commontypes.*;
     /**
      *  RepairBillingServiceSkeleton java skeleton for the axisService
@@ -63,6 +61,46 @@
                      BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub();
                      billCallSerStub.confirmBillSent(stubBillSentConfirm);
                      
+                     // The name of the file to open.
+                     String fileName = repairID + ".txt";
+
+                     // For Simulation: This will record the text file line and the repair ID and total cost;
+                     String line = null;
+                     String[] splitStr = new String[2];
+
+                     try {
+                         // FileReader reads text files in the default encoding.
+                         FileReader fileReader = 
+                             new FileReader(fileName);
+
+                         // Always wrap FileReader in BufferedReader.
+                         BufferedReader bufferedReader = 
+                             new BufferedReader(fileReader);
+
+                        // Read the line in the txt file;
+                        line = bufferedReader.readLine();
+
+                         // Always close files.
+                         bufferedReader.close();         
+                     }
+                     catch(FileNotFoundException ex) {
+                         System.out.println(
+                             "Unable to open file '" + 
+                             fileName + "'");                
+                     }
+                     catch(IOException ex) {
+                         System.out.println(
+                             "Error reading file '" 
+                             + fileName + "'");                  
+                         // Or we could just do this: 
+                         // ex.printStackTrace();
+                     }
+                     
+                     // If line is not null split the line into the repair ID and total Cost;
+                     if (line.length() != 0) {
+                    	 splitStr = line.split("\\s+");
+                     }
+                     
                           // Simulate sending the bill by printing the following;
                           System.out.println("===============================================================");
                           System.out.println("Customer Details:");
@@ -91,15 +129,18 @@
                 	// Define local variables for the 3 costs;
                      double pickUpCost, repairCost, deliveryCost;
                      
-                     // Define local variable for the approval response of the customer;
-                     String approvalResp;
+                     // Define local variable for the approval response and the repair ID of the customer;
+                     String approvalResp, repairIDs;
                      
                      //Retrieve all the information needed to calculate The Total Cost;
                      pickUpCost   = bill1.getBill().getPickUpCost().getCostType().doubleValue();
                      repairCost   = bill1.getBill().getRepairCost().getCostType().doubleValue();
                      deliveryCost = bill1.getBill().getDeliveryCost().getCostType().doubleValue();
                      
+                     
+                     // Retrieve the repair ID and approval response;
                      approvalResp = bill1.getBill().getApprovalResponse().getValue();
+                     repairIDs = bill1.getBill().getCustomerInformation().getRepairID().getRepairIDType();
                      
                      // Calculate the total cost (only include the repair cost if the repair was approved);
                      totalCost = pickUpCost + deliveryCost;
@@ -112,8 +153,37 @@
                      System.out.println("The total cost of the repair service is: " + totalCost + " $");
                      
                      // Retrieve the information needed for the bill to be stored by the billing department;
-                     bill = bill1;
+                     //bill = bill1;
                      
+                     // For Simulation: Create a string that stores total cost and repair ID;
+                     String repIDCosts = repairIDs + " " + totalCost;
+                     
+                     // The name of the file to open.
+                     String fileName = repairIDs + ".txt";
+
+                     try {
+                         // Assume default encoding.
+                         FileWriter fileWriter =
+                             new FileWriter(fileName);
+
+                         // Always wrap FileWriter in BufferedWriter.
+                         BufferedWriter bufferedWriter =
+                             new BufferedWriter(fileWriter);
+
+                         // Note that write() does not automatically
+                         // append a newline character.
+                         bufferedWriter.write(repIDCosts);
+
+                         // Always close files.
+                         bufferedWriter.close();
+                     }
+                     catch(IOException ex) {
+                         System.out.println(
+                             "Error writing to file '"
+                             + fileName + "'");
+                         // Or we could just do this:
+                         // ex.printStackTrace();
+                     }
                      // Invoke the Confirm Total Cost operation for the Billing services callback service;
                      // Retrieve the appropriate Repair ID;
                      String repairID = bill1.getBill().getCustomerInformation().getRepairID().getRepairIDType();

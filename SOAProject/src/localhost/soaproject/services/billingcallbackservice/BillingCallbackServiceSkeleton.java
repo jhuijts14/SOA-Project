@@ -36,7 +36,8 @@ import localhost.soaproject.services.commontypes.*;
                      //Retrieve confirmation, repair ID from message;
                      repairID.setRepairIDType(billSentConfirmation0.getBillSentConfirmation().getRepairID().getRepairIDType());
                      confirmBillSent.setConfirmationType(billSentConfirmation0.getBillSentConfirmation().getConfirmation().getConfirmationType());
-                     
+                    
+                     System.out.print("Bill was sent to customer!");
         }
      
          
@@ -61,6 +62,8 @@ import localhost.soaproject.services.commontypes.*;
                       //Retrieve confirmation, repair ID from message;
                       repairID.setRepairIDType(totalCostConfirmation1.getTotalCostConfirmation().getRepairID().getRepairIDType());
                       confirmDelivered.setConfirmationType(totalCostConfirmation1.getTotalCostConfirmation().getConfirmation().getConfirmationType());
+                      
+                      System.out.print("Total Cost on bill was calculated and the billing process has begun");
         }
      
     }
