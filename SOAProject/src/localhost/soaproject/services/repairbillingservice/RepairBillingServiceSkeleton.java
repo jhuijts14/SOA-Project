@@ -65,7 +65,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      String fileName = repairID + ".txt";
 
                      // For Simulation: This will record the text file line and the repair ID and total cost;
-                     String line = null;
+                     String line = null, repairIDStr, totCostStr;
                      String[] splitStr = new String[2];
 
                      try {
@@ -99,16 +99,17 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      // If line is not null split the line into the repair ID and total Cost;
                      if (line.length() != 0) {
                     	 splitStr = line.split("\\s+");
+                    	 repairIDStr = splitStr[0];
+                    	 totCostStr = splitStr[1];
+                    	 
+                    	// Simulate sending the bill by printing the following;
+                         System.out.println("===============================================================");
+                         System.out.println("Repair ID: " + repairIDStr);
+                         System.out.println("The total cost of the repair service is: $" + totCostStr);
+                         System.out.println("===============================================================");
                      }
                      
-                          // Simulate sending the bill by printing the following;
-                          System.out.println("===============================================================");
-                          System.out.println("Customer Details:");
-                          System.out.println("Customer Name: " 
-                                  + bill.getBill().getCustomerInformation().getCustomerName().getFirstName() + " " 
-                                  + bill.getBill().getCustomerInformation().getCustomerName().getLastName());
-                          System.out.println("RepairID: " + bill.getBill().getCustomerInformation().getRepairID().getRepairIDType());
-                          System.out.println("The total cost of the repair service is: " + totalCost + " $");
+                         
         }
      
          
