@@ -68,7 +68,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      // The name of the file to open.
                      String fileName = repairID + ".txt";
 
-                     // For Simulation: This will record the text file line and the repair ID and total cost;
+             /*      // For Simulation: This will record the text file line and the repair ID and total cost;
                      String line = null, repairIDStr, totCostStr;
                      String[] splitStr = new String[2];
 
@@ -104,14 +104,43 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      if (line.length() != 0) {
                     	 splitStr = line.split("\\s+");
                     	 repairIDStr = splitStr[0];
-                    	 totCostStr = splitStr[1];
+                    	 totCostStr = splitStr[1]; */
+                     String TotalCostReturn = null;
+                     try(BufferedReader br = new BufferedReader(new FileReader(repairID + ".txt"))) {
+                    	    StringBuilder sb = new StringBuilder();
+                    	    String line = br.readLine();
+
+                    	    while (line != null) {
+                    	        sb.append(line);
+                    	        sb.append(System.lineSeparator());
+                    	        line = br.readLine();
+                    	    }
+                    	    String everything = sb.toString();
+                    	    TotalCostReturn = everything;
+                    	} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+                     
+                     
+                     
+                     
+                     
+                     
+                     	// Simulate sending the bill by printing the following;
+                         System.out.println("===============================================================");
+                         System.out.println("Repair ID: " + repairID);
+                         System.out.println("The total cost of the repair service is: $" + TotalCostReturn);
+                         System.out.println("===============================================================");
+ 
+                     
+                     
                     	 
-                    	// Simulate sending the bill by printing the following;
-                         System.out.println("===============================================================");
-                         System.out.println("Repair ID: " + repairIDStr);
-                         System.out.println("The total cost of the repair service is: $" + totCostStr);
-                         System.out.println("===============================================================");
-                     }
+
+                  //   }
                      
                          
         }
@@ -170,6 +199,14 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE);
                     
                      
+                     try{
+                    	    PrintWriter writer = new PrintWriter(repairIDs + ".txt", "UTF-8");
+                    	    writer.println(totalCost);
+                    	    writer.close();
+                    	} catch (IOException e) {
+                    	   // do something
+                    	}
+                     
                      /*
                      try {
                         // Create the File:
@@ -201,6 +238,8 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      */
                      // Invoke the Confirm Total Cost operation for the Billing services callback service;
                      // Retrieve the appropriate Repair ID;
+                     
+                     
                      String repairID = bill1.getBill().getCustomerInformation().getRepairID().getRepairIDType();
                      localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.RepairIDType stubRepairID = new localhost.soaproject.services.billingcallbackservice.BillingCallbackServiceStub.RepairIDType();
                      stubRepairID.setRepairIDType(repairID);
