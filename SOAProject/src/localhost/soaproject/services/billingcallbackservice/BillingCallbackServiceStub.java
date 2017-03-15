@@ -288,7 +288,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/BillingCallbackService/",
                 "ConfirmBillSent",
-                "ns9");
+                "ns13");
 
             
 
@@ -406,7 +406,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/BillingCallbackService/")){
-                return "ns9";
+                return "ns13";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -723,7 +723,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "TransportationDistance",
-                "ns4");
+                "ns14");
 
             
 
@@ -801,7 +801,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1061,7 +1061,7 @@
         /* This type was generated from the piece of schema that had
                 name = CostConfirmationType
                 Namespace URI = http://localhost:8080/SOAProject/services/BillingCallbackService
-                Namespace Prefix = ns10
+                Namespace Prefix = ns15
                 */
             
 
@@ -1203,7 +1203,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/BillingCallbackService")){
-                return "ns10";
+                return "ns15";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1535,7 +1535,7 @@
         /* This type was generated from the piece of schema that had
                 name = BillSentConfirmationType
                 Namespace URI = http://localhost:8080/SOAProject/services/BillingCallbackService
-                Namespace Prefix = ns10
+                Namespace Prefix = ns15
                 */
             
 
@@ -1677,7 +1677,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/BillingCallbackService")){
-                return "ns10";
+                return "ns15";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2132,7 +2132,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "TransportationDistanceType",
-                "ns4");
+                "ns14");
 
             
 
@@ -2243,7 +2243,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2541,7 +2541,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/BillingCallbackService",
                 "BillSentConfirmation",
-                "ns10");
+                "ns15");
 
             
 
@@ -2619,7 +2619,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/BillingCallbackService")){
-                return "ns10";
+                return "ns15";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2880,7 +2880,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "ApprovalResponse",
-                "ns4");
+                "ns14");
 
             
 
@@ -2958,7 +2958,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3219,7 +3219,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "ApprovalResponseType",
-                "ns4");
+                "ns14");
 
             
 
@@ -3340,7 +3340,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3652,7 +3652,7 @@
         /* This type was generated from the piece of schema that had
                 name = AddressType
                 Namespace URI = http://localhost:8080/SOAProject/services/CommonTypes
-                Namespace Prefix = ns4
+                Namespace Prefix = ns14
                 */
             
 
@@ -3718,141 +3718,63 @@
 
                         /**
                         * field for City
-                        * This was an Array!
                         */
 
                         
-                                    protected java.lang.String[] localCity ;
+                                    protected java.lang.String localCity ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String[]
+                           * @return java.lang.String
                            */
-                           public  java.lang.String[] getCity(){
+                           public  java.lang.String getCity(){
                                return localCity;
                            }
 
                            
                         
-
-
-                               
-                              /**
-                               * validate the array for City
+                            /**
+                               * Auto generated setter method
+                               * @param param City
                                */
-                              protected void validateCity(java.lang.String[] param){
-                             
-                              if ((param != null) && (param.length < 1)){
-                                throw new java.lang.RuntimeException("Input values do not follow defined XSD restrictions");
-                              }
-                              
-                              }
-
-
-                             /**
-                              * Auto generated setter method
-                              * @param param City
-                              */
-                              public void setCity(java.lang.String[] param){
-                              
-                                   validateCity(param);
-
-                               
-                                      this.localCity=param;
-                              }
-
-                               
-                             
-                             /**
-                             * Auto generated add method for the array for convenience
-                             * @param param java.lang.String
-                             */
-                             public void addCity(java.lang.String param){
-                                   if (localCity == null){
-                                   localCity = new java.lang.String[]{};
-                                   }
-
+                               public void setCity(java.lang.String param){
                             
+                                            this.localCity=param;
+                                       
 
-                               java.util.List list =
-                            org.apache.axis2.databinding.utils.ConverterUtil.toList(localCity);
-                               list.add(param);
-                               this.localCity =
-                             (java.lang.String[])list.toArray(
-                            new java.lang.String[list.size()]);
-
-                             }
-                             
+                               }
+                            
 
                         /**
                         * field for PostCode
-                        * This was an Array!
                         */
 
                         
-                                    protected java.lang.String[] localPostCode ;
+                                    protected java.lang.String localPostCode ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String[]
+                           * @return java.lang.String
                            */
-                           public  java.lang.String[] getPostCode(){
+                           public  java.lang.String getPostCode(){
                                return localPostCode;
                            }
 
                            
                         
-
-
-                               
-                              /**
-                               * validate the array for PostCode
+                            /**
+                               * Auto generated setter method
+                               * @param param PostCode
                                */
-                              protected void validatePostCode(java.lang.String[] param){
-                             
-                              if ((param != null) && (param.length < 1)){
-                                throw new java.lang.RuntimeException("Input values do not follow defined XSD restrictions");
-                              }
-                              
-                              }
-
-
-                             /**
-                              * Auto generated setter method
-                              * @param param PostCode
-                              */
-                              public void setPostCode(java.lang.String[] param){
-                              
-                                   validatePostCode(param);
-
-                               
-                                      this.localPostCode=param;
-                              }
-
-                               
-                             
-                             /**
-                             * Auto generated add method for the array for convenience
-                             * @param param java.lang.String
-                             */
-                             public void addPostCode(java.lang.String param){
-                                   if (localPostCode == null){
-                                   localPostCode = new java.lang.String[]{};
-                                   }
-
+                               public void setPostCode(java.lang.String param){
                             
+                                            this.localPostCode=param;
+                                       
 
-                               java.util.List list =
-                            org.apache.axis2.databinding.utils.ConverterUtil.toList(localPostCode);
-                               list.add(param);
-                               this.localPostCode =
-                             (java.lang.String[])list.toArray(
-                            new java.lang.String[list.size()]);
-
-                             }
-                             
+                               }
+                            
 
      
      
@@ -3944,60 +3866,42 @@
                                     
                                    xmlWriter.writeEndElement();
                              
-                             if (localCity!=null) {
-                                   namespace = "http://localhost:8080/SOAProject/services/CommonTypes";
-                                   for (int i = 0;i < localCity.length;i++){
-                                        
-                                            if (localCity[i] != null){
-                                        
-                                                writeStartElement(null, namespace, "City", xmlWriter);
+                                    namespace = "http://localhost:8080/SOAProject/services/CommonTypes";
+                                    writeStartElement(null, namespace, "City", xmlWriter);
+                             
 
-                                            
-                                                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCity[i]));
-                                                    
-                                                xmlWriter.writeEndElement();
+                                          if (localCity==null){
+                                              // write the nil attribute
                                               
-                                                } else {
-                                                   
-                                                           throw new org.apache.axis2.databinding.ADBException("City cannot be null!!");
-                                                       
-                                                }
+                                                     throw new org.apache.axis2.databinding.ADBException("City cannot be null!!");
+                                                  
+                                          }else{
 
-                                   }
-                             } else {
-                                 
-                                         throw new org.apache.axis2.databinding.ADBException("City cannot be null!!");
-                                    
-                             }
-
-                        
-                             if (localPostCode!=null) {
-                                   namespace = "http://localhost:8080/SOAProject/services/CommonTypes";
-                                   for (int i = 0;i < localPostCode.length;i++){
                                         
-                                            if (localPostCode[i] != null){
-                                        
-                                                writeStartElement(null, namespace, "PostCode", xmlWriter);
-
+                                                   xmlWriter.writeCharacters(localCity);
                                             
-                                                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPostCode[i]));
-                                                    
-                                                xmlWriter.writeEndElement();
-                                              
-                                                } else {
-                                                   
-                                                           throw new org.apache.axis2.databinding.ADBException("PostCode cannot be null!!");
-                                                       
-                                                }
-
-                                   }
-                             } else {
-                                 
-                                         throw new org.apache.axis2.databinding.ADBException("PostCode cannot be null!!");
+                                          }
                                     
-                             }
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://localhost:8080/SOAProject/services/CommonTypes";
+                                    writeStartElement(null, namespace, "PostCode", xmlWriter);
+                             
 
-                        
+                                          if (localPostCode==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("PostCode cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localPostCode);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -4005,7 +3909,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -4198,52 +4102,24 @@
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localHouseNumber));
                             
-                            if (localCity!=null){
-                                  for (int i = 0;i < localCity.length;i++){
-                                      
-                                         if (localCity[i] != null){
-                                          elementList.add(new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes",
-                                                                              "City"));
-                                          elementList.add(
-                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCity[i]));
-                                          } else {
-                                             
-                                                    throw new org.apache.axis2.databinding.ADBException("City cannot be null!!");
-                                                
-                                          }
-                                      
-
-                                  }
-                            } else {
-                              
-                                    throw new org.apache.axis2.databinding.ADBException("City cannot be null!!");
-                                
-                            }
-
-                        
-                            if (localPostCode!=null){
-                                  for (int i = 0;i < localPostCode.length;i++){
-                                      
-                                         if (localPostCode[i] != null){
-                                          elementList.add(new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes",
-                                                                              "PostCode"));
-                                          elementList.add(
-                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPostCode[i]));
-                                          } else {
-                                             
-                                                    throw new org.apache.axis2.databinding.ADBException("PostCode cannot be null!!");
-                                                
-                                          }
-                                      
-
-                                  }
-                            } else {
-                              
-                                    throw new org.apache.axis2.databinding.ADBException("PostCode cannot be null!!");
-                                
-                            }
-
-                        
+                                      elementList.add(new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes",
+                                                                      "City"));
+                                 
+                                        if (localCity != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCity));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("City cannot be null!!");
+                                        }
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes",
+                                                                      "PostCode"));
+                                 
+                                        if (localPostCode != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPostCode));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("PostCode cannot be null!!");
+                                        }
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -4319,10 +4195,6 @@
                     
                     reader.next();
                 
-                        java.util.ArrayList list3 = new java.util.ArrayList();
-                    
-                        java.util.ArrayList list4 = new java.util.ArrayList();
-                    
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
@@ -4378,40 +4250,19 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes","City").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"City" +"  cannot be null");
+                                    }
                                     
+
+                                    java.lang.String content = reader.getElementText();
                                     
-                                    // Process the array and step past its final element's end.
-                                    list3.add(reader.getElementText());
-                                            
-                                            //loop until we find a start element that is not part of this array
-                                            boolean loopDone3 = false;
-                                            while(!loopDone3){
-                                                // Ensure we are at the EndElement
-                                                while (!reader.isEndElement()){
-                                                    reader.next();
-                                                }
-                                                // Step out of this element
-                                                reader.next();
-                                                // Step to next element event.
-                                                while (!reader.isStartElement() && !reader.isEndElement())
-                                                    reader.next();
-                                                if (reader.isEndElement()){
-                                                    //two continuous end elements means we are exiting the xml structure
-                                                    loopDone3 = true;
-                                                } else {
-                                                    if (new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes","City").equals(reader.getName())){
-                                                         list3.add(reader.getElementText());
-                                                        
-                                                    }else{
-                                                        loopDone3 = true;
-                                                    }
-                                                }
-                                            }
-                                            // call the converter utility  to convert and set the array
-                                            
-                                                    object.setCity((java.lang.String[])
-                                                        list3.toArray(new java.lang.String[list3.size()]));
-                                                
+                                              object.setCity(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
                               }  // End of if for expected property start element
                                 
                                 else{
@@ -4424,40 +4275,19 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes","PostCode").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"PostCode" +"  cannot be null");
+                                    }
                                     
+
+                                    java.lang.String content = reader.getElementText();
                                     
-                                    // Process the array and step past its final element's end.
-                                    list4.add(reader.getElementText());
-                                            
-                                            //loop until we find a start element that is not part of this array
-                                            boolean loopDone4 = false;
-                                            while(!loopDone4){
-                                                // Ensure we are at the EndElement
-                                                while (!reader.isEndElement()){
-                                                    reader.next();
-                                                }
-                                                // Step out of this element
-                                                reader.next();
-                                                // Step to next element event.
-                                                while (!reader.isStartElement() && !reader.isEndElement())
-                                                    reader.next();
-                                                if (reader.isEndElement()){
-                                                    //two continuous end elements means we are exiting the xml structure
-                                                    loopDone4 = true;
-                                                } else {
-                                                    if (new javax.xml.namespace.QName("http://localhost:8080/SOAProject/services/CommonTypes","PostCode").equals(reader.getName())){
-                                                         list4.add(reader.getElementText());
-                                                        
-                                                    }else{
-                                                        loopDone4 = true;
-                                                    }
-                                                }
-                                            }
-                                            // call the converter utility  to convert and set the array
-                                            
-                                                    object.setPostCode((java.lang.String[])
-                                                        list4.toArray(new java.lang.String[list4.size()]));
-                                                
+                                              object.setPostCode(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
                               }  // End of if for expected property start element
                                 
                                 else{
@@ -4495,7 +4325,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/BillingCallbackService",
                 "TotalCostConfirmation",
-                "ns10");
+                "ns15");
 
             
 
@@ -4573,7 +4403,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/BillingCallbackService")){
-                return "ns10";
+                return "ns15";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -4833,7 +4663,7 @@
         /* This type was generated from the piece of schema that had
                 name = CustomerNameType
                 Namespace URI = http://localhost:8080/SOAProject/services/CommonTypes
-                Namespace Prefix = ns4
+                Namespace Prefix = ns14
                 */
             
 
@@ -4999,7 +4829,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -5350,7 +5180,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "EmailType",
-                "ns4");
+                "ns14");
 
             
 
@@ -5461,7 +5291,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -5759,7 +5589,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/BillingCallbackService/",
                 "ConfirmTotalCost",
-                "ns9");
+                "ns13");
 
             
 
@@ -5877,7 +5707,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/BillingCallbackService/")){
-                return "ns9";
+                return "ns13";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6194,7 +6024,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "ConfirmationType",
-                "ns4");
+                "ns14");
 
             
 
@@ -6303,7 +6133,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6601,7 +6431,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "Customer",
-                "ns4");
+                "ns14");
 
             
 
@@ -6679,7 +6509,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6940,7 +6770,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "RepairIDType",
-                "ns4");
+                "ns14");
 
             
 
@@ -7051,7 +6881,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -7348,7 +7178,7 @@
         /* This type was generated from the piece of schema that had
                 name = CustomerType
                 Namespace URI = http://localhost:8080/SOAProject/services/CommonTypes
-                Namespace Prefix = ns4
+                Namespace Prefix = ns14
                 */
             
 
@@ -7610,7 +7440,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -8027,7 +7857,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "CostType",
-                "ns4");
+                "ns14");
 
             
 
@@ -8138,7 +7968,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -8436,7 +8266,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://localhost:8080/SOAProject/services/CommonTypes",
                 "Cost",
-                "ns4");
+                "ns14");
 
             
 
@@ -8514,7 +8344,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://localhost:8080/SOAProject/services/CommonTypes")){
-                return "ns4";
+                return "ns14";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
