@@ -163,9 +163,12 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      String fileName = repairIDs + ".txt";
 
                      try {
-                         // Assume default encoding.
+                        // Create the File:
+                    	 File file = new File("./BillServiceTextFiles/" + fileName);
+                    	 
+                    	 // Assume default encoding.
                          FileWriter fileWriter =
-                             new FileWriter(fileName);
+                             new FileWriter(file);
 
                          // Always wrap FileWriter in BufferedWriter.
                          BufferedWriter bufferedWriter =
@@ -175,6 +178,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                          // append a newline character.
                          bufferedWriter.write(repIDCosts);
 
+                         System.out.println(file.getCanonicalPath());
                          // Always close files.
                          bufferedWriter.close();
                      }
