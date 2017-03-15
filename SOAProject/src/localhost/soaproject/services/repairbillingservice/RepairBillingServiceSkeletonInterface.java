@@ -7,6 +7,7 @@
  */
     package localhost.soaproject.services.repairbillingservice;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 
 /**
@@ -35,13 +36,14 @@ import java.rmi.RemoteException;
          * 
                                     * @param bill
          * @throws RemoteException 
+         * @throws IOException 
          */
 
         
                 public void calculateTotalCost
                 (
                   localhost.soaproject.services.repairbillingservice.Bill bill
-                 ) throws RemoteException
+                 ) throws RemoteException, IOException
             ;
         
          }

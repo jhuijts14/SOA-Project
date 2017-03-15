@@ -8,8 +8,12 @@
     package localhost.soaproject.services.repairbillingservice;
     
     import java.io.*;
-
-    import java.rmi.RemoteException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.rmi.RemoteException;
 
     import org.apache.axis2.AxisFault;
 
@@ -118,13 +122,13 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
          * 
                                      * @param bill1 
              * @return  
-         * @throws RemoteException 
+         * @throws IOException 
          */
         
                  public void calculateTotalCost
                   (
                   localhost.soaproject.services.repairbillingservice.Bill bill1
-                  ) throws RemoteException
+                  ) throws IOException
             {
                 //TODO : fill this with the necessary business logic
                 	// Define local variables for the 3 costs;
@@ -157,11 +161,16 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      //bill = bill1;
                      
                      // For Simulation: Create a string that stores total cost and repair ID;
-                     String repIDCosts = repairIDs + " " + totalCost;
+                     String content = repairIDs + " " + totalCost;
                      
                      // The name of the file to open.
                      String fileName = repairIDs + ".txt";
 
+                     System.out.println(System.getProperty("user.dir"));
+                     Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE);
+                    
+                     
+                     /*
                      try {
                         // Create the File:
                     	 File file = new File("./BillServiceTextFiles/" + fileName);
@@ -189,6 +198,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                          // Or we could just do this:
                          // ex.printStackTrace();
                      }
+                     */
                      // Invoke the Confirm Total Cost operation for the Billing services callback service;
                      // Retrieve the appropriate Repair ID;
                      String repairID = bill1.getBill().getCustomerInformation().getRepairID().getRepairIDType();
