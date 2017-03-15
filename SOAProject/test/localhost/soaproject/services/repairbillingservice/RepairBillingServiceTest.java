@@ -49,6 +49,11 @@
                       // TODO : Fill in the bill5 here
                   
 
+          BillType billType = new BillType();
+          billType.setApprovalResponse(param);
+          billType.setCustomerInformation(param);
+          billType.setDeliveryCost(param);
+          billType
                   //There is no output to be tested!
                   stub.calculateTotalCost(
                   bill5);
