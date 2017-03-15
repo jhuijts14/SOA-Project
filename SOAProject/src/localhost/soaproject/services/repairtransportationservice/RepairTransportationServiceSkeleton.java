@@ -40,13 +40,16 @@
                      Calendar cal = Calendar.getInstance();
                      cal = updateDeliveryTime0.getUpdateDeliveryTimeRequest().getDeliveryTime().getTransportationTimeType();
                      int repairTime = updateDeliveryTime0.getUpdateDeliveryTimeRequest().getRepairTime().getRepairTimeType();
+                     String approvalResponse = updateDeliveryTime0.getUpdateDeliveryTimeRequest().getApprovalResponse().getValue();
                 
                      
                      //Local Variable
                      TransportationTimeType transportationTimeType = new TransportationTimeType();
                      
                      //Add the repair time to the time to deliver
+                     if (approvalResponse == "Approved"){
                      cal.add(Calendar.MINUTE, repairTime);
+                     }
                      
                      //set transportationtimetype to new value
                      transportationTimeType.setTransportationTimeType(cal);
