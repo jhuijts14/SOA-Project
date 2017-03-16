@@ -110,14 +110,14 @@ import localhost.soaproject.services.commontypes.*;
                 	
                 	 // Define local variables for the transportation distance and rate;
                      BigDecimal distance = calculateTransportCost2.getCalculateTransportCostRequest().getTransportationDistance().getTransportationDistanceType();
-                     BigDecimal transRate = new BigDecimal(0.45); //$ per km
+                     BigDecimal transRate = new BigDecimal(0.45); //€ per km;
                             
                      // Local variable for the calculated transportation costs;
                      BigDecimal transCost = distance.multiply(transRate);
                      
                      // Make that BigDecimal a CostType object;
                      CostType transCostType = new CostType();
-                     transCostType.setCostType(transCost.round(new MathContext(2, RoundingMode.CEILING)));
+                     transCostType.setCostType(transCost.setScale(2, RoundingMode.HALF_EVEN));
                      
                      // Create the transportation cost response type to be sent;
                      TransportationCostResponseType transCostRespType = new TransportationCostResponseType();
