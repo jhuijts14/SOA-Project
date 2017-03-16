@@ -16,7 +16,7 @@ xmlns:Q1="http://localhost:8080/SOAProject/services/CommonTypes">
 		</xsd:element>
 		<xsd:element name="PickUpCost" type="Q1:CostType" maxOccurs="1" minOccurs="1">
 		</xsd:element>
-		<xsd:element name="RepairCost" type="Q1:CostType" maxOccurs="1" minOccurs="0">
+		<xsd:element name="RepairCost" type="Q1:CostType" maxOccurs="1" minOccurs="1">
 		</xsd:element>
 		<xsd:element name="DeliveryCost" type="Q1:CostType" maxOccurs="1" minOccurs="1">
 		</xsd:element>
