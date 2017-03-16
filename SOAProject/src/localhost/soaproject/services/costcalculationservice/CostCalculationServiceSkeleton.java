@@ -60,6 +60,11 @@ import localhost.soaproject.services.commontypes.*;
                               // Calculate the repair costs (repair time in minutes so need the labour rate per minute);
                               repairCost = repairTime * labourRate/60;
                               
+                              for (int i = 0; i < priceOfParts.length; i++) {
+                            	  repairCost += priceOfParts[i].getPriceType().doubleValue();
+                              }
+                              
+                              /*
                               // If there are bike parts in the inspections add them to the repair cost;
                               // Since inspection results are simulated we know there are either 0, 1 or 3;
                               if (priceOfParts.length == 1) {
@@ -69,7 +74,7 @@ import localhost.soaproject.services.commontypes.*;
                                           + priceOfParts[1].getPriceType().doubleValue() 
                                           + priceOfParts[2].getPriceType().doubleValue();
                               }
-                              
+                              */
                               // Create a BigDecimal object to store the repair cost.
                               CostType BigDecRepCost = new CostType();
                               BigDecRepCost.setCostType((new BigDecimal(repairCost)).setScale(2, RoundingMode.HALF_EVEN));
