@@ -43,7 +43,7 @@ import localhost.soaproject.services.commontypes.*;
                               double repairCost;
                               
                               // The labour rate of the repair shop.
-                              double labourRate = 15; //$ per labour hour;
+                              double labourRate = 15; //€ per labour hour;
                               
                               // Retrieve the repair time;
                               repairTime = calculateRepairCost0.getCalculateRepairCostRequest().getRepairTime().getRepairTimeType();
@@ -57,8 +57,8 @@ import localhost.soaproject.services.commontypes.*;
                                   numberOfParts--;
                               }
                               
-                              // Calculate the repair costs;
-                              repairCost = repairTime * labourRate;
+                              // Calculate the repair costs (repair time in minutes so need the labour rate per minute);
+                              repairCost = repairTime * labourRate/60;
                               
                               // If there are bike parts in the inspections add them to the repair cost;
                               // Since inspection results are simulated we know there are either 0, 1 or 3;
