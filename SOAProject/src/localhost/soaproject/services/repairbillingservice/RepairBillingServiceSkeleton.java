@@ -64,47 +64,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      
                      BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub();
                      billCallSerStub.confirmBillSent(stubBillSentConfirm);
-                     
-                     // The name of the file to open.
-                     String fileName = repairID + ".txt";
 
-             /*      // For Simulation: This will record the text file line and the repair ID and total cost;
-                     String line = null, repairIDStr, totCostStr;
-                     String[] splitStr = new String[2];
-
-                     try {
-                         // FileReader reads text files in the default encoding.
-                         FileReader fileReader = 
-                             new FileReader(fileName);
-
-                         // Always wrap FileReader in BufferedReader.
-                         BufferedReader bufferedReader = 
-                             new BufferedReader(fileReader);
-
-                        // Read the line in the txt file;
-                        line = bufferedReader.readLine();
-
-                         // Always close files.
-                         bufferedReader.close();         
-                     }
-                     catch(FileNotFoundException ex) {
-                         System.out.println(
-                             "Unable to open file '" + 
-                             fileName + "'");                
-                     }
-                     catch(IOException ex) {
-                         System.out.println(
-                             "Error reading file '" 
-                             + fileName + "'");                  
-                         // Or we could just do this: 
-                         // ex.printStackTrace();
-                     }
-                     
-                     // If line is not null split the line into the repair ID and total Cost;
-                     if (line.length() != 0) {
-                    	 splitStr = line.split("\\s+");
-                    	 repairIDStr = splitStr[0];
-                    	 totCostStr = splitStr[1]; */
                      String TotalCostReturn = null;
                      try(BufferedReader br = new BufferedReader(new FileReader(repairID + ".txt"))) {
                     	    StringBuilder sb = new StringBuilder();
@@ -259,7 +219,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      TotalCostConfirmation stubTotCostConfirm = new TotalCostConfirmation();
                      stubTotCostConfirm.setTotalCostConfirmation(confirmCostType);
                      
-                     BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub();
+                     BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub("http://localhost:8088/mockBillingCallbackServiceSOAPBinding");
                      billCallSerStub.confirmTotalCost(stubTotCostConfirm);
         }
      
