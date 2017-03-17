@@ -40,6 +40,8 @@ import localhost.soaproject.services.commontypes.*;
                      
                      Scanner scanner = new Scanner(System.in);
                      
+                     // Display repair ID of bike being inspected;
+                     System.out.print("Hello, you are inspecting this bike: " + repairID.getRepairIDType());
                      // User Scanner to get Repair time and number of parts;
                      System.out.print("How much time is needed for the repair? ");
                      repairTime = scanner.nextInt();
