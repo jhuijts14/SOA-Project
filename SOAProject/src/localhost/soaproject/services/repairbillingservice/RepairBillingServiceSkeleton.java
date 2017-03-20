@@ -150,7 +150,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      // The name of the file to open.
                      String fileName = repairIDs + ".txt";
 
-                     System.out.println(System.getProperty("user.dir"));
+                    // System.out.println(System.getProperty("user.dir"));
                      Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE);
                     
                      
