@@ -214,7 +214,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                      TotalCostConfirmation stubTotCostConfirm = new TotalCostConfirmation();
                      stubTotCostConfirm.setTotalCostConfirmation(confirmCostType);
                      
-                     BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub("http://localhost:8088/mockBillingCallbackServiceSOAPBinding");
+                     BillingCallbackServiceStub billCallSerStub = new BillingCallbackServiceStub();
                      billCallSerStub.confirmTotalCost(stubTotCostConfirm);
         }
      
