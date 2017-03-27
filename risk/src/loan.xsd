@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://loans.org/schema" xmlns:tns="http://loans.org/schema"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="CreditInformationRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="firstName" type="xsd:string" />
+				<xs:element name="name" type="xsd:string" />
+				<xs:element name="amount" type="xsd:integer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ApprovalResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accept" type="xsd:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RiskAssessmentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accept" type="xsd:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="errorMessage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="errorCode" type="xsd:integer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+

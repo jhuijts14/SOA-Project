@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BillingCallbackService" targetNamespace="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd1="http://www.djbikeshop.org/BillingCallbackService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.djbikeshop.org/BillingCallbackService/">
+      <xsd:element name="ConfirmBillSent">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfirmBillSentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfirmTotalCost">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="in" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfirmTotalCostResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="out" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import namespace="http://www.djbikeshop.org/BillingCallbackService" schemaLocation="BillingCallbackService.xsd">
+    	</xsd:import></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfirmBillSentRequest">
+    <wsdl:part name="ConfirmBillSentRequest" element="xsd1:BillSentConfirmation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfirmTotalCostRequest">
+    <wsdl:part name="ConfirmTotalCost" element="xsd1:TotalCostConfirmation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BillingCallbackService">
+    <wsdl:operation name="ConfirmBillSent">
+      <wsdl:input message="tns:ConfirmBillSentRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTotalCost">
+      <wsdl:input message="tns:ConfirmTotalCostRequest">
+    </wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BillingCallbackServiceSOAP" type="tns:BillingCallbackService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConfirmBillSent">
+      <soap:operation soapAction="http://www.djbikeshop.org/BillingCallbackService/ConfirmBillSent"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTotalCost">
+      <soap:operation soapAction="http://www.djbikeshop.org/BillingCallbackService/ConfirmTotalCost"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillingCallbackService">
+    <wsdl:port name="BillingCallbackServiceSOAP" binding="tns:BillingCallbackServiceSOAP">
+      <soap:address location="http://www.djbikeshop.org/BillingCallbackService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

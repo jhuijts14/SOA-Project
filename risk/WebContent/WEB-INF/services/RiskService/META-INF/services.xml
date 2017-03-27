@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="RiskService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.loans.risk.RiskServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.loans.risk.RiskServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="check" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://loans.org/risk">
+            <actionMapping>http://loans.org/risk/riskAssessmentPT/checkRequest</actionMapping>
+            <outputActionMapping>http://loans.org/risk/riskAssessmentPT/checkResponse</outputActionMapping>
+            <faultActionMapping faultName="loanProcessFault">http://loans.org/risk/riskAssessmentPT/check/Fault/loanProcessFault</faultActionMapping>
+            <faultActionMapping faultName="ErrorMessage">http://loans.org/risk/riskAssessmentPT/check/Fault/loanProcessFault</faultActionMapping>
+            <faultActionMapping faultName="ErrorMessage_Exception">http://loans.org/risk/riskAssessmentPT/check/Fault/loanProcessFault</faultActionMapping>
+            <faultActionMapping faultName="errorMessage">urn:checkerrorMessage</faultActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

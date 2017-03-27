@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process exitOnStandardFault="yes" name="BikeRepair.bpel"
+    targetNamespace="http://www.djbikerepair.org/BikeRepairService/"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:ns="http://www.djbikerepair.org/BikeRepairService/Artifacts"
+    xmlns:ns0="http://www.djbikeshop.org/BikeRepairService" 
+    xmlns:ns1="http://www.djbikerepair.org/BikeRepairService/" 
+    xmlns:ns2="http://www.djbikeshop.org/CustomerService/" 
+    xmlns:ns3="http://www.djbikeshop.org/CommonTypes">
+    
+    <bpel:import namespace="http://www.djbikeshop.org/CommonTypes" location="CommonTypes.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
+    <bpel:import namespace="http://www.djbikeshop.org/CustomerService/" location="CustomerService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="BikeRepairService_0.wsdl" namespace="http://www.djbikerepair.org/BikeRepairService/"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="BikeRepairArtifacts.wsdl" namespace="http://www.djbikerepair.org/BikeRepairService/Artifacts"/>
+   
+    <bpel:partnerLinks>
+        <bpel:partnerLink myRole="BikeRepairServiceRole"
+            name="bpelProcessPartner" partnerLinkType="ns:BikeRepairServicePLT"/>
+     
+    </bpel:partnerLinks>
+    
+    <bpel:variables>
+        <bpel:variable element="ns0:RepairRequest" name="requestRepairRequest"/>
+        <bpel:variable element="ns0:RepairDelivery" name="requestRepairResponse"/>
+        
+    </bpel:variables>
+    
+    <bpel:sequence name="MainSequence">
+        <bpel:pick createInstance="yes" name="SwitchInvokedOperation">
+            <bpel:onMessage operation="RequestRepair"
+                partnerLink="bpelProcessPartner"
+                portType="ns1:BikeRepairService" variable="requestRepairRequest">
+                <bpel:reply name="ReplyToRequestRepair"
+                    operation="RequestRepair"
+                    partnerLink="bpelProcessPartner"
+                    portType="ns1:BikeRepairService" variable="requestRepairResponse"/>
+            </bpel:onMessage>
+        </bpel:pick>
+    </bpel:sequence>
+</bpel:process>

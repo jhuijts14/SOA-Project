@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://loans.org/approval"
+	xmlns:tns="http://loans.org/approval" xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ln="http://loans.org/schema"
+	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+
+	<import namespace="http://loans.org/schema" location="./loan.xsd" />
+
+	<message name="creditInformationMessage">
+		<part name="request" element="ln:CreditInformationRequest" />
+	</message>
+	<message name="approvalMessage">
+		<part name="accept" element="ln:ApprovalResponse" />
+	</message>
+	<message name="errorMessage">
+		<part name="errorCode" element="ln:errorMessage" />
+	</message>
+
+	<portType name="loanApprovalPT">
+		<operation name="approve">
+			<input message="tns:creditInformationMessage" />
+			<output message="tns:approvalMessage" />
+			<fault name="loanProcessFault" message="tns:errorMessage" />
+		</operation>
+	</portType>
+	
+	<plnk:partnerLinkType name="loanApprovalLinkType">
+		<plnk:role name="approver" portType="tns:loanApprovalPT" />
+	</plnk:partnerLinkType>
+
+	<binding name="LoanApprovalBinding" type="tns:loanApprovalPT">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="approve">
+			<soap:operation style="document" soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="loanProcessFault">
+               <soap:fault name="loanProcessFault" use="literal"/>
+           </fault>
+		</operation>
+	</binding>
+
+	<!-- Service defines the address of Web service -->
+	<service name="ApprovalService">
+		<port name="ApprovalServicePort" binding="tns:LoanApprovalBinding">
+			<soap:address location="http://utwks03054:8080/axis2/services/ApprovalService" />
+		</port>
+	</service>
+</definitions>

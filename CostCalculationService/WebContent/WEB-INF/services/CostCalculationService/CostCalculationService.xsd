@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.djbikeshop.org/CostCalculationService" 
+elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.djbikeshop.org/CostCalculationService"
+xmlns:common="http://www.djbikeshop.org/CommonTypes">
+
+<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.djbikeshop.org/CommonTypes"/>
+
+<complexType name="GetRepairCostType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="RepairTime" type="common:RepairTimeType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="NumberOfParts" type="int" 
+			maxOccurs="1" minOccurs="1">
+		</element>
+		<element name="BikePart" type="common:BikePartType" 
+			minOccurs="0"  maxOccurs="unbounded">
+		</element>
+	</sequence>
+</complexType>
+
+<complexType name="RepairCostResponseType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="RepairCost" type="common:CostType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+	</sequence>
+</complexType>
+
+<complexType name="TransportationCostResponseType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="TransportationCost" type="common:CostType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+	</sequence>
+</complexType>
+
+<complexType name="GetTransportationCostType">
+	<sequence>
+		<element name="RepairID" type="common:RepairIDType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+		<element name="TransportationDistance" type="common:TransportationDistanceType" 
+			minOccurs="1"  maxOccurs="1">
+		</element>
+	</sequence>
+</complexType>
+
+
+</schema>

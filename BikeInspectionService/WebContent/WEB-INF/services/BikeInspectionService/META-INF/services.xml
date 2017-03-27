@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="BikeInspectionService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.djbikeshop.www.bikeinspectionservice.BikeInspectionServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.djbikeshop.www.bikeinspectionservice.BikeInspectionServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="inspectBike" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.djbikeshop.org/BikeInspectionService/">
+            <actionMapping>http://www.djbikeshop.org/BikeInspectionService/inspectBike</actionMapping>
+            <outputActionMapping>http://www.djbikeshop.org/BikeInspectionService/BikeInspectionService/inspectBikeResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.djbikeshop.org/RepairBillingService" 
+elementFormDefault="qualified" 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.djbikeshop.org/RepairBillingService"
+xmlns:common="http://www.djbikeshop.org/CommonTypes"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<import schemaLocation="CommonTypes.xsd" 
+           namespace="http://www.djbikeshop.org/CommonTypes"/>
+           
+<xsd:element name="Bill" type="tns:BillType"></xsd:element>
+
+<xsd:complexType name="BillType">
+	<xsd:sequence>
+		<xsd:element name="ApprovalResponse" type="common:ApprovalResponseType" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+		<xsd:element name="PickUpCost" type="common:CostType" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+		<xsd:element name="RepairCost" type="common:CostType" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+		<xsd:element name="DeliveryCost" type="common:CostType" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+		<xsd:element name="CustomerInformation" type="common:CustomerType" maxOccurs="1" minOccurs="1">
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="DeliveryConfirmation" type="tns:DeliveryConfirmationType"></xsd:element>
+
+	<xsd:complexType name="DeliveryConfirmationType">
+		<xsd:sequence>
+			<xsd:element name="RepairID" type="common:RepairIDType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="DeliveryConfirmation" type="common:ConfirmationType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</schema>

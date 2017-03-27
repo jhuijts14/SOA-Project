@@ -85,11 +85,6 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
 							e.printStackTrace();
 						}
                      
-                     
-                     
-                     
-                     
-                     
                      	// Simulate sending the bill by printing the following;
                          System.out.println("===============================================================");
                          System.out.println("Repair ID: " + repairID);
@@ -162,35 +157,7 @@ import localhost.soaproject.services.billingcallbackservice.BillingCallbackServi
                     	   // do something
                     	}
                      
-                     /*
-                     try {
-                        // Create the File:
-                    	 File file = new File("./BillServiceTextFiles/" + fileName);
-                    	 
-                    	 // Assume default encoding.
-                         FileWriter fileWriter =
-                             new FileWriter(file);
-
-                         // Always wrap FileWriter in BufferedWriter.
-                         BufferedWriter bufferedWriter =
-                             new BufferedWriter(fileWriter);
-
-                         // Note that write() does not automatically
-                         // append a newline character.
-                         bufferedWriter.write(repIDCosts);
-
-                         System.out.println(file.getCanonicalPath());
-                         // Always close files.
-                         bufferedWriter.close();
-                     }
-                     catch(IOException ex) {
-                         System.out.println(
-                             "Error writing to file '"
-                             + fileName + "'");
-                         // Or we could just do this:
-                         // ex.printStackTrace();
-                     }
-                     */
+                    
                      // Invoke the Confirm Total Cost operation for the Billing services callback service;
                      // Retrieve the appropriate Repair ID;
                      

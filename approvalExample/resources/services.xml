@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="ApprovalService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.loans.approval.ApprovalServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.loans.approval.ApprovalServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="approve" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://loans.org/approval">
+            <actionMapping>http://loans.org/approval/loanApprovalPT/approveRequest</actionMapping>
+            <outputActionMapping>http://loans.org/approval/loanApprovalPT/approveResponse</outputActionMapping>
+            <faultActionMapping faultName="loanProcessFault">http://loans.org/approval/loanApprovalPT/approve/Fault/loanProcessFault</faultActionMapping>
+            <faultActionMapping faultName="ErrorMessage">http://loans.org/approval/loanApprovalPT/approve/Fault/loanProcessFault</faultActionMapping>
+            <faultActionMapping faultName="ErrorMessage_Exception">http://loans.org/approval/loanApprovalPT/approve/Fault/loanProcessFault</faultActionMapping>
+            <faultActionMapping faultName="errorMessage">urn:approveerrorMessage</faultActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

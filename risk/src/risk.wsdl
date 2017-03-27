@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://loans.org/risk"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://loans.org/risk" xmlns:ln="http://loans.org/schema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+
+	<import namespace="http://loans.org/schema" location="./loan.xsd" />
+	
+	<message name="creditInformationMessage">
+		<part name="request" element="ln:CreditInformationRequest" />
+	</message>
+	<message name="riskAssessmentMessage">
+		<part name="level" element="ln:RiskAssessmentResponse" />
+	</message>
+	<message name="errorMessage">
+		<part name="errorCode" element="ln:errorMessage" />
+	</message>
+
+	<portType name="riskAssessmentPT">
+		<operation name="check">
+			<input message="tns:creditInformationMessage" />
+			<output message="tns:riskAssessmentMessage" />
+			<fault name="loanProcessFault" message="tns:errorMessage" />
+		</operation>
+	</portType>
+
+	<plnk:partnerLinkType name="riskAssessmentLinkType">
+		<plnk:role name="assessor" portType="tns:riskAssessmentPT" />
+	</plnk:partnerLinkType>
+
+
+	<binding name="RiskServiceBinding" type="tns:riskAssessmentPT">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="check">
+			<soap:operation style="document" soapAction="" />
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		<fault name="loanProcessFault">
+        <soap:fault name="loanProcessFault" use="literal"/>
+      </fault>
+		</operation>
+	</binding>
+
+	<!-- Service defines the address of Web service -->
+	<service name="RiskService">
+		<port name="RiskServicePort" binding="tns:RiskServiceBinding">
+			<soap:address location="http://utwks03054:8080/axis2/services/RiskService" />
+		</port>
+	</service>
+</definitions>

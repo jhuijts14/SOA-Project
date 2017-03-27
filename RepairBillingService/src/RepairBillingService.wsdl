@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.djbikeshop.org/RepairBillingService/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+name="RepairBillingService" 
+targetNamespace="http://www.djbikeshop.org/RepairBillingService/" 
+xmlns:xsd1="http://www.djbikeshop.org/RepairBillingService"
+xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+  
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.djbikeshop.org/RepairBillingService/">
+      <xsd:element name="CalculateTotalCost">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SendBill">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.djbikeshop.org/RepairBillingService"
+    		schemaLocation="RepairBillingService.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  
+  <wsdl:message name="CalculateTotalCostRequest">
+    <wsdl:part element="xsd1:Bill" name="CalculateTotalCostRequest"/>
+  </wsdl:message>
+  <wsdl:message name="SendBillRequest">
+  	<wsdl:part name="SendBillRequest" element="xsd1:DeliveryConfirmation"></wsdl:part>
+  </wsdl:message>
+ 
+  <wsdl:portType name="RepairBillingService">
+    <wsdl:operation name="CalculateTotalCost">
+      <wsdl:input message="tns:CalculateTotalCostRequest"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendBill">
+    	<wsdl:input message="tns:SendBillRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <!-- Added partner link -->
+  <plnk:partnerLinkType name="RepairBillingServiceLinkType">
+		<plnk:role name="billing" portType="tns:RepairBillingService" />
+  </plnk:partnerLinkType>
+  
+  <wsdl:binding name="RepairBillingServiceSOAP" type="tns:RepairBillingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CalculateTotalCost">
+      <soap:operation soapAction="http://www.djbikeshop.org/RepairBillingService/CalculateTotalCost"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SendBill">
+      <soap:operation soapAction="http://www.djbikeshop.org/RepairBillingService/SendBill"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <!-- Service defines the address of Web service -->
+  <wsdl:service name="RepairBillingService">
+    <wsdl:port binding="tns:RepairBillingServiceSOAP" name="RepairBillingServiceSOAP">
+      <soap:address location="http://localhost:9080/RepairBillingService/services/RepairBillingService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

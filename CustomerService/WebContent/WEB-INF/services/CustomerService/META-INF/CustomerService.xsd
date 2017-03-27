@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.djbikeshop.org/CommonTypes" xmlns:tns="http://www.djbikeshop.org/CustomerService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.djbikeshop.org/CustomerService">
+    <import namespace="http://www.djbikeshop.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    <element name="PickUpNotification" type="tns:PickUpType"/>
+    <complexType name="PickUpType">
+        <sequence>
+            <element name="CustomerName" type="common:CustomerNameType"/>
+            <element name="PickUpAddress" type="common:AddressType"/>
+            <element name="PickUpDateTime" type="common:TransportationTimeType"/>
+        </sequence>
+    </complexType>
+    <element name="ApprovalRequest" type="tns:ApprovalRequestType"/>
+    <complexType name="ApprovalRequestType">
+        <sequence>
+            <element name="RepairTime" type="common:RepairTimeType"/>
+            <element name="RepairCost" type="common:CostType"/>
+            <element name="Customer" type="common:CustomerType"/>
+        </sequence>
+    </complexType>
+    <element name="ApprovalResponse" type="tns:ApprovalResponseType"/>
+    <complexType name="ApprovalResponseType">
+        <sequence>
+            <element name="ApprovalResponse" type="common:ApprovalResponseType"/>
+            <element name="DeliveryAddress" type="common:AddressType"/>
+            <element name="RepairID" type="common:RepairIDType"/>
+        </sequence>
+    </complexType>
+</schema>

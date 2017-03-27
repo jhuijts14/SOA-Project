@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="RepairBillingService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.djbikeshop.www.repairbillingservice.RepairBillingServiceMessageReceiverInOnly"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.djbikeshop.www.repairbillingservice.RepairBillingServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="CalculateTotalCost" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.djbikeshop.org/RepairBillingService/">
+            <actionMapping>http://www.djbikeshop.org/RepairBillingService/CalculateTotalCost</actionMapping>
+        </operation>
+        <operation name="SendBill" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.djbikeshop.org/RepairBillingService/">
+            <actionMapping>http://www.djbikeshop.org/RepairBillingService/SendBill</actionMapping>
+        </operation>
+    </service>
+</serviceGroup>

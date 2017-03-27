@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://loans.org/loan"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://loans.org/loan"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nss="http://loans.org/schema"
+	xmlns:rk="http://loans.org/risk" xmlns:ap="http://loans.org/approval">
+
+<import namespace="http://loans.org/schema" location="./loan.xsd" />
+<!-- <import namespace="http://loans.org/risk" location="./risk.wsdl" /> -->
+<!-- <import namespace="http://loans.org/approval" location="./approval.wsdl" /> -->
+
+	<message name="creditInformationMessage">
+		<part name="request" element="nss:CreditInformationRequest" />
+	</message>
+	<message name="approvalMessage">
+		<part name="accept" element="nss:ApprovalResponse" />
+	</message>
+	<message name="errorMessage">
+		<part name="errorCode" element="nss:errorMessage" />
+	</message>
+	
+	<portType name="loanServicePT">
+		<operation name="request">
+			<input message="tns:creditInformationMessage" />
+			<output message="tns:approvalMessage" />
+			<fault name="unableToHandleRequest" message="tns:errorMessage" />
+		</operation>
+	</portType>
+
+	<plnk:partnerLinkType name="loanPartnerLinkType">
+		<plnk:role name="loanService" portType="tns:loanServicePT" />
+	</plnk:partnerLinkType>
+
+	<plnk:partnerLinkType name="riskAssessmentLinkType">
+		<plnk:role name="assessor" portType="rk:riskAssessmentPT" />
+	</plnk:partnerLinkType>
+
+	<binding name="LoanServiceBinding" type="tns:loanServicePT">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="request">
+			<soap:operation soapAction="http://loans.org/wsdl/loanapproval/request" />
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		<fault name="unableToHandleRequest">
+        <soap:fault name="unableToHandleRequest" use="literal"/>
+      </fault>
+		</operation>
+	</binding>
+
+	<!-- Service defines the address of Web service -->
+	<service name="LoanService">
+		<port name="LoanServicePort" binding="tns:LoanServiceBinding">
+			<soap:address location="http://localhost:8080/ode/processes/LoanService" />
+		</port>
+	</service>
+</definitions>

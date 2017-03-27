@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.djbikeshop.org/RepairTransportationService/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+name="RepairTransportationService" 
+targetNamespace="http://www.djbikeshop.org/RepairTransportationService/" 
+xmlns:xsd1="http://www.djbikeshop.org/RepairTransportationService">
+  
+  <wsdl:types>
+  	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<xsd:import
+  			namespace="http://www.djbikeshop.org/RepairTransportationService"
+  			schemaLocation="RepairTransportationService.xsd">
+  		</xsd:import></xsd:schema></wsdl:types>
+  
+  <wsdl:message name="GetTransportationTimeRequest">
+    <wsdl:part name="GetTransportationTimeRequest" type="xsd1:TransportationTimeRequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetTransportationTimeResponse">
+    <wsdl:part name="GetTransportationTimeResponse" type="xsd1:TimeResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetTransportationDistanceRequest">
+  	<wsdl:part name="GetTransportationDistanceRequest" type="xsd1:TransportationDistanceRequestType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetTransportationDistanceResponse">
+  	<wsdl:part name="GetTransportationDistanceResponse" type="xsd1:DistanceResponseType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliveryTimeRequest">
+  	<wsdl:part name="UpdateDeliveryTimeRequest" type="xsd1:UpdatedDeliveryTimeType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliveryTimeResponse">
+  	<wsdl:part name="UpdateDeliveryTimeResponse" type="xsd1:UpdatedDeliveryTimeResponseType"></wsdl:part>
+  </wsdl:message>
+  
+  <wsdl:portType name="RepairTransportationService">
+    <wsdl:operation name="GetTransportationTime">
+      <wsdl:input message="tns:GetTransportationTimeRequest"/>
+      <wsdl:output message="tns:GetTransportationTimeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransportationDistance">
+    	<wsdl:input message="tns:GetTransportationDistanceRequest"></wsdl:input>
+    	<wsdl:output message="tns:GetTransportationDistanceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryTime">
+    	<wsdl:input message="tns:UpdateDeliveryTimeRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateDeliveryTimeResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="RepairTransportationServiceSOAP" type="tns:RepairTransportationService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetTransportationTime">
+      <soap:operation soapAction="http://www.djbikeshop.org/RepairTransportationService/GetTransportationTime"/>
+      <wsdl:input>
+        <soap:body namespace="http://www.djbikeshop.org/RepairTransportationService/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://www.djbikeshop.org/RepairTransportationService/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+        <wsdl:operation name="GetTransportationDistance">
+      <soap:operation soapAction="http://www.djbikeshop.org/RepairTransportationService/GetTransportationDistance"/>
+      <wsdl:input>
+        <soap:body namespace="http://www.djbikeshop.org/RepairTransportationService/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://www.djbikeshop.org/RepairTransportationService/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+        <wsdl:operation name="UpdateDeliveryTime">
+      <soap:operation soapAction="http://www.djbikeshop.org/RepairTransportationService/UpdateDeliveryTime"/>
+      <wsdl:input>
+        <soap:body namespace="http://www.djbikeshop.org/RepairTransportationService/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://www.djbikeshop.org/RepairTransportationService/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <wsdl:service name="RepairTransportationService">
+    <wsdl:port binding="tns:RepairTransportationServiceSOAP" name="RepairTransportationServiceSOAP">
+      <soap:address location="http://www.djbikeshop.org/RepairTransportationService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

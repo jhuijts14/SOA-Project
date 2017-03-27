@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://www.djbikerepair.org/BikeRepairService/" xmlns:tns2="http://www.djbikerepair.org/BikeRepairService/Artifacts" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.djbikeshop.org/CommonTypes" targetNamespace="http://www.djbikerepair.org/BikeRepairService/Artifacts">
+  <partnerLinkType xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype" name="BikeRepairServicePLT">
+    <role name="BikeRepairServiceRole" portType="tns:BikeRepairService"/>
+  </partnerLinkType>
+    <property name="RepairID" type="xsd:RepairIDType" xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop"/>
+    <import location="BikeRepairService_0.wsdl" namespace="http://www.djbikerepair.org/BikeRepairService/"/>
+    <import location="CommonTypes.xsd" namespace="http://www.djbikeshop.org/CommonTypes"/>
+</definitions>

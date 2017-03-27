@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BikeInspectionService" targetNamespace="http://www.djbikeshop.org/BikeInspectionService/" xmlns:xsd1="http://www.djbikeshop.org/BikeInspectionService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/BikeInspectionService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<xsd:import namespace="http://www.djbikeshop.org/BikeInspectionService" schemaLocation="BikeInspectionService.xsd">
+  		</xsd:import></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="inspectBikeResponse">
+    <wsdl:part name="inspectBikeResponse" type="xsd1:InspectionResultsType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inspectBikeRequest">
+    <wsdl:part name="inspectBikeRequest" type="xsd1:InspectionRequestType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BikeInspectionService">
+    <wsdl:operation name="inspectBike">
+      <wsdl:input message="tns:inspectBikeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:inspectBikeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BikeInspectionServiceSOAP" type="tns:BikeInspectionService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="inspectBike">
+      <soap:operation soapAction="http://www.djbikeshop.org/BikeInspectionService/inspectBike"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://www.djbikeshop.org/BikeInspectionService/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://www.djbikeshop.org/BikeInspectionService/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BikeInspectionService">
+    <wsdl:port name="BikeInspectionServiceSOAP" binding="tns:BikeInspectionServiceSOAP">
+      <soap:address location="http://www.djbikeshop.org/BikeInspectionService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

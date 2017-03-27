@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:03:39 GMT) --><serviceGroup>
+    <service name="BillingCallbackService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.djbikeshop.www.billingcallbackservice.BillingCallbackServiceMessageReceiverInOnly"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.djbikeshop.www.billingcallbackservice.BillingCallbackServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="ConfirmTotalCost" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.djbikeshop.org/BillingCallbackService/">
+            <actionMapping>http://www.djbikeshop.org/BillingCallbackService/ConfirmTotalCost</actionMapping>
+        </operation>
+        <operation name="ConfirmBillSent" mep="http://www.w3.org/ns/wsdl/in-only" namespace="http://www.djbikeshop.org/BillingCallbackService/">
+            <actionMapping>http://www.djbikeshop.org/BillingCallbackService/ConfirmBillSent</actionMapping>
+        </operation>
+    </service>
+</serviceGroup>
