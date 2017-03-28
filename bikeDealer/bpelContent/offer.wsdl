@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://bikeDealer/offer/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:tns="http://bikeDealer/offer/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+	<!-- type definitions -->
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://bikeDealer/offer/">
+			<xsd:element name="UserOffer">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bikeID" type="xsd:string" />
+						<xsd:element name="priceOffer" type="xsd:double" />
+						<xsd:element name="ownerID" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CheckOffer">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bikeID" type="xsd:string" />
+						<xsd:element name="ownerID" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>	
+			</xsd:element>
+			<xsd:element name="CheckOfferResult" type="xsd:double" />
+			<xsd:element name="AnswerToOffer" type="xsd:string" />
+		</xsd:schema>
+	</types>
+	
+	<!-- message definitions -->
+	<message name="receiveOfferRequest">
+		<part name="userOffer" element="tns:UserOffer" />
+	</message>
+	<message name="checkOfferRequest">
+		<part name="checkOfferID" element="tns:CheckOffer" />
+	</message>
+	<message name="checkOfferResponse">
+		<part name="offerMade" element="tns:CheckOfferResult" />
+	</message>
+	<message name="answerToOffer">
+		<part name="answerToOffer" element="tns:AnswerToOffer" />
+	</message>
+	
+	<!-- portType -->
+	<portType name="Offer">
+		<operation name="receiveOffer">
+			<input message="tns:receiveOfferRequest" />
+		</operation>
+		<operation name="checkOffer">
+			<input message="tns:checkOfferRequest" />
+			<output message="tns:checkOfferResponse" />
+		</operation>
+		<operation name="answerOfOwner">
+			<input message="tns:answerToOffer" />
+		</operation>
+	</portType>
+	
+	<!-- binding -->
+	<binding name="OfferBinding" type="tns:Offer">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="receiveOffer">
+		<soap:operation
+        	soapAction="http://bikeDealer/offer/receiveOffer"
+        	style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+		</operation>
+		<operation name="checkOffer">
+		<soap:operation
+        	soapAction="http://bikeDealer/offer/checkOffer"
+        	style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="answerOfOwner">
+		<soap:operation
+        	soapAction="http://bikeDealer/offer/answerOfOwner"
+        	style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+		</operation>
+	</binding>
+	
+	<!-- Service defines the address of Web service -->
+	<service name="OfferService">
+		<port name="Offer" binding="tns:OfferBinding">
+			<soap:address location="http://localhost:9080/ws.bikedealer.offer/services/OfferService" />
+		</port>
+	</service>
+</definitions>

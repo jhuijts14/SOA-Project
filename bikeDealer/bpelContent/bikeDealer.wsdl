@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="BikeDealer"
+	targetNamespace="http://bikeDealer/dealer/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:tns="http://bikeDealer/dealer/" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+	xmlns:bk="http://bikeDealer/bike/" 
+	xmlns:off="http://bikeDealer/offer/"
+	xmlns:cb="http://bikeDealer/offerCallback/" 
+	xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop">
+	<!-- types -->
+	
+	<import namespace="http://bikeDealer/offer/" location="offer.wsdl"/>
+	<import namespace="http://bikeDealer/bike/" location="bike.wsdl"/>
+	<import namespace="http://bikeDealer/offerCallback/" location="offerCallback.wsdl"/>
+	
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://bikeDealer/dealer/">
+			<xsd:element name="Offer">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bikeID" type="xsd:string" />
+						<xsd:element name="priceOffer" type="xsd:double" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="OfferResult" type="xsd:string" />
+			<xsd:element name="OwnerAnswer" type="xsd:string" />
+		</xsd:schema>
+	</types>
+	<!-- message -->
+	<message name="UserOfferRequest">
+		<part name="offer" element="tns:Offer" />
+	</message>
+	<message name="UserOfferResponse">
+		<part name="result" element="tns:OfferResult" />
+	</message>
+	
+	<!-- portType -->
+	<portType name="BikeDealer">
+		<operation name="userOffer">
+			<input message="tns:UserOfferRequest" />
+			<output message="tns:UserOfferResponse" />
+		</operation>
+	</portType>
+	
+	<!--  partnerLinkTypes -->
+ 	<plnk:partnerLinkType name="BikeDealer"> 
+         <plnk:role name="dealer" portType="tns:BikeDealer"/>
+    </plnk:partnerLinkType>
+
+	<plnk:partnerLinkType name="Bike"> 
+         <plnk:role name="directory" portType="bk:Bike"/>
+    </plnk:partnerLinkType> 
+
+	<plnk:partnerLinkType name="Offer"> 
+         <plnk:role name="manager" portType="off:Offer"/>
+         <plnk:role name="acceptor" portType="cb:OfferCallback"/>
+    </plnk:partnerLinkType>
+    
+    <vprop:property name="bikeID" type="xsd:string"/>
+    <vprop:propertyAlias propertyName="tns:bikeID" messageType="cb:ReceiveCallBackRequest" part="callbackReq">
+    	<vprop:query>BikeID</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:bikeID" messageType="tns:UserOfferRequest" part="offer">
+    	<vprop:query>bikeID</vprop:query>
+    </vprop:propertyAlias>
+	
+	<!-- binding -->
+	<binding name="BikeDealerBinding" type="tns:BikeDealer">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="userOffer">
+			<soap:operation soapAction="http://bikeDealer/bikeDealer/UserOffer" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<!-- Service defines the address of Web service -->
+	<service name="BikeDealerService">
+		<port name="BikeDealerPort" binding="tns:BikeDealerBinding">
+			<soap:address
+				location="http://localhost:8080/ode/processes/BikeDealerService" />
+		</port>
+	</service>
+</definitions>

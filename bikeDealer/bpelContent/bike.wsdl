@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://bikeDealer/bike/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://bikeDealer/bike/" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	>
+	<!-- type definitions -->
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bikeDealer/bike/">
+			<xsd:element name="BikeID" type="xsd:string" />
+			<xsd:element name="OwnerID" type="xsd:string" />
+		</xsd:schema>
+	</types>
+	
+	<!-- message definitions -->
+	<message name="getOwnerIDRequest">
+		<part name="bikeID" element="tns:BikeID" />
+	</message>
+	<message name="getOwnerIDResponse">
+		<part name="ownerID" element="tns:OwnerID" />
+	</message>
+	
+	
+	<!-- portType definitions -->
+	<portType name="Bike">
+		<operation name="getOwnerID">
+			<input message="tns:getOwnerIDRequest" />
+			<output message="tns:getOwnerIDResponse" />
+		</operation>
+	</portType>
+	
+	<!-- binding definition -->
+	<binding name="BikeBinding" type="tns:Bike">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getOwnerID">
+		<soap:operation
+        	soapAction="http://bikeDealer/bike/getOwnerID"
+        	style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	
+	<!-- Service defines the address of Web service -->
+	<service name="BikeService">
+		<port binding="tns:BikeBinding" name="bike">
+			<soap:address location="http://localhost:9080/ws.bikedealer.bike/services/BikeService" />
+		</port>
+	</service>
+</definitions>

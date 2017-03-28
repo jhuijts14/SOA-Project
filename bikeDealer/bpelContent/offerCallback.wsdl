@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="OfferCallback"
+	targetNamespace="http://bikeDealer/offerCallback/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:tns="http://bikeDealer/offerCallback/" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+	
+	<!-- type definitions -->
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://bikeDealer/offerCallback/" >
+			<xsd:element name="OfferCallbackRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="BikeID" type="xsd:string" />
+						<xsd:element name="OwnerAnswer" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>		
+		</xsd:schema>
+	</types>
+	
+	<!-- message -->
+	<message name="ReceiveCallBackRequest">
+		<part name="callbackReq" element="tns:OfferCallbackRequest" />
+	</message>
+	
+	<!-- portType -->
+	<portType name="OfferCallback">
+		<operation name="receiveCallBack">
+			<input message="tns:ReceiveCallBackRequest" />
+		</operation>
+	</portType>
+	
+<!--  binding -->
+	<binding name="OfferCallbackBinding" type="tns:OfferCallback">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="receiveCallBack">
+		<soap:operation
+        	soapAction="http://bikeDealer/offerCallaback/receiceCallback"
+        	style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+		</operation>
+	</binding>
+	
+<!-- Service defines the address of Web service  -->
+	<service name="OfferCallbackService">
+		<port name="OfferCallbackPort" binding="tns:OfferCallbackBinding">
+			<soap:address
+				location="http://localhost:8080/ode/processes/OfferCallbackService" />
+		</port>
+	</service>
+</definitions>

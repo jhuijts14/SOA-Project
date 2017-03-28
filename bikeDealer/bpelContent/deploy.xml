@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:bike="http://bikeDealer/bike/" xmlns:dealer="http://bikeDealer/dealer/" xmlns:offer="http://bikeDealer/offer/" xmlns:offerCallback="http://bikeDealer/offerCallback/">
+  <process name="dealer:bikeDealer">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="dealer:BikeDealerService" port="BikeDealerPort"/>
+    </provide>
+    <provide partnerLink="offer">
+      <service name="offerCallback:OfferCallbackService" port="OfferCallbackPort"/>
+    </provide>
+    <invoke partnerLink="bike">
+      <service name="bike:BikeService" port="bike"/>
+    </invoke>
+    <invoke partnerLink="offer">
+      <service name="offer:OfferService" port="Offer"/>
+    </invoke>
+  </process>
+</deploy>

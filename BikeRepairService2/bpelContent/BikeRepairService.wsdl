@@ -66,7 +66,7 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   <!-- Service defines the address of Web service -->
   <wsdl:service name="BikeRepairService">
     <wsdl:port binding="tns:BikeRepairServiceSOAP" name="BikeRepairServiceSOAP">
-      <soap:address location="http://localhost:8080/ode/processes/BikeRepairService"/>
+      <soap:address location="http://www.djbikeshop.org/BikeRepairService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
