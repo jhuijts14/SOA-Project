@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.rmi.RemoteException;
@@ -82,7 +83,15 @@ import org.djbikeshop.www.commontypes.*;
                      String fileName = repairIDs + ".txt";
 
                     // System.out.println(System.getProperty("user.dir"));
-                     Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE);
+                     Path filePath;
+                     if (System.getProperty("os.name").startsWith("Windows")) {
+                    	 filePath = Paths.get(fileName);
+                     }
+                     else {
+                         String tmpDirPath = "/Users/joep/Documents/Twente/SOA/Project/Data";
+                    	 filePath = Paths.get(tmpDirPath, fileName);                    	 
+                     }
+                     Files.write(filePath, content.getBytes(), StandardOpenOption.CREATE);
                     
                      
                      try{
@@ -161,7 +170,17 @@ import org.djbikeshop.www.commontypes.*;
                      billCallSerStub.confirmBillSent(stubBillSentConfirm);
 
                      String TotalCostReturn = null;
-                     try(BufferedReader br = new BufferedReader(new FileReader(repairID + ".txt"))) {
+                     String fileName = repairID + ".txt";
+                     Path filePath;
+                     if (System.getProperty("os.name").startsWith("Windows")) {
+                    	 filePath = Paths.get(fileName);
+                     }
+                     else {
+                         String tmpDirPath = "/Users/joep/Documents/Twente/SOA/Project/Data";
+                    	 filePath = Paths.get(tmpDirPath, fileName);                    	 
+                     }
+                     
+                     try(BufferedReader br = new BufferedReader(new FileReader(filePath.toString()))) {
                     	    StringBuilder sb = new StringBuilder();
                     	    String line = br.readLine();
 

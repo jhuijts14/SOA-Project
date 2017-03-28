@@ -124,7 +124,7 @@
      */
     public BillingCallbackServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost:9080/BillCallbackService/services/BillingCallbackService" );
+                    this("http://localhost:9080/BillingCallbackService/services/BillingCallbackService" );
                 
     }
 
