@@ -16,13 +16,13 @@
     <!-- Import the client WSDL -->
     <bpel:import namespace="http://www.djbikeshop.org/CommonTypes/" location="CommonTypes.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
     <bpel:import namespace="http://www.djbikeshop.org/CostCalculationService/" location="CostCalculationService.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
-    <bpel:import namespace="http://www.djbikerepair.org/BikeRepairService/" location="BikeRepairService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+    <bpel:import namespace="http://www.djbikeshop.org/BikeRepairService/" location="BikeRepairService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import namespace="http://www.djbikeshop.org/RepairBillingService/" location="RepairBillingService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import namespace="http://www.djbikeshop.org/CustomerService/" location="CustomerService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import namespace="http://www.djbikeshop.org/BillingCallbackService/" location="BillingCallbackService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import namespace="http://www.djbikeshop.org/CostCalculationService/" location="CostCalculationService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import namespace="http://www.djbikeshop.org/RepairTransportationService/" location="RepairTransportationService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
-    <bpel:import namespace="http://www.djbikerepair.org/BikeInspectionService/" location="BikeInspectionService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+    <bpel:import namespace="http://www.djbikeshop.org/BikeInspectionService/" location="BikeInspectionService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import location="BikeRepairArtifacts.wsdl" namespace="http://www.djbikeshop.org/BikeRepairService/" 
 	        importType="http://schemas.xmlsoap.org/wsdl/" />
 
