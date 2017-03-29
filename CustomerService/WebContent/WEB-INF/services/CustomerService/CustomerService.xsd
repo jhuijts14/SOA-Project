@@ -8,17 +8,14 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<import schemaLocation="CommonTypes.xsd" 
            namespace="http://www.djbikeshop.org/CommonTypes/"/>
 
-    <xsd:element name="PickUpNotification" type="tns:PickUpType"></xsd:element>
+    <xsd:element name="DeliveryNotification" type="tns:NotificationType"></xsd:element>
 
-	<complexType name="PickUpType">
+	<complexType name="NotificationType">
 		<sequence>
 			<element name="CustomerName" type="common:CustomerNameType" 
 				minOccurs="1"  maxOccurs="1">
 			</element>
-			<element name="PickUpAddress" type="common:AddressType" 
-				minOccurs="1"  maxOccurs="1">
-			</element>
-			<element name="PickUpDateTime" type="common:TransportationTimeType" 
+			<element name="DeliveryDetails" type="common:TransportationTimeType" 
 				maxOccurs="1" minOccurs="1">
 			</element>
 		</sequence>

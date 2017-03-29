@@ -36,7 +36,7 @@ import org.djbikeshop.www.commontypes.*;
                       repairID.setRepairIDType(totalCostConfirmation0.getTotalCostConfirmation().getRepairID().getRepairIDType());
                       confirmDelivered.setConfirmationType(totalCostConfirmation0.getTotalCostConfirmation().getConfirmation().getConfirmationType());
                       
-                      System.out.println("Total Cost on bill was calculated for repair ID " + repairID.getRepairIDType() + "and the billing process has begun");
+                      System.out.println("Total Cost on bill was calculated for repair ID " + repairID.getRepairIDType() + "and the billing process has begun!");
         }
      
          

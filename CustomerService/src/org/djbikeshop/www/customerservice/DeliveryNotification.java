@@ -1,66 +1,59 @@
 
 /**
- * CostType.java
+ * DeliveryNotification.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:04:10 GMT)
  */
 
             
-                package org.djbikeshop.www.commontypes;
+                package org.djbikeshop.www.customerservice;
             
 
             /**
-            *  CostType bean class
+            *  DeliveryNotification bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class CostType
+        public  class DeliveryNotification
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://www.djbikeshop.org/CommonTypes/",
-                "CostType",
-                "ns1");
+                "http://www.djbikeshop.org/CustomerService/",
+                "DeliveryNotification",
+                "ns5");
 
             
 
                         /**
-                        * field for CostType
+                        * field for DeliveryNotification
                         */
 
                         
-                                    protected java.math.BigDecimal localCostType ;
+                                    protected org.djbikeshop.www.customerservice.NotificationType localDeliveryNotification ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.math.BigDecimal
+                           * @return org.djbikeshop.www.customerservice.NotificationType
                            */
-                           public  java.math.BigDecimal getCostType(){
-                               return localCostType;
+                           public  org.djbikeshop.www.customerservice.NotificationType getDeliveryNotification(){
+                               return localDeliveryNotification;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param CostType
+                               * @param param DeliveryNotification
                                */
-                               public void setCostType(java.math.BigDecimal param){
+                               public void setDeliveryNotification(org.djbikeshop.www.customerservice.NotificationType param){
                             
-                                             this.localCostType=param;
-                                        
+                                            this.localDeliveryNotification=param;
+                                       
 
                                }
                             
-
-                            public java.lang.String toString(){
-                                
-                                        return localCostType.toString();
-                                    
-                            }
-                        
 
      
      
@@ -96,43 +89,17 @@
                 
                 //We can safely assume an element has only one type associated with it
                 
-                            java.lang.String namespace = parentQName.getNamespaceURI();
-                            java.lang.String _localName = parentQName.getLocalPart();
-                        
-                            writeStartElement(null, namespace, _localName, xmlWriter);
-
-                            // add the type details if this is used in a simple type
-                               if (serializeType){
-                                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.djbikeshop.org/CommonTypes/");
-                                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                                           namespacePrefix+":CostType",
-                                           xmlWriter);
-                                   } else {
-                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                                           "CostType",
-                                           xmlWriter);
-                                   }
-                               }
+                                 if (localDeliveryNotification==null){
+                                   throw new org.apache.axis2.databinding.ADBException("DeliveryNotification cannot be null!");
+                                 }
+                                 localDeliveryNotification.serialize(MY_QNAME,xmlWriter);
                             
-                                          if (localCostType==null){
-                                            
-                                                     throw new org.apache.axis2.databinding.ADBException("CostType cannot be null !!");
-                                                
-                                         }else{
-                                        
-                                                       xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCostType));
-                                            
-                                         }
-                                    
-                            xmlWriter.writeEndElement();
-                    
 
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://www.djbikeshop.org/CommonTypes/")){
-                return "ns1";
+            if(namespace.equals("http://www.djbikeshop.org/CustomerService/")){
+                return "ns5";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -308,12 +275,7 @@
         
                 
                 //We can safely assume an element has only one type associated with it
-                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(MY_QNAME,
-                            new java.lang.Object[]{
-                            org.apache.axis2.databinding.utils.reader.ADBXMLStreamReader.ELEMENT_TEXT,
-                            org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCostType)
-                            },
-                            null);
+                return localDeliveryNotification.getPullParser(MY_QNAME);
 
         }
 
@@ -326,29 +288,6 @@
 
         
         
-                public static CostType fromString(java.lang.String value,
-                                                    java.lang.String namespaceURI){
-                    CostType returnValue = new  CostType();
-                    
-                            returnValue.setCostType(
-                                org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(value));
-                        
-
-                    return returnValue;
-                }
-
-                public static CostType fromString(javax.xml.stream.XMLStreamReader xmlStreamReader,
-                                                                    java.lang.String content) {
-                    if (content.indexOf(":") > -1){
-                        java.lang.String prefix = content.substring(0,content.indexOf(":"));
-                        java.lang.String namespaceUri = xmlStreamReader.getNamespaceContext().getNamespaceURI(prefix);
-                        return CostType.Factory.fromString(content,namespaceUri);
-                    } else {
-                       return CostType.Factory.fromString(content,"");
-                    }
-                }
-
-            
 
         /**
         * static method to create the object
@@ -357,9 +296,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CostType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CostType object =
-                new CostType();
+        public static DeliveryNotification parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            DeliveryNotification object =
+                new DeliveryNotification();
 
             int event;
             java.lang.String nillableValue = null;
@@ -380,20 +319,11 @@
 
                    
                 while(!reader.isEndElement()) {
-                    if (reader.isStartElement()  || reader.hasText()){
+                    if (reader.isStartElement() ){
                 
-                                    if (reader.isStartElement()  || reader.hasText()){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","DeliveryNotification").equals(reader.getName())){
                                 
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CostType" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setCostType(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                                object.setDeliveryNotification(org.djbikeshop.www.customerservice.NotificationType.Factory.parse(reader));
                                             
                               }  // End of if for expected property start element
                                 

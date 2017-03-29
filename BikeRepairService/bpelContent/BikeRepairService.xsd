@@ -24,11 +24,14 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		</sequence>
 	</complexType>
 	
-   <xsd:element name="RepairDelivery" type="tns:DeliveryType"></xsd:element>
+   <xsd:element name="PickUp" type="tns:NotifyType"></xsd:element>
 	
-	<complexType name="DeliveryType">
+	<complexType name="NotifyType">
 		<sequence>
-			<element name="DeliveryTimeDate" type="common:TransportationTimeType" 
+			<element name="CustomerName" type="common:CustomerNameType" 
+				minOccurs="1"  maxOccurs="1">
+			</element>
+			<element name="PickUpDetails" type="common:TransportationTimeType" 
 				minOccurs="1"  maxOccurs="1">
 			</element>
 		</sequence>

@@ -37,10 +37,11 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
     	<xsd:import
     		namespace="http://www.djbikeshop.org/CustomerService/"
     		schemaLocation="CustomerService.xsd">
-    	</xsd:import></xsd:schema></wsdl:types>
+    	</xsd:import>
+    	</xsd:schema></wsdl:types>
   
-  <wsdl:message name="NotifyPickUpRequest">
-    <wsdl:part element="xsd1:PickUpNotification" name="NotifyPickUp"/>
+  <wsdl:message name="NotifyDeliveryRequest">
+    <wsdl:part element="xsd1:DeliveryNotification" name="NotifyDelivery"/>
   </wsdl:message>
   <wsdl:message name="GetApprovalDeliveryAddressRequest">
   	<wsdl:part name="GetApprovalDeliveryAddressRequest" element="xsd1:ApprovalRequest"></wsdl:part>
@@ -50,8 +51,8 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   </wsdl:message>
   
   <wsdl:portType name="CustomerService">
-    <wsdl:operation name="NotifyPickUp">
-      <wsdl:input message="tns:NotifyPickUpRequest"/>
+    <wsdl:operation name="NotifyDelivery">
+      <wsdl:input message="tns:NotifyDeliveryRequest"/>
     </wsdl:operation>
     <wsdl:operation name="GetApprovalDeliveryAddress">
     	<wsdl:input message="tns:GetApprovalDeliveryAddressRequest"></wsdl:input>
@@ -66,8 +67,8 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   
   <wsdl:binding name="CustomerServiceSOAP" type="tns:CustomerService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="NotifyPickUp">
-      <soap:operation soapAction="http://www.djbikeshop.org/CustomerService/NotifyPickUp"/>
+    <wsdl:operation name="NotifyDelivery">
+      <soap:operation soapAction="http://www.djbikeshop.org/CustomerService/NotifyDelivery"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>

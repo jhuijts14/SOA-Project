@@ -71,7 +71,7 @@ import org.djbikeshop.www.commontypes.*;
                      }
                      
                      // Print total cost on system to see if cost is calculated;
-                     System.out.println("The total cost of the repair service is: " + totalCost + " $");
+                     System.out.println("The total cost of the repair service is: $ " + totalCost + ".");
                      
                      // Retrieve the information needed for the bill to be stored by the billing department;
                      //bill = bill1;
@@ -199,10 +199,13 @@ import org.djbikeshop.www.commontypes.*;
 							e.printStackTrace();
 						}
                      
+                     int totCostIndex = TotalCostReturn.lastIndexOf(repairID);
+                     String totCost = TotalCostReturn.substring(totCostIndex + 1, TotalCostReturn.length());
+                     
                      	// Simulate sending the bill by printing the following;
                          System.out.println("===============================================================");
                          System.out.println("Repair ID: " + repairID);
-                         System.out.println("The total cost of the repair service is: $" + TotalCostReturn);
+                         System.out.println("The total cost of the repair service is: $" + totCost);
                          System.out.println("===============================================================");
  
                 

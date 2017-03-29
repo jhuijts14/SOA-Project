@@ -1,6 +1,6 @@
 
 /**
- * ApprovalRequestType.java
+ * NotificationType.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.4  Built on : Dec 28, 2015 (10:04:10 GMT)
@@ -11,104 +11,74 @@
             
 
             /**
-            *  ApprovalRequestType bean class
+            *  NotificationType bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class ApprovalRequestType
+        public  class NotificationType
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had
-                name = ApprovalRequestType
+                name = NotificationType
                 Namespace URI = http://www.djbikeshop.org/CustomerService/
                 Namespace Prefix = ns5
                 */
             
 
                         /**
-                        * field for RepairTime
+                        * field for CustomerName
                         */
 
                         
-                                    protected org.djbikeshop.www.commontypes.RepairTimeType localRepairTime ;
+                                    protected org.djbikeshop.www.commontypes.CustomerNameType localCustomerName ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return org.djbikeshop.www.commontypes.RepairTimeType
+                           * @return org.djbikeshop.www.commontypes.CustomerNameType
                            */
-                           public  org.djbikeshop.www.commontypes.RepairTimeType getRepairTime(){
-                               return localRepairTime;
+                           public  org.djbikeshop.www.commontypes.CustomerNameType getCustomerName(){
+                               return localCustomerName;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param RepairTime
+                               * @param param CustomerName
                                */
-                               public void setRepairTime(org.djbikeshop.www.commontypes.RepairTimeType param){
+                               public void setCustomerName(org.djbikeshop.www.commontypes.CustomerNameType param){
                             
-                                            this.localRepairTime=param;
+                                            this.localCustomerName=param;
                                        
 
                                }
                             
 
                         /**
-                        * field for RepairCost
+                        * field for DeliveryDetails
                         */
 
                         
-                                    protected org.djbikeshop.www.commontypes.CostType localRepairCost ;
+                                    protected org.djbikeshop.www.commontypes.TransportationTimeType localDeliveryDetails ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return org.djbikeshop.www.commontypes.CostType
+                           * @return org.djbikeshop.www.commontypes.TransportationTimeType
                            */
-                           public  org.djbikeshop.www.commontypes.CostType getRepairCost(){
-                               return localRepairCost;
+                           public  org.djbikeshop.www.commontypes.TransportationTimeType getDeliveryDetails(){
+                               return localDeliveryDetails;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param RepairCost
+                               * @param param DeliveryDetails
                                */
-                               public void setRepairCost(org.djbikeshop.www.commontypes.CostType param){
+                               public void setDeliveryDetails(org.djbikeshop.www.commontypes.TransportationTimeType param){
                             
-                                            this.localRepairCost=param;
-                                       
-
-                               }
-                            
-
-                        /**
-                        * field for Customer
-                        */
-
-                        
-                                    protected org.djbikeshop.www.commontypes.CustomerType localCustomer ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return org.djbikeshop.www.commontypes.CustomerType
-                           */
-                           public  org.djbikeshop.www.commontypes.CustomerType getCustomer(){
-                               return localCustomer;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Customer
-                               */
-                               public void setCustomer(org.djbikeshop.www.commontypes.CustomerType param){
-                            
-                                            this.localCustomer=param;
+                                            this.localDeliveryDetails=param;
                                        
 
                                }
@@ -162,33 +132,27 @@
                    java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.djbikeshop.org/CustomerService/");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":ApprovalRequestType",
+                           namespacePrefix+":NotificationType",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "ApprovalRequestType",
+                           "NotificationType",
                            xmlWriter);
                    }
 
                
                    }
                
-                                            if (localRepairTime==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("RepairTime cannot be null!!");
+                                            if (localCustomerName==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("CustomerName cannot be null!!");
                                             }
-                                           localRepairTime.serialize(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","RepairTime"),
+                                           localCustomerName.serialize(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","CustomerName"),
                                                xmlWriter);
                                         
-                                            if (localRepairCost==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("RepairCost cannot be null!!");
+                                            if (localDeliveryDetails==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("DeliveryDetails cannot be null!!");
                                             }
-                                           localRepairCost.serialize(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","RepairCost"),
-                                               xmlWriter);
-                                        
-                                            if (localCustomer==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("Customer cannot be null!!");
-                                            }
-                                           localCustomer.serialize(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","Customer"),
+                                           localDeliveryDetails.serialize(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","DeliveryDetails"),
                                                xmlWriter);
                                         
                     xmlWriter.writeEndElement();
@@ -377,31 +341,22 @@
 
                 
                             elementList.add(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/",
-                                                                      "RepairTime"));
+                                                                      "CustomerName"));
                             
                             
-                                    if (localRepairTime==null){
-                                         throw new org.apache.axis2.databinding.ADBException("RepairTime cannot be null!!");
+                                    if (localCustomerName==null){
+                                         throw new org.apache.axis2.databinding.ADBException("CustomerName cannot be null!!");
                                     }
-                                    elementList.add(localRepairTime);
+                                    elementList.add(localCustomerName);
                                 
                             elementList.add(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/",
-                                                                      "RepairCost"));
+                                                                      "DeliveryDetails"));
                             
                             
-                                    if (localRepairCost==null){
-                                         throw new org.apache.axis2.databinding.ADBException("RepairCost cannot be null!!");
+                                    if (localDeliveryDetails==null){
+                                         throw new org.apache.axis2.databinding.ADBException("DeliveryDetails cannot be null!!");
                                     }
-                                    elementList.add(localRepairCost);
-                                
-                            elementList.add(new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/",
-                                                                      "Customer"));
-                            
-                            
-                                    if (localCustomer==null){
-                                         throw new org.apache.axis2.databinding.ADBException("Customer cannot be null!!");
-                                    }
-                                    elementList.add(localCustomer);
+                                    elementList.add(localDeliveryDetails);
                                 
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -427,9 +382,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static ApprovalRequestType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            ApprovalRequestType object =
-                new ApprovalRequestType();
+        public static NotificationType parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            NotificationType object =
+                new NotificationType();
 
             int event;
             java.lang.String nillableValue = null;
@@ -453,10 +408,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"ApprovalRequestType".equals(type)){
+                            if (!"NotificationType".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (ApprovalRequestType)org.djbikeshop.www.customerservice.ExtensionMapper.getTypeObject(
+                                return (NotificationType)org.djbikeshop.www.customerservice.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -481,9 +436,9 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","RepairTime").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","CustomerName").equals(reader.getName())){
                                 
-                                                object.setRepairTime(org.djbikeshop.www.commontypes.RepairTimeType.Factory.parse(reader));
+                                                object.setCustomerName(org.djbikeshop.www.commontypes.CustomerNameType.Factory.parse(reader));
                                               
                                         reader.next();
                                     
@@ -497,25 +452,9 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","RepairCost").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","DeliveryDetails").equals(reader.getName())){
                                 
-                                                object.setRepairCost(org.djbikeshop.www.commontypes.CostType.Factory.parse(reader));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.djbikeshop.org/CustomerService/","Customer").equals(reader.getName())){
-                                
-                                                object.setCustomer(org.djbikeshop.www.commontypes.CustomerType.Factory.parse(reader));
+                                                object.setDeliveryDetails(org.djbikeshop.www.commontypes.TransportationTimeType.Factory.parse(reader));
                                               
                                         reader.next();
                                     
