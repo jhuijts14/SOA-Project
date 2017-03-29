@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.djbikeshop.org/BikeInspectionService" 
+<schema targetNamespace="http://www.djbikeshop.org/BikeInspectionService/" 
 elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" 
-xmlns:tns="http://www.djbikeshop.org/BikeInspectionService"
-xmlns:common="http://www.djbikeshop.org/CommonTypes">
+xmlns:tns="http://www.djbikeshop.org/BikeInspectionService/"
+xmlns:common="http://www.djbikeshop.org/CommonTypes/">
 
 <import schemaLocation="CommonTypes.xsd" 
-           namespace="http://www.djbikeshop.org/CommonTypes"/>
+           namespace="http://www.djbikeshop.org/CommonTypes/"/>
 
 <complexType name="InspectionResultsType">
 		<sequence>

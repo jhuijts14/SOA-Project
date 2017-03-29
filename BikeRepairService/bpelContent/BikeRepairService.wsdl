@@ -5,8 +5,9 @@ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 name="BikeRepairService" 
 targetNamespace="http://www.djbikerepair.org/BikeRepairService/" 
-xmlns:xsd1="http://www.djbikeshop.org/BikeRepairService"
-xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+xmlns:xsd1="http://www.djbikeshop.org/BikeRepairService/"
+xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+	xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop">
   
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.djbikerepair.org/BikeRepairService/">
@@ -27,7 +28,7 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     	<xsd:import
-    		namespace="http://www.djbikeshop.org/BikeRepairService"
+    		namespace="http://www.djbikeshop.org/BikeRepairService/"
     		schemaLocation="BikeRepairService.xsd">
     	</xsd:import></xsd:schema></wsdl:types>
   

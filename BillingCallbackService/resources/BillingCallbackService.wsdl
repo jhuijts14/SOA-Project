@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="BillingCallbackService" targetNamespace="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd1="http://www.djbikeshop.org/BillingCallbackService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="BillingCallbackService" targetNamespace="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd1="http://www.djbikeshop.org/BillingCallbackService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.djbikeshop.org/BillingCallbackService/">
       <xsd:element name="ConfirmBillSent">
@@ -32,7 +32,7 @@
       </xsd:element>
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    	<xsd:import namespace="http://www.djbikeshop.org/BillingCallbackService" schemaLocation="BillingCallbackService.xsd">
+    	<xsd:import namespace="http://www.djbikeshop.org/BillingCallbackService/" schemaLocation="BillingCallbackService.xsd">
     	</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="ConfirmBillSentRequest">
@@ -45,15 +45,15 @@
   </wsdl:message>
   <wsdl:portType name="BillingCallbackService">
     <wsdl:operation name="ConfirmBillSent">
-      <wsdl:input message="tns:ConfirmBillSentRequest">
+      <wsdl:input message="xsd1:ConfirmBillSentRequest">
     </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="ConfirmTotalCost">
-      <wsdl:input message="tns:ConfirmTotalCostRequest">
+      <wsdl:input message="xsd1:ConfirmTotalCostRequest">
     </wsdl:input>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BillingCallbackServiceSOAP" type="tns:BillingCallbackService">
+  <wsdl:binding name="BillingCallbackServiceSOAP" type="xsd1:BillingCallbackService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="ConfirmBillSent">
       <soap:operation soapAction="http://www.djbikeshop.org/BillingCallbackService/ConfirmBillSent"/>
@@ -69,8 +69,11 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="BillingCallbackService">
-    <wsdl:port name="BillingCallbackServiceSOAP" binding="tns:BillingCallbackServiceSOAP">
-      <soap:address location="http://www.djbikeshop.org/BillingCallbackService"/>
+    <wsdl:port name="BillingCallbackServiceSOAP" binding="xsd1:BillingCallbackServiceSOAP">
+      <soap:address location="http://localhost:9080/BillingCallbackService/services/BillingCallbackService"/>
     </wsdl:port>
   </wsdl:service>
+    <plnk:partnerLinkType name="BillingCallbackServiceLinkType">
+		<plnk:role name="billingCallback" portType="tns:BillingCallbackService"/>
+  </plnk:partnerLinkType>
 </wsdl:definitions>

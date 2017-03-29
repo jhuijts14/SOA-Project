@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="CostCalculationService" targetNamespace="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd1="http://www.djbikeshop.org/CostCalculationService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="CostCalculationService" targetNamespace="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd1="http://www.djbikeshop.org/CostCalculationService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  		<xsd:import namespace="http://www.djbikeshop.org/CostCalculationService" schemaLocation="CostCalculationService.xsd">
+  		<xsd:import namespace="http://www.djbikeshop.org/CostCalculationService/" schemaLocation="CostCalculationService.xsd">
   		</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="CalculateRepairCostResponse">
@@ -23,19 +23,19 @@
   </wsdl:message>
   <wsdl:portType name="CostCalculationService">
     <wsdl:operation name="CalculateTransportCost">
-      <wsdl:input message="tns:CalculateTransportCostRequest">
+      <wsdl:input message="xsd1:CalculateTransportCostRequest">
     </wsdl:input>
-      <wsdl:output message="tns:CalculateTransportCostResponse">
+      <wsdl:output message="xsd1:CalculateTransportCostResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CalculateRepairCost">
-      <wsdl:input message="tns:CalculateRepairCostRequest">
+      <wsdl:input message="xsd1:CalculateRepairCostRequest">
     </wsdl:input>
-      <wsdl:output message="tns:CalculateRepairCostResponse">
+      <wsdl:output message="xsd1:CalculateRepairCostResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="CostCalculationServiceSOAP" type="tns:CostCalculationService">
+  <wsdl:binding name="CostCalculationServiceSOAP" type="xsd1:CostCalculationService">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="CalculateTransportCost">
       <soap:operation soapAction="http://www.djbikeshop.org/CostCalculationService/CalculateTransportCost"/>
@@ -57,8 +57,11 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CostCalculationService">
-    <wsdl:port name="CostCalculationServiceSOAP" binding="tns:CostCalculationServiceSOAP">
-      <soap:address location="http://www.djbikeshop.org/CostCalculationService"/>
+    <wsdl:port name="CostCalculationServiceSOAP" binding="xsd1:CostCalculationServiceSOAP">
+      <soap:address location="http://localhost:9080/CostCalculationService/services/CostCalculationService"/>
     </wsdl:port>
   </wsdl:service>
+    <plnk:partnerLinkType name="CostCalculationServiceLinkType">
+		<plnk:role name="calculator" portType="tns:CostCalculationService"/>
+  </plnk:partnerLinkType>
 </wsdl:definitions>

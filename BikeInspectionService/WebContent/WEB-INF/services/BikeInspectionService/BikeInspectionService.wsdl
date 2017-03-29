@@ -5,12 +5,13 @@ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 name="BikeInspectionService" 
 targetNamespace="http://www.djbikeshop.org/BikeInspectionService/" 
-xmlns:xsd1="http://www.djbikeshop.org/BikeInspectionService">
+xmlns:xsd1="http://www.djbikeshop.org/BikeInspectionService/"
+xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   
   <wsdl:types>
   	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   		<xsd:import
-  			namespace="http://www.djbikeshop.org/BikeInspectionService"
+  			namespace="http://www.djbikeshop.org/BikeInspectionService/"
   			schemaLocation="BikeInspectionService.xsd">
   		</xsd:import></xsd:schema></wsdl:types>
   <wsdl:message name="inspectBikeRequest">
@@ -27,6 +28,11 @@ xmlns:xsd1="http://www.djbikeshop.org/BikeInspectionService">
     </wsdl:operation>
   </wsdl:portType>
   
+  <!-- Added partner link -->
+  <plnk:partnerLinkType name="BikeInspectionServiceLinkType">
+		<plnk:role name="inspector" portType="tns:BikeInspectionService" />
+  </plnk:partnerLinkType>
+  
   <wsdl:binding name="BikeInspectionServiceSOAP" type="tns:BikeInspectionService">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="inspectBike">
@@ -40,9 +46,10 @@ xmlns:xsd1="http://www.djbikeshop.org/BikeInspectionService">
     </wsdl:operation>
   </wsdl:binding>
   
+  <!-- Service defines the address of Web service -->
   <wsdl:service name="BikeInspectionService">
     <wsdl:port binding="tns:BikeInspectionServiceSOAP" name="BikeInspectionServiceSOAP">
-      <soap:address location="http://www.djbikeshop.org/BikeInspectionService"/>
+      <soap:address location="http://localhost:9080/BikeInspectionService/services/BikeInspectionService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

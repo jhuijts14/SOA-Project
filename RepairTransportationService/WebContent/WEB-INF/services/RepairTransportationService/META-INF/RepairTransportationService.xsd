@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.djbikeshop.org/CommonTypes" xmlns:tns="http://www.djbikeshop.org/RepairTransportationService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.djbikeshop.org/RepairTransportationService">
-    <import namespace="http://www.djbikeshop.org/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.djbikeshop.org/CommonTypes/" xmlns:tns="http://www.djbikeshop.org/RepairTransportationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.djbikeshop.org/RepairTransportationService/">
+    <import namespace="http://www.djbikeshop.org/CommonTypes/" schemaLocation="CommonTypes.xsd"/>
     <complexType name="TransportationTimeRequestType">
         <sequence>
             <element name="Repair" type="common:RepairIDType"/>

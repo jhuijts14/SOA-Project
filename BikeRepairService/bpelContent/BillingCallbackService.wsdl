@@ -5,7 +5,7 @@ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 name="BillingCallbackService" 
 targetNamespace="http://www.djbikeshop.org/BillingCallbackService/" 
-xmlns:xsd1="http://www.djbikeshop.org/BillingCallbackService"
+xmlns:xsd1="http://www.djbikeshop.org/BillingCallbackServic/"
 xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.djbikeshop.org/BillingCallbackService/">
@@ -40,15 +40,15 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     	<xsd:import
-    		namespace="http://www.djbikeshop.org/BillingCallbackService"
+    		namespace="http://www.djbikeshop.org/BillingCallbackService/"
     		schemaLocation="BillingCallbackService.xsd">
     	</xsd:import></xsd:schema></wsdl:types>
   
   <wsdl:message name="ConfirmBillSentRequest">
-    <wsdl:part element="xsd1:BillSentConfirmation" name="ConfirmBillSentRequest"/>
+    <wsdl:part element="tns:BillSentConfirmation" name="ConfirmBillSentRequest"/>
   </wsdl:message>
   <wsdl:message name="ConfirmTotalCostRequest">
-  	<wsdl:part name="ConfirmTotalCost" element="xsd1:TotalCostConfirmation"></wsdl:part>
+  	<wsdl:part name="ConfirmTotalCost" element="tns:TotalCostConfirmation"></wsdl:part>
   </wsdl:message>
   
   <wsdl:portType name="BillingCallbackService">

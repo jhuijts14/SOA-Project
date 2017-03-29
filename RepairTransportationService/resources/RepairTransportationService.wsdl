@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="RepairTransportationService" targetNamespace="http://www.djbikeshop.org/RepairTransportationService/" xmlns:xsd1="http://www.djbikeshop.org/RepairTransportationService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/RepairTransportationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="RepairTransportationService" targetNamespace="http://www.djbikeshop.org/RepairTransportationService/" xmlns:xsd1="http://www.djbikeshop.org/RepairTransportationService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/RepairTransportationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  		<xsd:import namespace="http://www.djbikeshop.org/RepairTransportationService" schemaLocation="RepairTransportationService.xsd">
+  		<xsd:import namespace="http://www.djbikeshop.org/RepairTransportationService/" schemaLocation="RepairTransportationService.xsd">
   		</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="GetTransportationDistanceRequest">
@@ -31,25 +31,25 @@
   </wsdl:message>
   <wsdl:portType name="RepairTransportationService">
     <wsdl:operation name="GetTransportationTime">
-      <wsdl:input message="tns:GetTransportationTimeRequest">
+      <wsdl:input message="xsd1:GetTransportationTimeRequest">
     </wsdl:input>
-      <wsdl:output message="tns:GetTransportationTimeResponse">
+      <wsdl:output message="xsd1:GetTransportationTimeResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetTransportationDistance">
-      <wsdl:input message="tns:GetTransportationDistanceRequest">
+      <wsdl:input message="xsd1:GetTransportationDistanceRequest">
     </wsdl:input>
-      <wsdl:output message="tns:GetTransportationDistanceResponse">
+      <wsdl:output message="xsd1:GetTransportationDistanceResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateDeliveryTime">
-      <wsdl:input message="tns:UpdateDeliveryTimeRequest">
+      <wsdl:input message="xsd1:UpdateDeliveryTimeRequest">
     </wsdl:input>
-      <wsdl:output message="tns:UpdateDeliveryTimeResponse">
+      <wsdl:output message="xsd1:UpdateDeliveryTimeResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="RepairTransportationServiceSOAP" type="tns:RepairTransportationService">
+  <wsdl:binding name="RepairTransportationServiceSOAP" type="xsd1:RepairTransportationService">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="GetTransportationTime">
       <soap:operation soapAction="http://www.djbikeshop.org/RepairTransportationService/GetTransportationTime"/>
@@ -80,8 +80,11 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="RepairTransportationService">
-    <wsdl:port name="RepairTransportationServiceSOAP" binding="tns:RepairTransportationServiceSOAP">
-      <soap:address location="http://www.djbikeshop.org/RepairTransportationService"/>
+    <wsdl:port name="RepairTransportationServiceSOAP" binding="xsd1:RepairTransportationServiceSOAP">
+      <soap:address location="http://localhost:9080/RepairTransportationService/services/RepairTransportationService"/>
     </wsdl:port>
   </wsdl:service>
+    <plnk:partnerLinkType name="RepairTransportationServiceLinkType">
+		<plnk:role name="transporter" portType="tns:RepairTransportationService"/>
+  </plnk:partnerLinkType>
 </wsdl:definitions>

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.djbikeshop.org/RepairTransportationService" 
-elementFormDefault="qualified" 
-xmlns="http://www.w3.org/2001/XMLSchema" 
-xmlns:tns="http://www.djbikeshop.org/RepairTransportationService"
-xmlns:common="http://www.djbikeshop.org/CommonTypes"
-xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema targetNamespace="http://www.djbikeshop.org/RepairTransportationService/" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.djbikeshop.org/RepairTransportationService/" xmlns:common="http://www.djbikeshop.org/CommonTypes/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-<import schemaLocation="CommonTypes.xsd" 
-           namespace="http://www.djbikeshop.org/CommonTypes"/>
+<xsd:import schemaLocation="CommonTypes.xsd" namespace="http://www.djbikeshop.org/CommonTypes/" />
  
  <xsd:complexType name="TransportationTimeRequestType">
 		<xsd:sequence>
@@ -66,4 +60,4 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-</schema>
+</xsd:schema>

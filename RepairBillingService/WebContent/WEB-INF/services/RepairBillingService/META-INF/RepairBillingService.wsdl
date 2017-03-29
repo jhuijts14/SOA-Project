@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="RepairBillingService" targetNamespace="http://www.djbikeshop.org/RepairBillingService/" xmlns:xsd1="http://www.djbikeshop.org/RepairBillingService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/RepairBillingService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="RepairBillingService" targetNamespace="http://www.djbikeshop.org/RepairBillingService/" xmlns:xsd1="http://www.djbikeshop.org/RepairBillingService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.djbikeshop.org/RepairBillingService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.djbikeshop.org/RepairBillingService/">
       <xsd:element name="CalculateTotalCost">
@@ -18,7 +18,7 @@
       </xsd:element>
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    	<xsd:import namespace="http://www.djbikeshop.org/RepairBillingService" schemaLocation="RepairBillingService.xsd">
+    	<xsd:import namespace="http://www.djbikeshop.org/RepairBillingService/" schemaLocation="RepairBillingService.xsd">
     	</xsd:import></xsd:schema>
   </wsdl:types>
   <wsdl:message name="CalculateTotalCostRequest">
@@ -31,15 +31,15 @@
   </wsdl:message>
   <wsdl:portType name="RepairBillingService">
     <wsdl:operation name="CalculateTotalCost">
-      <wsdl:input message="tns:CalculateTotalCostRequest">
+      <wsdl:input message="xsd1:CalculateTotalCostRequest">
     </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="SendBill">
-      <wsdl:input message="tns:SendBillRequest">
+      <wsdl:input message="xsd1:SendBillRequest">
     </wsdl:input>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="RepairBillingServiceSOAP" type="tns:RepairBillingService">
+  <wsdl:binding name="RepairBillingServiceSOAP" type="xsd1:RepairBillingService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="CalculateTotalCost">
       <soap:operation soapAction="http://www.djbikeshop.org/RepairBillingService/CalculateTotalCost"/>
@@ -55,8 +55,11 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="RepairBillingService">
-    <wsdl:port name="RepairBillingServiceSOAP" binding="tns:RepairBillingServiceSOAP">
-      <soap:address location="http://www.djbikeservice.org/RepairBillingService"/>
+    <wsdl:port name="RepairBillingServiceSOAP" binding="xsd1:RepairBillingServiceSOAP">
+      <soap:address location="http://localhost:9080/RepairBillingService/services/RepairBillingService"/>
     </wsdl:port>
   </wsdl:service>
+    <plnk:partnerLinkType name="RepairBillingServiceLinkType">
+		<plnk:role name="billing" portType="tns:RepairBillingService"/>
+  </plnk:partnerLinkType>
 </wsdl:definitions>

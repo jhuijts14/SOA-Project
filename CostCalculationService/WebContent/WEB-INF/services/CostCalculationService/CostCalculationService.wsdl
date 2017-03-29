@@ -4,12 +4,14 @@ xmlns:tns="http://www.djbikeshop.org/CostCalculationService/"
 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 name="CostCalculationService" 
-targetNamespace="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd1="http://www.djbikeshop.org/CostCalculationService">
+targetNamespace="http://www.djbikeshop.org/CostCalculationService/" 
+xmlns:xsd1="http://www.djbikeshop.org/CostCalculationService/"
+xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   
   <wsdl:types>
   	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   		<xsd:import
-  			namespace="http://www.djbikeshop.org/CostCalculationService"
+  			namespace="http://www.djbikeshop.org/CostCalculationService/"
   			schemaLocation="CostCalculationService.xsd">
   		</xsd:import></xsd:schema></wsdl:types>
   		
@@ -37,6 +39,11 @@ targetNamespace="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd1="
     </wsdl:operation>
   </wsdl:portType>
   
+  <!-- Added partner link -->
+  <plnk:partnerLinkType name="CostCalculationServiceLinkType">
+		<plnk:role name="calculator" portType="tns:CostCalculationService" />
+  </plnk:partnerLinkType>
+  
   <wsdl:binding name="CostCalculationServiceSOAP" type="tns:CostCalculationService">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="CalculateTransportCost">
@@ -59,9 +66,10 @@ targetNamespace="http://www.djbikeshop.org/CostCalculationService/" xmlns:xsd1="
     </wsdl:operation>
   </wsdl:binding>
   
+  <!-- Service defines the address of Web service -->
   <wsdl:service name="CostCalculationService">
     <wsdl:port binding="tns:CostCalculationServiceSOAP" name="CostCalculationServiceSOAP">
-      <soap:address location="http://www.djbikeshop.org/CostCalculationService"/>
+      <soap:address location="http://localhost:9080/CostCalculationService/services/CostCalculationService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

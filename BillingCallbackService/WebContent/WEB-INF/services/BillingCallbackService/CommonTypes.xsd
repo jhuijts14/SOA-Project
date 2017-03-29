@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="http://www.djbikeshop.org/CommonTypes" 
+<xsd:schema targetNamespace="http://www.djbikeshop.org/CommonTypes/" 
 elementFormDefault="qualified" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-xmlns:tns="http://www.djbikeshop.org/CommonTypes">
+xmlns:tns="http://www.djbikeshop.org/CommonTypes/">
 
-<xsd:element name="Customer" type="tns:CustomerType"></xsd:element>
 	<xsd:complexType name="CustomerType">
 		<xsd:sequence>
 			<xsd:element name="RepairID" type="tns:RepairIDType" maxOccurs="1" minOccurs="1">

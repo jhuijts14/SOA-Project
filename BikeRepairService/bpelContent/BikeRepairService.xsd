@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.djbikeshop.org/BikeRepairService" 
+<schema targetNamespace="http://www.djbikeshop.org/BikeRepairService/" 
 elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" 
-xmlns:tns="http://www.djbikeshop.org/BikeRepairService"
-xmlns:common="http://www.djbikeshop.org/CommonTypes"
+xmlns:tns="http://www.djbikeshop.org/BikeRepairService/"
+xmlns:common="http://www.djbikeshop.org/CommonTypes/"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 <import schemaLocation="CommonTypes.xsd" 
-           namespace="http://www.djbikeshop.org/CommonTypes"/>
+           namespace="http://www.djbikeshop.org/CommonTypes/"/>
 
    <xsd:element name="RepairRequest" type="tns:RepairRequestType"></xsd:element>
 

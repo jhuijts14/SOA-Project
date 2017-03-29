@@ -5,13 +5,13 @@ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 name="RepairTransportationService" 
 targetNamespace="http://www.djbikeshop.org/RepairTransportationService/" 
-xmlns:xsd1="http://www.djbikeshop.org/RepairTransportationService"
+xmlns:xsd1="http://www.djbikeshop.org/RepairTransportationService/"
 xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
   
   <wsdl:types>
   	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   		<xsd:import
-  			namespace="http://www.djbikeshop.org/RepairTransportationService"
+  			namespace="http://www.djbikeshop.org/RepairTransportationService/"
   			schemaLocation="RepairTransportationService.xsd">
   		</xsd:import></xsd:schema></wsdl:types>
   
