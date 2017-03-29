@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-xmlns:tns="http://www.djbikerepair.org/BikeRepairService/" 
-xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-name="BikeRepairService" 
-targetNamespace="http://www.djbikerepair.org/BikeRepairService/" 
-xmlns:xsd1="http://www.djbikeshop.org/BikeRepairService/"
-xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
-xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" 
-xmlns:rts="http://www.djbikeshop.org/RepairTransportationService/" 
-xmlns:bis="http://www.djbikeshop.org/BikeInspectionService/" 
-xmlns:bcs="http://www.djbikeshop.org/BillingCallbackService/" 
-xmlns:ccs="http://www.djbikeshop.org/CostCalculationService/" 
-xmlns:cs="http://www.djbikeshop.org/CustomerService/" 
-xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
+<wsdl:definitions name="BikeRepairService" 
+targetNamespace="http://www.djbikeshop.org/BikeRepairService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.djbikeshop.org/BikeRepairService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.djbikeshop.org/BikeRepairService/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:rts="http://www.djbikeshop.org/RepairTransportationService/" xmlns:bis="http://www.djbikeshop.org/BikeInspectionService/" xmlns:bcs="http://www.djbikeshop.org/BillingCallbackService/" xmlns:ccs="http://www.djbikeshop.org/CostCalculationService/" xmlns:cs="http://www.djbikeshop.org/CustomerService/" xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
   
   	<!-- types -->
   
@@ -25,7 +12,7 @@ xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
     <wsdl:import namespace="http://www.djbikeshop.org/RepairBillingService/" location="RepairBillingService.wsdl"></wsdl:import>
     
     <wsdl:types>
-    <xsd:schema targetNamespace="http://www.djbikerepair.org/BikeRepairService/">
+    <xsd:schema targetNamespace="http://www.djbikeshop.org/BikeRepairService/">
       <xsd:element name="RequestRepair">
         <xsd:complexType>
           <xsd:sequence>
@@ -92,6 +79,7 @@ xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
          <plnk:role name="billing" portType="rbs:RepairBillingService"/>
     </plnk:partnerLinkType>
   
+    	<!-- property -->
   <vprop:property name="repairID" type="xsd:string"/>
   <vprop:propertyAlias propertyName="tns:repairID" messageType="bcs:ConfirmBillSentRequest" part="ConfirmBillSentRequest">
     	<vprop:query>RepairID</vprop:query>
@@ -104,7 +92,7 @@ xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
   <wsdl:binding name="BikeRepairServiceSOAP" type="tns:BikeRepairService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="RequestRepair">
-      <soap:operation soapAction="http://www.djbikerepair.org/BikeRepairService/RequestRepair"/>
+      <soap:operation soapAction="http://www.djbikeshop.org/BikeRepairService/RequestRepair"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
