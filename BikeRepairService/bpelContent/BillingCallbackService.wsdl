@@ -16,24 +16,10 @@ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="ConfirmBillSentResponse">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element name="out" type="xsd:string"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
       <xsd:element name="ConfirmTotalCost">
       	<xsd:complexType>
       		<xsd:sequence>
       			<xsd:element name="in" type="xsd:string"></xsd:element>
-      		</xsd:sequence>
-      	</xsd:complexType>
-      </xsd:element>
-      <xsd:element name="ConfirmTotalCostResponse">
-      	<xsd:complexType>
-      		<xsd:sequence>
-      			<xsd:element name="out" type="xsd:string"></xsd:element>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>

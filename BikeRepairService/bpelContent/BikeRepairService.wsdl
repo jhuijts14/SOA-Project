@@ -15,6 +15,8 @@ xmlns:ccs="http://www.djbikeshop.org/CostCalculationService/"
 xmlns:cs="http://www.djbikeshop.org/CustomerService/" 
 xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
   
+  	<!-- types -->
+  
     <wsdl:import namespace="http://www.djbikeshop.org/RepairTransportationService/" location="RepairTransportationService.wsdl"></wsdl:import>
     <wsdl:import namespace="http://www.djbikeshop.org/BikeInspectionService/" location="BikeInspectionService.wsdl"></wsdl:import>
     <wsdl:import namespace="http://www.djbikeshop.org/BillingCallbackService/" location="BillingCallbackService.wsdl"></wsdl:import>
@@ -45,6 +47,7 @@ xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
     		schemaLocation="BikeRepairService.xsd">
     	</xsd:import></xsd:schema></wsdl:types>
   
+  	<!-- message -->
   <wsdl:message name="RequestRepairRequest">
     <wsdl:part element="xsd1:RepairRequest" name="RequestRepair"/>
   </wsdl:message>
@@ -52,6 +55,7 @@ xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
     <wsdl:part element="xsd1:PickUp" name="NotifyPickUp"/>
   </wsdl:message>
   
+  	<!-- portType -->
   <wsdl:portType name="BikeRepairService">
     <wsdl:operation name="RequestRepair">
       <wsdl:input message="tns:RequestRepairRequest"/>
@@ -64,6 +68,39 @@ xmlns:rbs="http://www.djbikeshop.org/RepairBillingService/">
 		<plnk:role name="repairService" portType="tns:BikeRepairService" />
   </plnk:partnerLinkType>
   
+  <plnk:partnerLinkType name="RepairTransportationServiceLinkType"> 
+         <plnk:role name="transporter" portType="rts:RepairTransportationService"/>
+    </plnk:partnerLinkType> 
+
+	<plnk:partnerLinkType name="BikeInspectionServiceLinkType"> 
+         <plnk:role name="inspector" portType="bis:BikeInspectionService"/>
+    </plnk:partnerLinkType>
+    
+     <plnk:partnerLinkType name="BillingCallbackServiceLinkType"> 
+         <plnk:role name="billingCallback" portType="bcs:BillingCallbackService"/>
+    </plnk:partnerLinkType>
+    
+    <plnk:partnerLinkType name="CostCalculationServiceLinkType"> 
+         <plnk:role name="calculator" portType="ccs:CostCalculationService"/>
+    </plnk:partnerLinkType>
+    
+    <plnk:partnerLinkType name="CustomerServiceLinkType"> 
+         <plnk:role name="customer" portType="cs:CustomerService"/>
+    </plnk:partnerLinkType>
+    
+    <plnk:partnerLinkType name="RepairBillingServiceLinkType"> 
+         <plnk:role name="billing" portType="rbs:RepairBillingService"/>
+    </plnk:partnerLinkType>
+  
+  <vprop:property name="repairID" type="xsd:string"/>
+  <vprop:propertyAlias propertyName="tns:repairID" messageType="bcs:ConfirmBillSentRequest" part="ConfirmBillSentRequest">
+    	<vprop:query>RepairID</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:repairID" messageType="bcs:ConfirmTotalCostRequest" part="ConfirmTotalCost">
+    	<vprop:query>RepairID</vprop:query>
+    </vprop:propertyAlias>
+  
+  	<!-- binding -->
   <wsdl:binding name="BikeRepairServiceSOAP" type="tns:BikeRepairService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="RequestRepair">
