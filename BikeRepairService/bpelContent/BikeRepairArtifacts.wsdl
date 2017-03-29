@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.djbikeshop.org/BikeRepairService/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:xsd="http://www.djbikeshop.org/BillingCallbackService/" xmlns:xsd1="http://www.djbikeshop.org/CommonTypes/" xmlns:xsd2="http://www.w3.org/2001/XMLSchema" name="BikeRepair" targetNamespace="http://www.djbikeshop.org/BikeRepairService/">
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <vprop:property name="RepairID" type="xsd1:RepairIDType"/>
+    <vprop:propertyAlias messageType="xsd:ConfirmTotalCostRequest" part="ConfirmTotalCost" propertyName="tns:RepairID">
+    <vprop:query><![CDATA[/xsd:RepairID]]></vprop:query>
+  </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="xsd:ConfirmBillSentRequest" part="ConfirmBillSentRequest" propertyName="tns:RepairID">
+    <vprop:query><![CDATA[/xsd:RepairID]]></vprop:query>
+  </vprop:propertyAlias>
+    <import location="CommonTypes.xsd" namespace="http://www.djbikeshop.org/CommonTypes/"/>
+    <import location="BillingCallbackService.wsdl" namespace="http://www.djbikeshop.org/BillingCallbackService/"/>
+    <service name="BikeRepairService">
+    </service>
+</definitions>
